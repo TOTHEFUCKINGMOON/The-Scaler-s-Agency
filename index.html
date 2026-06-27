@@ -5,16 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>The Scaler's Agency | Spécialiste YouTube Shorts Finance</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'serif': ['DM Serif Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
     <style>
         [x-cloak] { display: none !important; }
         html { scroll-behavior: smooth; }
         
         body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #f8f9fa; /* Gris perle très léger Google */
-            color: #202124; /* Noir Google natif */
             overflow-x: hidden;
         }
 
@@ -24,15 +34,25 @@
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             border: 1px solid rgba(0,0,0,0.03);
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
         }
         .material-card:hover {
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
             transform: translateY(-2px);
         }
 
+        .dark .material-card {
+            background-color: #1e1e1e;
+            border-color: rgba(255,255,255,0.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        .dark .material-card:hover {
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+
         .custom-scrollbar::-webkit-scrollbar { width: 6px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: #f1f3f4; }
+        .dark .custom-scrollbar::-webkit-scrollbar-track { background: #121212; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #FF0000; border-radius: 10px; }
 
         @keyframes scroll {
@@ -50,60 +70,62 @@
         }
     </style>
 </head>
-<body class="antialiased custom-scrollbar">
+<body x-data="{ darkMode: false }" :class="{ 'dark': darkMode }" class="antialiased custom-scrollbar bg-[#f8f9fa] dark:bg-[#0a0a0a] text-[#202124] dark:text-gray-100 transition-colors duration-300">
 
-    <!-- NAVIGATION -->
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm">
+    <nav class="fixed w-full z-50 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-gray-200 dark:border-white/10 shadow-sm transition-colors duration-300">
         <div class="flex justify-between items-center p-4 md:p-5 max-w-7xl mx-auto">
-            <div class="text-2xl font-black tracking-tighter uppercase text-[#202124]">
+            <div class="text-2xl font-black tracking-tighter uppercase text-[#202124] dark:text-white">
                 TSA
             </div>
             
-            <div class="hidden lg:flex space-x-8 text-xs font-bold uppercase tracking-widest text-gray-600">
+            <div class="hidden lg:flex space-x-8 text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-300">
                 <a href="#stats" class="hover:text-[#FF0000] transition">Statistiques</a>
                 <a href="#compliance" class="hover:text-[#FF0000] transition">Compliance</a>
                 <a href="#process" class="hover:text-[#FF0000] transition">Processus</a>
                 <a href="#pricing" class="hover:text-[#FF0000] transition">Pricing</a>
             </div>
 
-            <div>
-                <a href="https://calendly.com/lucabesson333/30min" target="_blank" class="bg-[#FF0000] hover:bg-red-700 text-white px-5 md:px-6 py-2.5 rounded-lg font-bold transition text-xs uppercase tracking-widest shadow-md inline-block">Demander un audit</a>
+            <div class="flex items-center space-x-4">
+                <button @click="darkMode = !darkMode" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-zinc-800 transition" aria-label="Toggle Dark Mode">
+                    <svg x-show="darkMode" x-cloak class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4.22 4.22a1 1 0 011.415 0l.708.708a1 1 0 01-1.414 1.414l-.708-.708a1 1 0 010-1.414zm-9.854 0a1 1 0 010 1.415l-.708.708a1 1 0 11-1.414-1.414l.708-.708a1 1 0 011.414 0zM10 6a4 4 0 100 8 4 4 0 000-8zm-5 4a1 1 0 11-2 0 1 1 0 012 0zm10 0a1 1 0 112 0 1 1 0 01-2 0zm-5 5a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm4.93-1.636a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM5.07 13.364a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    <svg x-show="!darkMode" class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                </button>
+
+                <a href="https://calendly.com/lucabesson333/30min" target="_blank" class="bg-[#FF0000] hover:bg-red-700 text-white px-5 md:px-6 py-2.5 rounded-lg font-bold transition text-xs uppercase tracking-widest shadow-md inline-block">AUDIT OFFERT</a>
             </div>
         </div>
     </nav>
 
-    <!-- SECTION 1: HERO SECTION -->
-    <header class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-white">
-        <!-- Canvas restraint à la Hero -->
+    <header class="relative pt-32 pb-16 md:pt-48 md:pb-24 overflow-hidden bg-white dark:bg-[#121212] transition-colors duration-300">
         <canvas id="hero-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
         
         <div class="relative z-10 max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
-            <!-- Text Content -->
             <div class="w-full md:w-1/2 text-center md:text-left">
-                <div class="inline-block border border-[#0F9D58]/30 bg-[#0F9D58]/10 text-[#0F9D58] px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest mb-6">Spécialisé Finance</div>
-                
-                <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight uppercase tracking-tighter text-[#202124]">
-                    YOUTUBE SHORT<br>
-                    <span class="text-[#FF0000]">AGENCE CRÉATIVE</span>
+                <h1 class="text-5xl md:text-7xl font-black mb-2 leading-tight uppercase tracking-tighter text-[#202124] dark:text-white">
+                    YOUTUBE SHORT <br>
+                    <span class="text-[#FF0000] whitespace-nowrap">AGENCE CRÉATIVE</span>
                 </h1>
                 
-                <p class="text-lg md:text-xl mb-10 text-gray-600 font-medium leading-relaxed max-w-xl mx-auto md:mx-0">
-                    Diviser votre coût d’acquisition avec des créatives YouTube short performante.
+                <h2 class="font-serif text-4xl md:text-6xl text-[#202124] dark:text-white mb-8">Spécialisé finance</h2>
+                
+                <p class="text-lg md:text-xl mb-10 text-gray-600 dark:text-gray-300 font-medium leading-relaxed max-w-xl mx-auto md:mx-0">
+                    Diviser votre coût d’acquisition avec des créatives YouTube short performantes.
                 </p>
                 
-                <a href="https://calendly.com/lucabesson333/30min" target="_blank" class="inline-block bg-[#FF0000] text-white px-8 py-4 rounded-lg font-black text-sm md:text-base hover:bg-red-700 transition shadow-lg tracking-widest uppercase">Demander un audit gratuit</a>
+                <div class="flex flex-col items-center md:items-start">
+                    <a href="https://calendly.com/lucabesson333/30min" target="_blank" class="inline-block bg-[#FF0000] text-white px-8 py-4 rounded-lg font-black text-sm md:text-base hover:bg-red-700 transition shadow-lg tracking-widest uppercase mb-4">Demander un audit gratuit</a>
+                    <p class="text-xs font-bold text-gray-500 uppercase tracking-widest">Trusted by Google Partners & Finance Leaders</p>
+                </div>
             </div>
 
-            <!-- Visual Asymétrique (Mimétisme Material) -->
-            <div class="w-full md:w-1/2 relative flex justify-center md:justify-end">
-                <div class="relative w-64 h-[450px] bg-gray-100 border-4 border-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-2xl overflow-hidden z-10 rotate-3">
+            <div class="w-full md:w-1/2 relative flex justify-center md:justify-end mt-12 md:mt-0">
+                <div class="relative w-64 h-[450px] bg-gray-100 dark:bg-zinc-800 border-4 border-white dark:border-zinc-700 shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-2xl overflow-hidden z-10 rotate-3">
                     <div class="absolute inset-0 flex items-center justify-center text-gray-400 font-bold uppercase text-sm tracking-widest">Aperçu Short 1</div>
                 </div>
-                <div class="absolute top-10 right-10 md:right-32 w-56 h-[400px] bg-gray-200 border-4 border-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-2xl overflow-hidden -rotate-6 z-0">
+                <div class="absolute top-10 right-10 md:right-32 w-56 h-[400px] bg-gray-200 dark:bg-zinc-900 border-4 border-white dark:border-zinc-700 shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-2xl overflow-hidden -rotate-6 z-0">
                     <div class="absolute inset-0 flex items-center justify-center text-gray-400 font-bold uppercase text-sm tracking-widest">Aperçu Short 2</div>
                 </div>
                 
-                <!-- Badges Data Vert Finance -->
                 <div class="absolute bottom-20 left-10 md:left-20 bg-[#0F9D58] text-white px-4 py-2 rounded-lg font-black text-sm shadow-xl z-20 flex items-center gap-2">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
                     -25% CPA
@@ -115,128 +137,121 @@
         </div>
     </header>
 
-    <!-- SECTION 2: MARQUES & TRUST -->
-    <section class="py-10 bg-white border-y border-gray-200 shadow-sm relative z-20">
+    <section class="py-10 bg-white dark:bg-[#121212] border-y border-gray-200 dark:border-white/10 shadow-sm relative z-20 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-6">
             <p class="text-center text-xs font-bold text-gray-500 uppercase tracking-widest mb-8">Délivré par des équipes qui ont travaillés avec les plus grosses marques de finances</p>
             <div class="marquee-container flex">
-                <div class="marquee-content gap-16 md:gap-32 opacity-70 grayscale text-[#202124] items-center w-max">
-                    <div class="font-black text-2xl tracking-tighter uppercase">BNP Paribas</div>
-                    <div class="font-black text-2xl tracking-tighter uppercase">Groupe BPCE</div>
-                    <div class="font-black text-2xl tracking-tighter uppercase">Natixis</div>
-                    <div class="font-black text-2xl tracking-tighter uppercase">Sage</div>
-                    <div class="font-black text-2xl tracking-tighter uppercase">BNP Paribas</div>
-                    <div class="font-black text-2xl tracking-tighter uppercase">Groupe BPCE</div>
-                    <div class="font-black text-2xl tracking-tighter uppercase">Natixis</div>
-                    <div class="font-black text-2xl tracking-tighter uppercase">Sage</div>
+                <div class="marquee-content gap-16 md:gap-32 items-center w-max opacity-70">
+                    <img src="BNP_PARIBAS_logo.png" alt="BNP Paribas" class="h-10 md:h-12 object-contain filter grayscale dark:brightness-0 dark:invert">
+                    <img src="GROUPE_BPCE_logo.png" alt="Groupe BPCE" class="h-10 md:h-12 object-contain filter grayscale dark:brightness-0 dark:invert">
+                    <img src="NATIXIS_logo.png" alt="Natixis" class="h-10 md:h-12 object-contain filter grayscale dark:brightness-0 dark:invert">
+                    <img src="Sage_logo.png" alt="Sage" class="h-10 md:h-12 object-contain filter grayscale dark:brightness-0 dark:invert">
+                    <img src="BNP_PARIBAS_logo.png" alt="BNP Paribas" class="h-10 md:h-12 object-contain filter grayscale dark:brightness-0 dark:invert">
+                    <img src="GROUPE_BPCE_logo.png" alt="Groupe BPCE" class="h-10 md:h-12 object-contain filter grayscale dark:brightness-0 dark:invert">
+                    <img src="NATIXIS_logo.png" alt="Natixis" class="h-10 md:h-12 object-contain filter grayscale dark:brightness-0 dark:invert">
+                    <img src="Sage_logo.png" alt="Sage" class="h-10 md:h-12 object-contain filter grayscale dark:brightness-0 dark:invert">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3: STATISTIQUES YOUTUBE -->
-    <section id="stats" class="py-24 md:py-32 bg-[#f8f9fa] relative z-10">
+    <section id="stats" class="py-24 md:py-32 relative z-10">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl md:text-5xl font-black mb-16 text-center uppercase tracking-tighter text-[#202124]">La Puissance de l'Écosystème</h2>
+            <h2 class="text-3xl md:text-5xl font-black mb-16 text-center uppercase tracking-tighter">La Puissance de l'Écosystème</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Stat 1 -->
                 <div class="material-card p-8 md:p-10 border-t-4 border-[#4285F4]">
                     <div class="text-5xl md:text-6xl font-black text-[#4285F4] mb-4 tracking-tighter">2 MDS</div>
-                    <p class="text-gray-700 font-medium text-lg">D'utilisateurs connectés chaque mois sur la plateforme.</p>
+                    <p class="font-medium text-lg dark:text-gray-300">D'utilisateurs connectés chaque mois sur la plateforme.</p>
                 </div>
-                <!-- Stat 2 -->
                 <div class="material-card p-8 md:p-10 border-t-4 border-[#0F9D58]">
                     <div class="text-5xl md:text-6xl font-black text-[#0F9D58] mb-4 tracking-tighter">> 2.3X</div>
-                    <p class="text-gray-700 font-medium text-lg">Un ROAS à long terme 2.3X supérieur à celui des publicités classiques sur les réseaux sociaux.</p>
+                    <p class="font-medium text-lg dark:text-gray-300">Un ROAS à long terme 2.3X supérieur à celui des publicités classiques sur les réseaux sociaux.</p>
                 </div>
-                <!-- Stat 3 -->
                 <div class="material-card p-8 md:p-10 border-t-4 border-[#FBBC05]">
                     <div class="text-5xl md:text-6xl font-black text-[#FBBC05] mb-4 tracking-tighter">96 %</div>
-                    <p class="text-gray-700 font-medium text-lg">Des membres de la Génération Z aux États-Unis déclarent regarder à la fois des vidéos courtes et longues sur YouTube.</p>
+                    <p class="font-medium text-lg dark:text-gray-300">Des membres de la Génération Z aux États-Unis déclarent regarder à la fois des vidéos courtes et longues sur YouTube.</p>
                 </div>
-                <!-- Stat 4 -->
                 <div class="material-card p-8 md:p-10 border-t-4 border-[#FF0000]">
                     <div class="text-3xl md:text-4xl font-black text-[#FF0000] mb-4 tracking-tighter uppercase">Canal Éducationnel</div>
-                    <p class="text-gray-700 font-medium text-lg">YouTube Short excelle dans le format éducatif. Raconter une histoire autour de la finance crée une confiance immédiate et convertit des audiences froides en clients loyaux. C'est comme surfer sur un océan bleu.</p>
+                    <p class="font-medium text-lg dark:text-gray-300">YouTube Short excelle dans le format éducatif. Raconter une histoire autour de la finance crée une confiance immédiate et convertit des audiences froides en clients loyaux.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 4: COMPLIANCE -->
-    <section id="compliance" class="py-24 md:py-32 bg-white border-y border-gray-200">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl md:text-5xl font-black text-center mb-16 text-[#202124] uppercase tracking-tighter">LA COMPLIANCE N'EST PLUS UNE LIMITE</h2>
+    <section id="compliance" class="py-24 md:py-32 bg-white dark:bg-[#121212] border-y border-gray-200 dark:border-white/10 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-black text-center mb-16 uppercase tracking-tighter">LA COMPLIANCE N'EST PLUS UNE LIMITE</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="material-card p-8">
                     <h4 class="text-[#FF0000] font-black uppercase text-xs tracking-widest mb-3">Le Piège Financier</h4>
-                    <h3 class="text-[#202124] font-black uppercase text-xl mb-3">Bannissements</h3>
-                    <p class="text-gray-600 text-sm font-medium leading-relaxed">Comptes suspendus à répétition. La compliance stricte bloque vos campagnes et détruit votre ROI. L'algorithme ne pardonne pas les erreurs amateurs.</p>
+                    <h3 class="font-black uppercase text-xl mb-3">Bannissements</h3>
+                    <p class="dark:text-gray-300 text-sm font-medium leading-relaxed">Comptes suspendus à répétition. La compliance stricte bloque vos campagnes et détruit votre ROI. L'algorithme ne pardonne pas les erreurs amateurs.</p>
                 </div>
                 
                 <div class="material-card p-8">
                     <h4 class="text-[#0F9D58] font-black uppercase text-xs tracking-widest mb-3">Remplacement Instantané</h4>
-                    <h3 class="text-[#202124] font-black uppercase text-xl mb-3">Zéro Interruption</h3>
-                    <p class="text-gray-600 text-sm font-medium leading-relaxed">Notre solution : des comptes publicitaires agence sécurisés et remplaçables à la seconde. Votre acquisition ne s'arrête jamais, vos flux de trésorerie non plus.</p>
+                    <h3 class="font-black uppercase text-xl mb-3">Zéro Interruption</h3>
+                    <p class="dark:text-gray-300 text-sm font-medium leading-relaxed">Notre solution : des comptes publicitaires agence sécurisés et remplaçables à la seconde. Votre acquisition ne s'arrête jamais, vos flux de trésorerie non plus.</p>
                 </div>
                 
                 <div class="material-card p-8">
-                    <h4 class="text-[#4285F4] font-black uppercase text-xs tracking-widest mb-3">Maîtrise Algorithmique</h4>
-                    <h3 class="text-[#202124] font-black uppercase text-xl mb-3">Scale Conforme</h3>
-                    <p class="text-gray-600 text-sm font-medium leading-relaxed">Méthodes internes prouvées pour naviguer dans les certifications complexes. Nos frameworks créatifs performent massivement tout en respectant l'écosystème Google.</p>
+                    <h4 class="text-[#4285F4] font-black uppercase text-xs tracking-widest mb-3">Approuvé par Google</h4>
+                    <h3 class="font-black uppercase text-xl mb-3">Maîtrise Certifications</h3>
+                    <p class="dark:text-gray-300 text-sm font-medium leading-relaxed">Méthodes internes prouvées pour obtenir et valider vos certifications financières complexes rapidement et exploiter l'algorithme au maximum.</p>
+                </div>
+
+                <div class="material-card p-8">
+                    <h4 class="text-[#FBBC05] font-black uppercase text-xs tracking-widest mb-3">Pas de certif ? Pas de souci</h4>
+                    <h3 class="font-black uppercase text-xl mb-3">Scale Conforme</h3>
+                    <p class="dark:text-gray-300 text-sm font-medium leading-relaxed">Même sans certification, nos frameworks créatifs performent massivement tout en respectant les règles de Google grâce à nos connaissances internes.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 5: PROCESS DE SCALING -->
-    <section id="process" class="py-24 md:py-32 bg-[#f8f9fa]">
+    <section id="process" class="py-24 md:py-32">
         <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-3xl md:text-5xl font-black mb-20 uppercase tracking-tighter text-center text-[#202124]">VOTRE PROCESS DE SCALING</h2>
+            <h2 class="text-3xl md:text-5xl font-black mb-20 uppercase tracking-tighter text-center">VOTRE PROCESS DE SCALING</h2>
             
-            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-6 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gray-300">
+            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-6 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gray-300 dark:before:bg-gray-700">
                 
-                <!-- Etape 1 -->
                 <div class="relative flex items-center justify-end md:justify-normal md:odd:flex-row-reverse group">
-                    <div class="absolute left-0 md:static flex items-center justify-center w-12 h-12 rounded-full border-4 border-[#f8f9fa] bg-[#202124] text-white font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-md">1</div>
+                    <div class="absolute left-0 md:static flex items-center justify-center w-12 h-12 rounded-full border-4 border-[#f8f9fa] dark:border-[#0a0a0a] bg-[#202124] dark:bg-white text-white dark:text-[#202124] font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-md">1</div>
                     <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] material-card p-6 md:p-8">
-                        <h3 class="font-black text-xl uppercase mb-2 text-[#202124]">Audit & Stratégie (TSA)</h3>
-                        <p class="text-gray-600 font-medium text-sm leading-relaxed">Nous analysons votre funnel, vos métriques et vos goulots d'étranglement financiers. On ne lance rien sans avoir cartographié le chemin mathématique vers le ROI.</p>
+                        <h3 class="font-black text-xl uppercase mb-2">Audit & Stratégie (TSA)</h3>
+                        <p class="dark:text-gray-300 font-medium text-sm leading-relaxed">Nous analysons votre funnel, vos métriques et vos goulots d'étranglement financiers. On ne lance rien sans avoir cartographié le chemin mathématique vers le ROI.</p>
                     </div>
                 </div>
 
-                <!-- Etape 2 -->
                 <div class="relative flex items-center justify-end md:justify-normal md:odd:flex-row-reverse group">
-                    <div class="absolute left-0 md:static flex items-center justify-center w-12 h-12 rounded-full border-4 border-[#f8f9fa] bg-[#202124] text-white font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-md">2</div>
+                    <div class="absolute left-0 md:static flex items-center justify-center w-12 h-12 rounded-full border-4 border-[#f8f9fa] dark:border-[#0a0a0a] bg-[#202124] dark:bg-white text-white dark:text-[#202124] font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-md">2</div>
                     <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] material-card p-6 md:p-8 border-l-4 border-[#FF0000]">
-                        <h3 class="font-black text-xl uppercase mb-2 text-[#202124]">Production Créative</h3>
-                        <p class="text-gray-600 font-medium text-sm leading-relaxed">Notre équipe experte produit les Shorts qui captent l'attention algorithmique. Concepts testés, hooks narratifs éducatifs, design orienté pure conversion.</p>
+                        <h3 class="font-black text-xl uppercase mb-2">Production Créative</h3>
+                        <p class="dark:text-gray-300 font-medium text-sm leading-relaxed">Notre équipe experte produit les Shorts qui captent l'attention algorithmique. Concepts testés, hooks narratifs éducatifs, design orienté pure conversion.</p>
                     </div>
                 </div>
 
-                <!-- Etape 3 -->
                 <div class="relative flex items-center justify-end md:justify-normal md:odd:flex-row-reverse group">
-                    <div class="absolute left-0 md:static flex items-center justify-center w-12 h-12 rounded-full border-4 border-[#f8f9fa] bg-[#202124] text-white font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-md">3</div>
+                    <div class="absolute left-0 md:static flex items-center justify-center w-12 h-12 rounded-full border-4 border-[#f8f9fa] dark:border-[#0a0a0a] bg-[#202124] dark:bg-white text-white dark:text-[#202124] font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-md">3</div>
                     <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] material-card p-6 md:p-8 border-l-4 border-[#4285F4]">
-                        <h3 class="font-black text-xl uppercase mb-2 text-[#202124]">Media & Data-Buying</h3>
-                        <p class="text-gray-600 font-medium text-sm leading-relaxed">Configuration de l'écosystème publicitaire sur Google & YouTube. Ciblage ultra-précis des audiences financières, signaux d'intention, et pilotage par machine learning.</p>
+                        <h3 class="font-black text-xl uppercase mb-2">Media & Data-Buying</h3>
+                        <p class="dark:text-gray-300 font-medium text-sm leading-relaxed">Configuration de l'écosystème publicitaire sur Google & YouTube. Ciblage ultra-précis des audiences financières, signaux d'intention, et pilotage par machine learning.</p>
                     </div>
                 </div>
 
-                <!-- Etape 4 -->
                 <div class="relative flex items-center justify-end md:justify-normal md:odd:flex-row-reverse group">
-                    <div class="absolute left-0 md:static flex items-center justify-center w-12 h-12 rounded-full border-4 border-[#f8f9fa] bg-[#202124] text-white font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-md">4</div>
+                    <div class="absolute left-0 md:static flex items-center justify-center w-12 h-12 rounded-full border-4 border-[#f8f9fa] dark:border-[#0a0a0a] bg-[#202124] dark:bg-white text-white dark:text-[#202124] font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-md">4</div>
                     <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] material-card p-6 md:p-8 border-l-4 border-[#FBBC05]">
-                        <h3 class="font-black text-xl uppercase mb-2 text-[#202124]">Optimisation</h3>
-                        <p class="text-gray-600 font-medium text-sm leading-relaxed">Analyse froide de la donnée. Chaque euro dépensé est tracé et justifié. On coupe les annonces perdantes sans état d'âme, on isole les datas victorieuses.</p>
+                        <h3 class="font-black text-xl uppercase mb-2">Optimisation</h3>
+                        <p class="dark:text-gray-300 font-medium text-sm leading-relaxed">Analyse froide de la donnée. Chaque euro dépensé est tracé et justifié. On coupe les annonces perdantes sans état d'âme, on isole les datas victorieuses.</p>
                     </div>
                 </div>
 
-                <!-- Etape 5 -->
                 <div class="relative flex items-center justify-end md:justify-normal md:odd:flex-row-reverse group">
-                    <div class="absolute left-0 md:static flex items-center justify-center w-12 h-12 rounded-full border-4 border-[#f8f9fa] bg-[#0F9D58] text-white font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-md">5</div>
+                    <div class="absolute left-0 md:static flex items-center justify-center w-12 h-12 rounded-full border-4 border-[#f8f9fa] dark:border-[#0a0a0a] bg-[#0F9D58] text-white font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-md">5</div>
                     <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] material-card p-6 md:p-8 bg-[#0F9D58] border-none text-white">
                         <h3 class="font-black text-2xl uppercase mb-2">SCALE</h3>
                         <p class="text-white/90 font-bold text-sm leading-relaxed">Une fois le CPA cible verrouillé, on injecte le budget de manière agressive pour saturer l'espace YouTube Shorts et dominer votre niche financière.</p>
@@ -247,36 +262,33 @@
         </div>
     </section>
 
-    <!-- SECTION 6: QUI SUIS-JE ? -->
-    <section class="py-24 md:py-32 bg-white border-y border-gray-200">
+    <section class="py-24 md:py-32 bg-white dark:bg-[#121212] border-y border-gray-200 dark:border-white/10 transition-colors duration-300">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <div class="inline-block bg-gray-100 text-[#202124] px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest mb-6">Le Fondateur</div>
-            <h2 class="text-3xl md:text-5xl font-black mb-10 uppercase tracking-tighter text-[#202124]">Qui suis-je ?</h2>
+            <div class="inline-block bg-gray-100 dark:bg-zinc-800 text-[#202124] dark:text-white px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest mb-6">Le Fondateur</div>
+            <h2 class="text-3xl md:text-5xl font-black mb-10 uppercase tracking-tighter">Qui suis-je ?</h2>
             
-            <p class="text-lg md:text-2xl text-gray-700 font-medium leading-relaxed mb-12">
+            <p class="text-lg md:text-2xl font-medium leading-relaxed mb-12 dark:text-gray-300">
                 "Moi c’est Luca, j’ai travaillé en Finance pour la plus grosse communauté de trading francophone car je connais les mécaniques des marchés financiers sur le bout des doigts (avec + de 400,000€ en gestion de capital personnel sur un compte de scalping). Je développe le format Youtube Short en combinant YoutubeAds + GoogleAds et mon équipe créative a travaillé sur BNP, Natixis, le Groupe BPCE et Sage.<br><br>
-                <span class="text-[#202124] font-black">Pour faire simple j’ai créé une équipe de choc et je suis là pour agglomérer des ressources."</span>
+                <span class="font-black">Pour faire simple j’ai créé une équipe de choc et je suis là pour agglomérer des ressources."</span>
             </p>
         </div>
     </section>
 
-    <!-- SECTION 7: PRICING -->
-    <section id="pricing" class="py-24 md:py-32 bg-[#f8f9fa]">
+    <section id="pricing" class="py-24 md:py-32">
         <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-3xl md:text-5xl font-black mb-16 text-center text-[#202124] uppercase tracking-tighter">Transparent Pricing</h2>
+            <h2 class="text-3xl md:text-5xl font-black mb-16 text-center uppercase tracking-tighter">Transparent Pricing</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Pack Créa -->
                 <div class="material-card p-10 flex flex-col h-full border-t-8 border-[#FF0000]">
-                    <h3 class="text-2xl font-black uppercase mb-2 text-[#202124]">Pack Créa Shorts</h3>
-                    <p class="text-gray-500 text-sm font-medium mb-8">L'infrastructure agressive pour dominer YouTube.</p>
+                    <h3 class="text-2xl font-black uppercase mb-2">Pack Créa Shorts</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm font-medium mb-8">L'infrastructure agressive pour dominer YouTube.</p>
                     
                     <div class="mb-8">
-                        <span class="text-xs text-gray-500 uppercase tracking-widest font-bold">À partir de</span>
+                        <span class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-widest font-bold">À partir de</span>
                         <div class="text-5xl font-black text-[#0F9D58] tracking-tighter">3 000€</div>
                     </div>
                     
-                    <ul class="space-y-4 text-gray-700 font-medium mb-10 flex-grow">
+                    <ul class="space-y-4 font-medium mb-10 flex-grow dark:text-gray-300">
                         <li class="flex items-center gap-3">
                             <svg class="w-5 h-5 text-[#0F9D58]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                             Production de 50 créatives
@@ -291,20 +303,19 @@
                         </li>
                     </ul>
                     
-                    <a href="https://calendly.com/lucabesson333/30min" target="_blank" class="block w-full bg-[#202124] text-white text-center py-4 rounded-lg font-black uppercase tracking-widest text-sm hover:bg-gray-800 transition">Réserver un Appel</a>
+                    <a href="https://calendly.com/lucabesson333/30min" target="_blank" class="block w-full bg-[#202124] dark:bg-white text-white dark:text-black text-center py-4 rounded-lg font-black uppercase tracking-widest text-sm hover:bg-gray-800 dark:hover:bg-gray-200 transition">Réserver un Appel</a>
                 </div>
 
-                <!-- Pack Additionnel -->
                 <div class="material-card p-10 flex flex-col h-full border-t-8 border-[#4285F4]">
-                    <h3 class="text-2xl font-black uppercase mb-2 text-[#202124]">Pack Écosystème</h3>
-                    <p class="text-gray-500 text-sm font-medium mb-8">Pour encercler l'intention de recherche.</p>
+                    <h3 class="text-2xl font-black uppercase mb-2">Pack Écosystème</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm font-medium mb-8">Pour encercler l'intention de recherche.</p>
                     
                     <div class="mb-8">
-                        <span class="text-xs text-gray-500 uppercase tracking-widest font-bold">Investissement Additionnel</span>
+                        <span class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-widest font-bold">Investissement Additionnel</span>
                         <div class="text-5xl font-black text-[#0F9D58] tracking-tighter">+1 000€</div>
                     </div>
                     
-                    <ul class="space-y-4 text-gray-700 font-medium mb-10 flex-grow">
+                    <ul class="space-y-4 font-medium mb-10 flex-grow dark:text-gray-300">
                         <li class="flex items-center gap-3">
                             <svg class="w-5 h-5 text-[#4285F4]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                             Optimisation Google Ads Search
@@ -319,101 +330,98 @@
                         </li>
                     </ul>
                     
-                    <a href="https://calendly.com/lucabesson333/30min" target="_blank" class="block w-full bg-white border-2 border-[#202124] text-[#202124] text-center py-4 rounded-lg font-black uppercase tracking-widest text-sm hover:bg-gray-50 transition">Ajouter au Scope</a>
+                    <a href="https://calendly.com/lucabesson333/30min" target="_blank" class="block w-full bg-white dark:bg-[#1e1e1e] border-2 border-[#202124] dark:border-white text-[#202124] dark:text-white text-center py-4 rounded-lg font-black uppercase tracking-widest text-sm hover:bg-gray-50 dark:hover:bg-zinc-800 transition">Ajouter au Scope</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 8: FAQ -->
-    <section id="faq" class="py-24 md:py-32 bg-white border-t border-gray-200" x-data="{ active: null }">
+    <section id="faq" class="py-24 md:py-32 bg-white dark:bg-[#121212] border-t border-gray-200 dark:border-white/10 transition-colors duration-300" x-data="{ active: null }">
         <div class="max-w-3xl mx-auto px-6">
-            <h2 class="text-3xl md:text-5xl font-black mb-16 uppercase tracking-tighter text-center text-[#202124]">F.A.Q</h2>
+            <h2 class="text-3xl md:text-5xl font-black mb-16 uppercase tracking-tighter text-center">F.A.Q</h2>
             
-            <!-- Categorie Performance -->
             <div class="mb-12">
-                <h3 class="text-[#0F9D58] font-black mb-6 uppercase tracking-widest text-sm border-b border-gray-200 pb-2">Performance</h3>
+                <h3 class="text-[#0F9D58] font-black mb-6 uppercase tracking-widest text-sm border-b border-gray-200 dark:border-zinc-800 pb-2">Performance</h3>
                 <div class="space-y-3">
                     <div class="material-card overflow-hidden">
-                        <button @click="active !== 1 ? active = 1 : active = null" class="w-full text-left p-6 font-bold uppercase text-xs md:text-sm text-[#202124] flex justify-between items-center bg-white hover:bg-gray-50 transition">
+                        <button @click="active !== 1 ? active = 1 : active = null" class="w-full text-left p-6 font-bold uppercase text-xs md:text-sm flex justify-between items-center hover:bg-gray-50 dark:hover:bg-zinc-800/50 transition">
                             Comment mesurez-vous le ROI ?
                             <span class="text-xl font-normal" x-text="active === 1 ? '-' : '+'"></span>
                         </button>
                         <div x-show="active === 1" x-collapse x-cloak>
-                            <div class="p-6 pt-0 text-gray-600 text-sm md:text-base font-medium border-t border-gray-100 mt-2 pt-4">
+                            <div class="p-6 pt-0 dark:text-gray-300 text-sm md:text-base font-medium border-t border-gray-100 dark:border-zinc-800 mt-2 pt-4">
                                 À travers un tracking server-side rigoureux des conversions : leads qualifiés, inscriptions brokers, Dépôts, ou actions de valeur directe sur votre backend financier.
                             </div>
                         </div>
                     </div>
                     <div class="material-card overflow-hidden">
-                        <button @click="active !== 2 ? active = 2 : active = null" class="w-full text-left p-6 font-bold uppercase text-xs md:text-sm text-[#202124] flex justify-between items-center bg-white hover:bg-gray-50 transition">
+                        <button @click="active !== 2 ? active = 2 : active = null" class="w-full text-left p-6 font-bold uppercase text-xs md:text-sm flex justify-between items-center hover:bg-gray-50 dark:hover:bg-zinc-800/50 transition">
                             Pourquoi YouTube Shorts ?
                             <span class="text-xl font-normal" x-text="active === 2 ? '-' : '+'"></span>
                         </button>
                         <div x-show="active === 2" x-collapse x-cloak>
-                            <div class="p-6 pt-0 text-gray-600 text-sm md:text-base font-medium border-t border-gray-100 mt-2 pt-4">
+                            <div class="p-6 pt-0 dark:text-gray-300 text-sm md:text-base font-medium border-t border-gray-100 dark:border-zinc-800 mt-2 pt-4">
                                 C'est le format éducatif par excellence avec des CPM drastiquement inférieurs à Meta. L'espace est moins saturé par vos concurrents et génère un trust institutionnel direct grâce à l'écosystème Google.
                             </div>
                         </div>
                     </div>
                     <div class="material-card overflow-hidden">
-                        <button @click="active !== 3 ? active = 3 : active = null" class="w-full text-left p-6 font-bold uppercase text-xs md:text-sm text-[#202124] flex justify-between items-center bg-white hover:bg-gray-50 transition">
+                        <button @click="active !== 3 ? active = 3 : active = null" class="w-full text-left p-6 font-bold uppercase text-xs md:text-sm flex justify-between items-center hover:bg-gray-50 dark:hover:bg-zinc-800/50 transition">
                             Est-ce compatible avec mon budget ?
                             <span class="text-xl font-normal" x-text="active === 3 ? '-' : '+'"></span>
                         </button>
                         <div x-show="active === 3" x-collapse x-cloak>
-                            <div class="p-6 pt-0 text-gray-600 text-sm md:text-base font-medium border-t border-gray-100 mt-2 pt-4">
-                                Si votre offre financière valide déjà un Product-Market Fit et que vous avez la trésorerie pour soutenir un testing agressif, notre système est conçu pour scaler ce budget de manière mathématique.
+                            <div class="p-6 pt-0 dark:text-gray-300 text-sm md:text-base font-medium border-t border-gray-100 dark:border-zinc-800 mt-2 pt-4">
+                                Si votre offre financière valide déjà un Product-Market Fit, que vous conduisez déjà du Google Ads ou que vous avez la trésorerie pour soutenir un testing agressif, notre système est conçu pour scaler ce budget de manière mathématique.
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Categorie Processus -->
             <div>
-                <h3 class="text-[#4285F4] font-black mb-6 uppercase tracking-widest text-sm border-b border-gray-200 pb-2">Processus</h3>
+                <h3 class="text-[#4285F4] font-black mb-6 uppercase tracking-widest text-sm border-b border-gray-200 dark:border-zinc-800 pb-2">Processus</h3>
                 <div class="space-y-3">
                     <div class="material-card overflow-hidden">
-                        <button @click="active !== 4 ? active = 4 : active = null" class="w-full text-left p-6 font-bold uppercase text-xs md:text-sm text-[#202124] flex justify-between items-center bg-white hover:bg-gray-50 transition">
+                        <button @click="active !== 4 ? active = 4 : active = null" class="w-full text-left p-6 font-bold uppercase text-xs md:text-sm flex justify-between items-center hover:bg-gray-50 dark:hover:bg-zinc-800/50 transition">
                             Pourquoi choisir TSA ?
                             <span class="text-xl font-normal" x-text="active === 4 ? '-' : '+'"></span>
                         </button>
                         <div x-show="active === 4" x-collapse x-cloak>
-                            <div class="p-6 pt-0 text-gray-600 text-sm md:text-base font-medium border-t border-gray-100 mt-2 pt-4">
+                            <div class="p-6 pt-0 dark:text-gray-300 text-sm md:text-base font-medium border-t border-gray-100 dark:border-zinc-800 mt-2 pt-4">
                                 Pas d'approche généraliste. Nous combinons une expérience opérationnelle directe sur les marchés financiers avec une exécution média chirurgicale sur l'algorithme Google/YouTube.
                             </div>
                         </div>
                     </div>
                     <div class="material-card overflow-hidden">
-                        <button @click="active !== 5 ? active = 5 : active = null" class="w-full text-left p-6 font-bold uppercase text-xs md:text-sm text-[#202124] flex justify-between items-center bg-white hover:bg-gray-50 transition">
+                        <button @click="active !== 5 ? active = 5 : active = null" class="w-full text-left p-6 font-bold uppercase text-xs md:text-sm flex justify-between items-center hover:bg-gray-50 dark:hover:bg-zinc-800/50 transition">
                             TSA s'occupe de toutes les créations ?
                             <span class="text-xl font-normal" x-text="active === 5 ? '-' : '+'"></span>
                         </button>
                         <div x-show="active === 5" x-collapse x-cloak>
-                            <div class="p-6 pt-0 text-gray-600 text-sm md:text-base font-medium border-t border-gray-100 mt-2 pt-4">
+                            <div class="p-6 pt-0 dark:text-gray-300 text-sm md:text-base font-medium border-t border-gray-100 dark:border-zinc-800 mt-2 pt-4">
                                 Oui. Le pack Créa intègre la conceptualisation, la rédaction des scripts (hooks éducatifs), le montage dynamique spécialisé pour la rétention, et la livraison des assets finaux.
                             </div>
                         </div>
                     </div>
                     <div class="material-card overflow-hidden">
-                        <button @click="active !== 6 ? active = 6 : active = null" class="w-full text-left p-6 font-bold uppercase text-xs md:text-sm text-[#202124] flex justify-between items-center bg-white hover:bg-gray-50 transition">
+                        <button @click="active !== 6 ? active = 6 : active = null" class="w-full text-left p-6 font-bold uppercase text-xs md:text-sm flex justify-between items-center hover:bg-gray-50 dark:hover:bg-zinc-800/50 transition">
                             Que faire si j’ai déjà un media buyer ou une agence GoogleAds ?
                             <span class="text-xl font-normal" x-text="active === 6 ? '-' : '+'"></span>
                         </button>
                         <div x-show="active === 6" x-collapse x-cloak>
-                            <div class="p-6 pt-0 text-gray-600 text-sm md:text-base font-medium border-t border-gray-100 mt-2 pt-4">
+                            <div class="p-6 pt-0 dark:text-gray-300 text-sm md:text-base font-medium border-t border-gray-100 dark:border-zinc-800 mt-2 pt-4">
                                 TSA peut agir comme une unité commando spécialisée uniquement sur l'écosystème Shorts pour vous diversifier de Meta/TikTok, sans empiéter sur le scope de votre agence Search actuelle.
                             </div>
                         </div>
                     </div>
                     <div class="material-card overflow-hidden">
-                        <button @click="active !== 7 ? active = 7 : active = null" class="w-full text-left p-6 font-bold uppercase text-xs md:text-sm text-[#202124] flex justify-between items-center bg-white hover:bg-gray-50 transition">
+                        <button @click="active !== 7 ? active = 7 : active = null" class="w-full text-left p-6 font-bold uppercase text-xs md:text-sm flex justify-between items-center hover:bg-gray-50 dark:hover:bg-zinc-800/50 transition">
                             Délai de mise en place ?
                             <span class="text-xl font-normal" x-text="active === 7 ? '-' : '+'"></span>
                         </button>
                         <div x-show="active === 7" x-collapse x-cloak>
-                            <div class="p-6 pt-0 text-gray-600 text-sm md:text-base font-medium border-t border-gray-100 mt-2 pt-4">
+                            <div class="p-6 pt-0 dark:text-gray-300 text-sm md:text-base font-medium border-t border-gray-100 dark:border-zinc-800 mt-2 pt-4">
                                 Onboarding rapide. Audit technique sous 48h, validation stratégique, et premières créations lancées sous 7 à 10 jours ouvrés.
                             </div>
                         </div>
@@ -424,40 +432,37 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="relative py-24 md:py-32 bg-white text-center border-t border-gray-200 overflow-hidden">
-        <!-- Canvas restraint au Footer -->
+    <footer class="relative py-24 md:py-32 bg-white dark:bg-[#121212] text-center border-t border-gray-200 dark:border-white/10 overflow-hidden transition-colors duration-300">
         <canvas id="footer-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
         
         <div class="relative z-10 max-w-4xl mx-auto px-6">
             <p class="text-[#FF0000] font-black tracking-widest uppercase mb-6 text-xs md:text-sm">Growth Partner for Finance Businesses</p>
-            <h2 class="text-5xl md:text-8xl font-black mb-8 uppercase tracking-tighter text-[#202124]">Demander un audit</h2>
+            <h2 class="text-5xl md:text-8xl font-black mb-8 uppercase tracking-tighter text-[#202124] dark:text-white">Demander un audit</h2>
             
-            <p class="text-gray-600 font-medium mb-12 text-base md:text-xl">
-                Prenez rendez-vous directement pour analyser vos métriques et évaluer le potentiel de scale.
+            <p class="text-gray-600 dark:text-gray-400 font-medium mb-12 text-base md:text-xl">
+                Prenez rendez-vous directement pour analyser vos métriques et évaluer le potentiel d'expansion et de croissance.
             </p>
             
             <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-24">
-                <a href="https://calendly.com/lucabesson333/30min" target="_blank" class="w-full md:w-auto bg-[#FF0000] text-white px-8 md:px-10 py-4 rounded-lg font-black text-xs md:text-sm hover:bg-red-700 transition uppercase tracking-widest shadow-lg">Request your free audit</a>
+                <a href="https://calendly.com/lucabesson333/30min" target="_blank" class="w-full md:w-auto bg-[#FF0000] text-white px-8 md:px-10 py-4 rounded-lg font-black text-xs md:text-sm hover:bg-red-700 transition uppercase tracking-widest shadow-lg">Notre cadeau pour vous</a>
             </div>
 
-            <div class="mt-20 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+            <div class="mt-20 pt-8 border-t border-gray-200 dark:border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
                 <p class="text-gray-400 text-[10px] tracking-[0.2em] uppercase font-bold">© 2026 THE SCALER'S AGENCY — HIGH PERFORMANCE ONLY</p>
                 <div class="flex flex-wrap justify-center gap-4 text-gray-400 text-[10px] md:text-xs uppercase tracking-widest font-bold mt-4 md:mt-0">
-                    <a href="#" class="hover:text-[#202124] transition">Privacy Policy</a>
-                    <a href="#" class="hover:text-[#202124] transition">Terms of Service</a>
-                    <a href="#" class="hover:text-[#202124] transition">Legal Notice</a>
+                    <a href="#" class="hover:text-[#202124] dark:hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-[#202124] dark:hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="hover:text-[#202124] dark:hover:text-white transition">Legal Notice</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- SCRIPT PARTICULES (Restreint aux zones définies) -->
     <script>
         const gadsImg = new Image();
-        gadsImg.src = 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg';
+        gadsImg.src = 'Google_Ads_logo_.webp';
         const ytImg = new Image();
-        ytImg.src = 'https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg';
+        ytImg.src = 'YouTube_Ads_logo.webp';
 
         class ParticleSystem {
             constructor(canvasId) {
@@ -484,7 +489,6 @@
 
             initParticles() {
                 this.particles = [];
-                // Densité d'électrons calculée selon la zone
                 const count = (this.canvas.parentElement.offsetWidth * this.canvas.parentElement.offsetHeight) / 12000;
                 for (let i = 0; i < count; i++) {
                     this.particles.push(this.createParticle());
@@ -501,10 +505,10 @@
                 };
                 
                 let rand = Math.random();
-                if (rand > 0.99) { // 1%
+                if (rand > 0.99) { 
                     p.type = 'yt';
                     p.size = Math.random() * 20 + 35; 
-                } else if (rand > 0.98) { // 1%
+                } else if (rand > 0.98) { 
                     p.type = 'gads';
                     p.size = Math.random() * 20 + 35;
                 } else {
@@ -515,7 +519,6 @@
             }
 
             update(p) {
-                // Léger mouvement circulaire doux
                 p.angle += 0.001;
                 p.x += Math.cos(p.angle) * 0.1;
                 p.y += Math.sin(p.angle) * 0.1;
@@ -523,14 +526,14 @@
                 p.x += p.vx;
                 p.y += p.vy;
 
-                // Rebond sur les bords du container
                 if (p.x < 0 || p.x > this.canvas.parentElement.offsetWidth) p.vx *= -1;
                 if (p.y < 0 || p.y > this.canvas.parentElement.offsetHeight) p.vy *= -1;
             }
 
             draw(p) {
                 if (p.type === 'electron') {
-                    this.ctx.fillStyle = 'rgba(255, 0, 0, 0.4)'; // Rouge YouTube (Légèrement transparent pour pas polluer le blanc)
+                    // Les électrons rouges restent visuellement adaptés aux deux modes
+                    this.ctx.fillStyle = 'rgba(255, 0, 0, 0.4)'; 
                     this.ctx.beginPath();
                     this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
                     this.ctx.fill();
@@ -542,7 +545,7 @@
                         let drawH = p.size;
                         if (ratio > 1) { drawH = p.size / ratio; } else { drawW = p.size * ratio; }
 
-                        this.ctx.globalAlpha = 0.5; // Plus discret sur fond blanc
+                        this.ctx.globalAlpha = 0.5; 
                         this.ctx.drawImage(img, p.x - drawW/2, p.y - drawH/2, drawW, drawH);
                         this.ctx.globalAlpha = 1.0;
                     }
@@ -560,7 +563,7 @@
                         let dy = pi.y - pj.y;
                         let dist = Math.sqrt(dx*dx + dy*dy);
                         if (dist < 100) {
-                            let opacity = (1 - (dist / 100)) * 0.15; // Lignes très subtiles
+                            let opacity = (1 - (dist / 100)) * 0.15; 
                             this.ctx.strokeStyle = `rgba(255, 0, 0, ${opacity})`;
                             this.ctx.lineWidth = 0.5;
                             this.ctx.beginPath();
@@ -580,7 +583,6 @@
             }
         }
 
-        // Lancement uniquement dans la Hero et le Footer
         window.addEventListener('load', () => {
             new ParticleSystem('hero-canvas');
             new ParticleSystem('footer-canvas');

@@ -33,14 +33,12 @@
             z-index: 10;
         }
 
-        /* Effet dopaminergique Rouge/Jaune */
         .gradient-text-ry { 
             background: linear-gradient(90deg, #FF0000, #FFC107); 
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent; 
         }
 
-        /* Glow strict Rouge et Jaune */
         .card-glow-red:hover { 
             box-shadow: 0 0 30px rgba(255, 0, 0, 0.15); 
             border-color: #FF0000; 
@@ -65,7 +63,6 @@
 </head>
 <body class="antialiased custom-scrollbar" x-data="languageManager()" x-cloak>
 
-    <!-- Canvas de l'animation inchangé (couleur modifiée dans le script en bas) -->
     <canvas id="particle-canvas"></canvas>
 
     <div class="relative-content">
@@ -131,7 +128,6 @@
             <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto text-lg" x-text="t[lang].portSub"></p>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Video Placeholders -->
                 <template x-for="i in 4">
                     <div class="aspect-[9/16] bg-zinc-900 border border-zinc-800 rounded-2xl flex flex-col items-center justify-center card-glow-red relative overflow-hidden group cursor-pointer">
                         <div class="absolute inset-0 bg-[#FF0000]/10 opacity-0 group-hover:opacity-100 transition duration-300"></div>
@@ -144,52 +140,87 @@
             </div>
         </section>
 
-        <!-- 5. Methodology / Process -->
-        <section id="how-it-works" class="py-32 glass-section px-6 border-y border-white/5">
-            <div class="max-w-5xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-black mb-24 uppercase tracking-tighter text-center" x-text="t[lang].methTitle"></h2>
+        <!-- 4.5 Compliance Section -->
+        <section id="compliance" class="py-24 bg-gradient-to-r from-pink-500 via-orange-400 to-teal-400 px-6">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-black text-center mb-6 text-white uppercase tracking-tighter" x-text="t[lang].compTitle"></h2>
+                <p class="text-white font-bold text-center mb-16 max-w-3xl mx-auto text-lg" x-text="t[lang].compSub"></p>
                 
-                <div class="space-y-12 relative before:absolute before:inset-0 before:ml-6 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-[#FF0000] before:via-[#FFC107] before:to-zinc-900">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                    <div class="bg-zinc-900 rounded-3xl p-6 flex flex-col shadow-2xl card-glow-red border border-white/5">
+                        <h4 class="text-pink-500 font-black uppercase text-xs tracking-widest mb-2" x-text="t[lang].compB1T"></h4>
+                        <h3 class="text-white font-black uppercase text-lg mb-4 leading-tight" x-text="t[lang].compB1S"></h3>
+                        <p class="text-gray-300 text-sm font-medium" x-text="t[lang].compB1D"></p>
+                    </div>
                     
-                    <!-- Step 1 -->
+                    <div class="bg-zinc-900 rounded-3xl p-6 flex flex-col shadow-2xl card-glow-red border border-white/5">
+                        <h4 class="text-pink-500 font-black uppercase text-xs tracking-widest mb-2" x-text="t[lang].compB2T"></h4>
+                        <h3 class="text-white font-black uppercase text-lg mb-4 leading-tight" x-text="t[lang].compB2S"></h3>
+                        <p class="text-gray-300 text-sm font-medium" x-text="t[lang].compB2D"></p>
+                    </div>
+                    
+                    <div class="bg-zinc-900 rounded-3xl p-6 flex flex-col shadow-2xl card-glow-red border border-white/5">
+                        <h4 class="text-pink-500 font-black uppercase text-xs tracking-widest mb-2" x-text="t[lang].compB3T"></h4>
+                        <h3 class="text-white font-black uppercase text-lg mb-4 leading-tight" x-text="t[lang].compB3S"></h3>
+                        <p class="text-gray-300 text-sm font-medium" x-text="t[lang].compB3D"></p>
+                    </div>
+                    
+                    <div class="bg-zinc-900 rounded-3xl p-6 flex flex-col shadow-2xl card-glow-red border border-white/5">
+                        <h4 class="text-pink-500 font-black uppercase text-xs tracking-widest mb-2" x-text="t[lang].compB4T"></h4>
+                        <h3 class="text-white font-black uppercase text-lg mb-4 leading-tight" x-text="t[lang].compB4S"></h3>
+                        <p class="text-gray-300 text-sm font-medium" x-text="t[lang].compB4D"></p>
+                    </div>
+                    
+                    <div class="bg-zinc-900 rounded-3xl p-6 flex flex-col shadow-2xl card-glow-red border border-white/5">
+                        <h4 class="text-pink-500 font-black uppercase text-xs tracking-widest mb-2" x-text="t[lang].compB5T"></h4>
+                        <h3 class="text-white font-black uppercase text-lg mb-4 leading-tight" x-text="t[lang].compB5S"></h3>
+                        <p class="text-gray-300 text-sm font-medium" x-text="t[lang].compB5D"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Methodology / Process (White Background) -->
+        <section id="how-it-works" class="py-32 bg-white px-6 border-y border-gray-200 relative z-10">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-black mb-24 uppercase tracking-tighter text-center text-black" x-text="t[lang].methTitle"></h2>
+                
+                <div class="space-y-12 relative before:absolute before:inset-0 before:ml-6 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-[#FF0000] before:via-[#FFC107] before:to-white">
+                    
                     <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                        <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-[0_0_15px_rgba(255,255,255,0.2)] group-hover:scale-110 transition duration-300">1</div>
-                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-zinc-900 border border-zinc-800 p-8 rounded-3xl card-glow-red">
-                            <h3 class="font-black text-2xl uppercase mb-3 tracking-tighter" x-text="t[lang].meth1Title"></h3>
-                            <p class="text-gray-400 leading-relaxed" x-text="t[lang].meth1Desc"></p>
+                        <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-lg group-hover:scale-110 transition duration-300">1</div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-gray-50 border border-gray-200 p-8 rounded-3xl card-glow-red shadow-md">
+                            <h3 class="font-black text-2xl uppercase mb-3 tracking-tighter text-black" x-text="t[lang].meth1Title"></h3>
+                            <p class="text-gray-600 leading-relaxed font-medium" x-text="t[lang].meth1Desc"></p>
                         </div>
                     </div>
 
-                    <!-- Step 2 -->
                     <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                        <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-[0_0_15px_rgba(255,255,255,0.2)] group-hover:scale-110 transition duration-300">2</div>
-                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-zinc-900 border border-zinc-800 p-8 rounded-3xl card-glow-yellow">
-                            <h3 class="font-black text-2xl uppercase mb-3 tracking-tighter" x-text="t[lang].meth2Title"></h3>
-                            <p class="text-gray-400 leading-relaxed" x-text="t[lang].meth2Desc"></p>
+                        <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-lg group-hover:scale-110 transition duration-300">2</div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-gray-50 border border-gray-200 p-8 rounded-3xl card-glow-yellow shadow-md">
+                            <h3 class="font-black text-2xl uppercase mb-3 tracking-tighter text-black" x-text="t[lang].meth2Title"></h3>
+                            <p class="text-gray-600 leading-relaxed font-medium" x-text="t[lang].meth2Desc"></p>
                         </div>
                     </div>
 
-                    <!-- Step 3 -->
                     <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                        <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-[0_0_15px_rgba(255,255,255,0.2)] group-hover:scale-110 transition duration-300">3</div>
-                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-zinc-900 border border-zinc-800 p-8 rounded-3xl card-glow-red">
-                            <h3 class="font-black text-2xl uppercase mb-3 tracking-tighter" x-text="t[lang].meth3Title"></h3>
-                            <p class="text-gray-400 leading-relaxed" x-text="t[lang].meth3Desc"></p>
+                        <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-lg group-hover:scale-110 transition duration-300">3</div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-gray-50 border border-gray-200 p-8 rounded-3xl card-glow-red shadow-md">
+                            <h3 class="font-black text-2xl uppercase mb-3 tracking-tighter text-black" x-text="t[lang].meth3Title"></h3>
+                            <p class="text-gray-600 leading-relaxed font-medium" x-text="t[lang].meth3Desc"></p>
                         </div>
                     </div>
 
-                    <!-- Step 4 -->
                     <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                        <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-[0_0_15px_rgba(255,255,255,0.2)] group-hover:scale-110 transition duration-300">4</div>
-                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-zinc-900 border border-zinc-800 p-8 rounded-3xl card-glow-yellow">
-                            <h3 class="font-black text-2xl uppercase mb-3 tracking-tighter" x-text="t[lang].meth4Title"></h3>
-                            <p class="text-gray-400 leading-relaxed" x-text="t[lang].meth4Desc"></p>
+                        <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-lg group-hover:scale-110 transition duration-300">4</div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-gray-50 border border-gray-200 p-8 rounded-3xl card-glow-yellow shadow-md">
+                            <h3 class="font-black text-2xl uppercase mb-3 tracking-tighter text-black" x-text="t[lang].meth4Title"></h3>
+                            <p class="text-gray-600 leading-relaxed font-medium" x-text="t[lang].meth4Desc"></p>
                         </div>
                     </div>
 
-                    <!-- Step 5 -->
                     <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                        <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-[0_0_15px_rgba(255,255,255,0.2)] group-hover:scale-110 transition duration-300">5</div>
+                        <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-lg group-hover:scale-110 transition duration-300">5</div>
                         <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-[#FF0000] border border-[#FF0000] p-8 rounded-3xl shadow-[0_0_30px_rgba(255,0,0,0.3)]">
                             <h3 class="font-black text-2xl uppercase mb-3 tracking-tighter text-white" x-text="t[lang].meth5Title"></h3>
                             <p class="text-white/90 leading-relaxed font-bold" x-text="t[lang].meth5Desc"></p>
@@ -211,80 +242,78 @@
             </div>
         </section>
 
-        <!-- 7. FAQ -->
-        <section id="faq" class="py-32 glass-section px-6 border-t border-white/5" x-data="{ active: null }">
+        <!-- 7. FAQ (Matte Silver Background) -->
+        <section id="faq" class="py-32 bg-[#e2e4e8] px-6 border-t border-gray-300 relative z-10" x-data="{ active: null }">
             <div class="max-w-3xl mx-auto">
-                <h2 class="text-4xl font-black mb-16 uppercase tracking-tighter text-center" x-text="t[lang].faqTitle"></h2>
+                <h2 class="text-4xl font-black mb-16 uppercase tracking-tighter text-center text-black" x-text="t[lang].faqTitle"></h2>
                 
-                <!-- Category 1 -->
                 <div class="mb-10">
-                    <h3 class="text-[#FFC107] font-black mb-6 uppercase tracking-widest text-sm border-b border-[#FFC107]/20 pb-2" x-text="t[lang].faqCat1"></h3>
+                    <h3 class="text-gray-900 font-black mb-6 uppercase tracking-widest text-sm border-b border-gray-400 pb-2" x-text="t[lang].faqCat1"></h3>
                     
                     <div class="space-y-4">
-                        <div class="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden transition-all">
-                            <button @click="active !== 1 ? active = 1 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm hover:text-[#FFC107] transition flex justify-between items-center">
+                        <div class="bg-white border border-gray-300 rounded-xl overflow-hidden transition-all shadow-sm">
+                            <button @click="active !== 1 ? active = 1 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm text-black hover:text-[#FF0000] transition flex justify-between items-center">
                                 <span x-text="t[lang].faq1Q"></span>
-                                <span class="text-xl" x-text="active === 1 ? '-' : '+'"></span>
+                                <span class="text-xl font-normal" x-text="active === 1 ? '-' : '+'"></span>
                             </button>
                             <div x-show="active === 1" x-collapse x-cloak>
-                                <div class="p-6 pt-0 text-gray-400" x-text="t[lang].faq1A"></div>
+                                <div class="p-6 pt-0 text-gray-700 font-medium" x-text="t[lang].faq1A"></div>
                             </div>
                         </div>
 
-                        <div class="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden transition-all">
-                            <button @click="active !== 2 ? active = 2 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm hover:text-[#FFC107] transition flex justify-between items-center">
+                        <div class="bg-white border border-gray-300 rounded-xl overflow-hidden transition-all shadow-sm">
+                            <button @click="active !== 2 ? active = 2 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm text-black hover:text-[#FF0000] transition flex justify-between items-center">
                                 <span x-text="t[lang].faq2Q"></span>
-                                <span class="text-xl" x-text="active === 2 ? '-' : '+'"></span>
+                                <span class="text-xl font-normal" x-text="active === 2 ? '-' : '+'"></span>
                             </button>
                             <div x-show="active === 2" x-collapse x-cloak>
-                                <div class="p-6 pt-0 text-gray-400" x-text="t[lang].faq2A"></div>
+                                <div class="p-6 pt-0 text-gray-700 font-medium" x-text="t[lang].faq2A"></div>
                             </div>
                         </div>
 
-                        <div class="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden transition-all">
-                            <button @click="active !== 3 ? active = 3 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm hover:text-[#FFC107] transition flex justify-between items-center">
+                        <div class="bg-white border border-gray-300 rounded-xl overflow-hidden transition-all shadow-sm">
+                            <button @click="active !== 3 ? active = 3 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm text-black hover:text-[#FF0000] transition flex justify-between items-center">
                                 <span x-text="t[lang].faq3Q"></span>
-                                <span class="text-xl" x-text="active === 3 ? '-' : '+'"></span>
+                                <span class="text-xl font-normal" x-text="active === 3 ? '-' : '+'"></span>
                             </button>
                             <div x-show="active === 3" x-collapse x-cloak>
-                                <div class="p-6 pt-0 text-gray-400" x-text="t[lang].faq3A"></div>
+                                <div class="p-6 pt-0 text-gray-700 font-medium" x-text="t[lang].faq3A"></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Category 2 -->
                 <div>
-                    <h3 class="text-[#FF0000] font-black mb-6 uppercase tracking-widest text-sm border-b border-[#FF0000]/20 pb-2" x-text="t[lang].faqCat2"></h3>
+                    <h3 class="text-gray-900 font-black mb-6 uppercase tracking-widest text-sm border-b border-gray-400 pb-2" x-text="t[lang].faqCat2"></h3>
                     
                     <div class="space-y-4">
-                        <div class="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden transition-all">
-                            <button @click="active !== 4 ? active = 4 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm hover:text-[#FF0000] transition flex justify-between items-center">
+                        <div class="bg-white border border-gray-300 rounded-xl overflow-hidden transition-all shadow-sm">
+                            <button @click="active !== 4 ? active = 4 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm text-black hover:text-[#FF0000] transition flex justify-between items-center">
                                 <span x-text="t[lang].faq4Q"></span>
-                                <span class="text-xl" x-text="active === 4 ? '-' : '+'"></span>
+                                <span class="text-xl font-normal" x-text="active === 4 ? '-' : '+'"></span>
                             </button>
                             <div x-show="active === 4" x-collapse x-cloak>
-                                <div class="p-6 pt-0 text-gray-400" x-text="t[lang].faq4A"></div>
+                                <div class="p-6 pt-0 text-gray-700 font-medium" x-text="t[lang].faq4A"></div>
                             </div>
                         </div>
 
-                        <div class="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden transition-all">
-                            <button @click="active !== 5 ? active = 5 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm hover:text-[#FF0000] transition flex justify-between items-center">
+                        <div class="bg-white border border-gray-300 rounded-xl overflow-hidden transition-all shadow-sm">
+                            <button @click="active !== 5 ? active = 5 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm text-black hover:text-[#FF0000] transition flex justify-between items-center">
                                 <span x-text="t[lang].faq5Q"></span>
-                                <span class="text-xl" x-text="active === 5 ? '-' : '+'"></span>
+                                <span class="text-xl font-normal" x-text="active === 5 ? '-' : '+'"></span>
                             </button>
                             <div x-show="active === 5" x-collapse x-cloak>
-                                <div class="p-6 pt-0 text-gray-400" x-text="t[lang].faq5A"></div>
+                                <div class="p-6 pt-0 text-gray-700 font-medium" x-text="t[lang].faq5A"></div>
                             </div>
                         </div>
 
-                        <div class="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden transition-all">
-                            <button @click="active !== 6 ? active = 6 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm hover:text-[#FF0000] transition flex justify-between items-center">
+                        <div class="bg-white border border-gray-300 rounded-xl overflow-hidden transition-all shadow-sm">
+                            <button @click="active !== 6 ? active = 6 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm text-black hover:text-[#FF0000] transition flex justify-between items-center">
                                 <span x-text="t[lang].faq6Q"></span>
-                                <span class="text-xl" x-text="active === 6 ? '-' : '+'"></span>
+                                <span class="text-xl font-normal" x-text="active === 6 ? '-' : '+'"></span>
                             </button>
                             <div x-show="active === 6" x-collapse x-cloak>
-                                <div class="p-6 pt-0 text-gray-400" x-text="t[lang].faq6A"></div>
+                                <div class="p-6 pt-0 text-gray-700 font-medium" x-text="t[lang].faq6A"></div>
                             </div>
                         </div>
                     </div>
@@ -293,8 +322,8 @@
             </div>
         </section>
 
-        <!-- 8. Footer Funnel (Reproduction Ryze + Tes infos) -->
-        <footer id="footer-funnel" class="py-32 bg-black text-center border-t border-zinc-800 relative">
+        <!-- 8. Footer -->
+        <footer id="footer-funnel" class="py-32 bg-black text-center border-t border-zinc-800 relative z-10">
             <div class="max-w-4xl mx-auto px-6 relative z-10">
                 <p class="text-[#FF0000] font-black tracking-widest uppercase mb-6 text-sm" x-text="t[lang].footerHeader"></p>
                 <h2 class="text-6xl md:text-9xl font-black mb-8 uppercase tracking-tighter text-white" x-text="t[lang].footerTitle"></h2>
@@ -324,13 +353,18 @@
         </footer>
     </div>
 
-    <!-- Script de l'animation d'électrons et du Multilingue -->
     <script>
-        // --- 1. ANIMATION DES PARTICULES (FUCHSIA UNIQUEMENT) ---
+        // --- 1. ANIMATION DES PARTICULES (Électrons & Icônes) ---
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
         const mouse = { x: null, y: null, radius: 250 };
+        
+        const gadsImg = new Image();
+        gadsImg.src = 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg';
+        
+        const ytImg = new Image();
+        ytImg.src = 'https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg';
 
         function resize() {
             const scale = window.devicePixelRatio || 1;
@@ -341,15 +375,27 @@
         }
 
         window.addEventListener('mousemove', (e) => { mouse.x = e.x; mouse.y = e.y; });
+        window.addEventListener('mouseout', () => { mouse.x = null; mouse.y = null; });
 
         class Particle {
             constructor() {
                 this.x = Math.random() * window.innerWidth;
                 this.y = Math.random() * window.innerHeight;
-                this.size = Math.random() * 1.5 + 0.2;
                 this.vx = (Math.random() - 0.5) * 0.3;
                 this.vy = (Math.random() - 0.5) * 0.3;
                 this.angle = Math.random() * Math.PI * 2;
+                
+                let rand = Math.random();
+                if (rand > 0.96) {
+                    this.type = 'yt';
+                    this.size = Math.random() * 8 + 12; 
+                } else if (rand > 0.92) {
+                    this.type = 'gads';
+                    this.size = Math.random() * 8 + 12;
+                } else {
+                    this.type = 'electron';
+                    this.size = Math.random() * 1.5 + 0.2;
+                }
             }
             update() {
                 let dxC = (window.innerWidth / 2) - this.x;
@@ -380,11 +426,19 @@
                 }
             }
             draw() {
-                // Modification : Couleur Fuschia exacte pour les particules
-                ctx.fillStyle = 'rgba(255, 0, 255, 1.0)';
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
+                if (this.type === 'electron') {
+                    ctx.fillStyle = 'rgba(255, 0, 255, 1.0)';
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                } else {
+                    let img = this.type === 'gads' ? gadsImg : ytImg;
+                    if (img.complete) {
+                        ctx.globalAlpha = 0.8;
+                        ctx.drawImage(img, this.x - this.size/2, this.y - this.size/2, this.size, this.size);
+                        ctx.globalAlpha = 1.0;
+                    }
+                }
             }
         }
 
@@ -397,12 +451,12 @@
         function drawLines() {
             for (let i = 0; i < particles.length; i++) {
                 for (let j = i; j < particles.length; j++) {
+                    if (particles[i].type !== 'electron' || particles[j].type !== 'electron') continue;
                     let dx = particles[i].x - particles[j].x;
                     let dy = particles[i].y - particles[j].y;
                     let dist = Math.sqrt(dx*dx + dy*dy);
                     if (dist < 110) {
                         let opacity = (1 - (dist / 110)) * 0.3;
-                        // Modification : Couleur Fuschia exacte pour les liens
                         ctx.strokeStyle = `rgba(255, 0, 255, ${opacity})`;
                         ctx.lineWidth = 0.5;
                         ctx.beginPath();
@@ -425,7 +479,7 @@
         resize();
         animate();
 
-        // --- 2. GESTIONNAIRE DE LANGUES (Nouveau Copywriting) ---
+        // --- 2. GESTIONNAIRE DE LANGUES ---
         function languageManager() {
             return {
                 lang: localStorage.getItem('scalerLang') || 'fr',
@@ -440,6 +494,15 @@
                         logosTitle: "Trusted by Google Partners & Finance Leaders",
                         portTitle: "Creative Assets & Finance Wins",
                         portSub: "Des Shorts produits par RYZE, optimisés par TSA. Nous ne produisons pas de l'art, nous produisons de la conversion.",
+                        
+                        compTitle: "COMPLIANCE ISN'T A LIMIT ANYMORE",
+                        compSub: "La publicité financière est un champ de mines. Les suspensions tuent votre trésorerie. Voici comment nous détruisons ces barrières.",
+                        compB1T: "THE FINANCE TRAP", compB1S: "BANS & SUSPENSIONS", compB1D: "Comptes suspendus à répétition. La compliance stricte bloque vos campagnes et détruit votre ROI.",
+                        compB2T: "ZERO DOWNTIME", compB2S: "INSTANT REPLACEMENT", compB2D: "Notre solution : des comptes publicitaires remplaçables à la seconde. Votre acquisition ne s'arrête jamais.",
+                        compB3T: "GOOGLE APPROVED", compB3S: "CERTIFICATION MASTERY", compB3D: "Méthodes internes prouvées pour obtenir et valider vos certifications financières complexes rapidement.",
+                        compB4T: "NO CERT? NO PROBLEM", compB4S: "COMPLIANT SCALING", compB4D: "Même sans certification, nos frameworks créatifs performent massivement tout en respectant les algorithmes.",
+                        compB5T: "UNFAIR ADVANTAGE", compB5S: "OUTPERFORM", compB5D: "Laissez vos concurrents se débattre avec le support. Scalez violemment pendant qu'ils sont bloqués.",
+
                         methTitle: "Le Processus de Scale",
                         meth1Title: "Audit & Strategy (TSA)", meth1Desc: "J'analyse ton funnel, tes métriques et tes goulots d'étranglement financiers. On ne lance rien sans avoir cartographié le chemin vers le ROI.",
                         meth2Title: "Production (RYZE)", meth2Desc: "Ryze Performance prend le relais pour créer les Shorts qui captent l'attention. Concepts testés, hooks agressifs, design orienté conversion.",
@@ -468,6 +531,15 @@
                         logosTitle: "Trusted by Google Partners & Finance Leaders",
                         portTitle: "Creative Assets & Finance Wins",
                         portSub: "Shorts produced by RYZE, optimized by TSA. We don't produce art, we produce conversions.",
+                        
+                        compTitle: "COMPLIANCE ISN'T A LIMIT ANYMORE",
+                        compSub: "Finance advertising is restricted. Suspensions kill your cash flow. Here is how we crush these barriers.",
+                        compB1T: "THE FINANCE TRAP", compB1S: "BANS & SUSPENSIONS", compB1D: "Repeated account bans. Strict compliance blocks your campaigns and destroys your ROI.",
+                        compB2T: "ZERO DOWNTIME", compB2S: "INSTANT REPLACEMENT", compB2D: "Our solution: ad accounts replaceable in seconds. Your acquisition never stops.",
+                        compB3T: "GOOGLE APPROVED", compB3S: "CERTIFICATION MASTERY", compB3D: "Proven internal methods to quickly obtain and validate complex financial certifications.",
+                        compB4T: "NO CERT? NO PROBLEM", compB4S: "COMPLIANT SCALING", compB4D: "Even without certification, our creative frameworks perform massively while respecting algorithms.",
+                        compB5T: "UNFAIR ADVANTAGE", compB5S: "OUTPERFORM", compB5D: "Let your competitors struggle with support. Scale violently while they are stuck.",
+
                         methTitle: "The Scaling Process",
                         meth1Title: "Audit & Strategy (TSA)", meth1Desc: "I analyze your funnel, metrics, and financial bottlenecks. We don't launch anything without mapping the path to ROI.",
                         meth2Title: "Production (RYZE)", meth2Desc: "Ryze Performance takes over to create attention-grabbing Shorts. Tested concepts, aggressive hooks, conversion-oriented design.",
@@ -496,6 +568,15 @@
                         logosTitle: "Confían en nosotros Partners de Google y Líderes Financieros",
                         portTitle: "Activos Creativos y Éxitos Financieros",
                         portSub: "Shorts producidos por RYZE, optimizados por TSA. No producimos arte, producimos conversiones.",
+                        
+                        compTitle: "LA COMPLIANCE YA NO ES UN LÍMITE",
+                        compSub: "La publicidad financiera está restringida. Las suspensiones matan tu flujo de caja. Así destruimos estas barreras.",
+                        compB1T: "LA TRAMPA", compB1S: "BANEOS Y SUSPENSIONES", compB1D: "Cuentas suspendidas repetidamente. La estricta compliance bloquea tus campañas y destruye tu ROI.",
+                        compB2T: "CERO INACTIVIDAD", compB2S: "REEMPLAZO INSTANTÁNEO", compB2D: "Nuestra solución: cuentas reemplazables en segundos. Tu adquisición nunca se detiene.",
+                        compB3T: "APROBADO POR GOOGLE", compB3S: "DOMINIO DE CERTIFICACIONES", compB3D: "Métodos internos probados para obtener rápidamente certificaciones financieras complejas.",
+                        compB4T: "¿SIN CERTIFICADO?", compB4S: "ESCALADO COMPLIANT", compB4D: "Aún sin certificación, nuestros frameworks creativos rinden masivamente respetando los algoritmos.",
+                        compB5T: "VENTAJA INJUSTA", compB5S: "SUPERA A TU COMPETENCIA", compB5D: "Deja que tus competidores luchen con el soporte. Escala violentamente mientras ellos están bloqueados.",
+
                         methTitle: "El Proceso de Escala",
                         meth1Title: "Auditoría y Estrategia (TSA)", meth1Desc: "Analizo tu embudo, métricas y cuellos de botella. No lanzamos nada sin mapear el camino hacia el ROI.",
                         meth2Title: "Producción (RYZE)", meth2Desc: "Ryze Performance asume el control para crear Shorts que captan la atención. Conceptos probados, ganchos agresivos, diseño orientado a la conversión.",

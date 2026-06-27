@@ -34,19 +34,19 @@
         }
 
         .gradient-text-ry { 
-            background: linear-gradient(90deg, #FF0000, #FFC107); 
+            background: linear-gradient(90deg, #FF0000, #FFC107);
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent; 
         }
 
         .card-glow-red:hover { 
-            box-shadow: 0 0 30px rgba(255, 0, 0, 0.15); 
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.15);
             border-color: #FF0000; 
             transition: all 0.4s ease; 
         }
         
         .card-glow-yellow:hover { 
-            box-shadow: 0 0 30px rgba(255, 193, 7, 0.15); 
+            box-shadow: 0 0 30px rgba(255, 193, 7, 0.15);
             border-color: #FFC107; 
             transition: all 0.4s ease; 
         }
@@ -67,12 +67,9 @@
 
     <div class="relative-content">
         
-        <!-- 1. Navigation -->
         <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
             <div class="flex justify-between items-center p-5 max-w-7xl mx-auto">
-                <div class="text-2xl font-black tracking-tighter uppercase text-white">
-                    TSA
-                </div>
+                <div class="text-2xl font-black tracking-tighter uppercase text-white">TSA</div>
                 
                 <div class="hidden lg:flex space-x-8 text-xs font-bold uppercase tracking-widest text-gray-400">
                     <a href="#portfolio" class="hover:text-white transition" x-text="t[lang].navPortfolio"></a>
@@ -93,7 +90,6 @@
             </div>
         </nav>
 
-        <!-- 2. Hero Section -->
         <header class="pt-48 pb-20 px-6 text-center max-w-5xl mx-auto">
             <div class="inline-block border border-white/20 bg-zinc-900/50 backdrop-blur-sm px-4 py-1.5 rounded-full text-[#FFC107] text-xs font-black uppercase tracking-widest mb-8" x-text="t[lang].heroTag"></div>
             
@@ -110,7 +106,6 @@
             </div>
         </header>
 
-        <!-- 3. Social Proof (Logos) -->
         <section class="py-12 border-y border-white/10 bg-black/40 backdrop-blur-md">
             <div class="max-w-5xl mx-auto text-center px-6">
                 <p class="text-xs text-gray-500 uppercase tracking-widest mb-8 font-bold" x-text="t[lang].logosTitle"></p>
@@ -122,7 +117,6 @@
             </div>
         </section>
 
-        <!-- 4. Creative Portfolio -->
         <section id="portfolio" class="py-32 max-w-7xl mx-auto px-6">
             <h2 class="text-4xl md:text-5xl font-black mb-4 uppercase tracking-tighter text-center" x-text="t[lang].portTitle"></h2>
             <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto text-lg" x-text="t[lang].portSub"></p>
@@ -140,7 +134,6 @@
             </div>
         </section>
 
-        <!-- 4.5 Compliance Section -->
         <section id="compliance" class="py-24 bg-gradient-to-r from-pink-500 via-orange-400 to-teal-400 px-6">
             <div class="max-w-7xl mx-auto">
                 <h2 class="text-4xl md:text-5xl font-black text-center mb-6 text-white uppercase tracking-tighter" x-text="t[lang].compTitle"></h2>
@@ -180,13 +173,11 @@
             </div>
         </section>
 
-        <!-- 5. Methodology / Process (White Background) -->
         <section id="how-it-works" class="py-32 bg-white px-6 border-y border-gray-200 relative z-10">
             <div class="max-w-5xl mx-auto">
                 <h2 class="text-4xl md:text-5xl font-black mb-24 uppercase tracking-tighter text-center text-black" x-text="t[lang].methTitle"></h2>
                 
                 <div class="space-y-12 relative before:absolute before:inset-0 before:ml-6 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-[#FF0000] before:via-[#FFC107] before:to-white">
-                    
                     <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
                         <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-lg group-hover:scale-110 transition duration-300">1</div>
                         <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-gray-50 border border-gray-200 p-8 rounded-3xl card-glow-red shadow-md">
@@ -226,12 +217,10 @@
                             <p class="text-white/90 leading-relaxed font-bold" x-text="t[lang].meth5Desc"></p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- 6. Reviews -->
         <section id="reviews" class="py-32 max-w-5xl mx-auto px-6 text-center">
             <h2 class="text-4xl font-black mb-16 uppercase tracking-tighter" x-text="t[lang].revTitle"></h2>
             
@@ -242,7 +231,42 @@
             </div>
         </section>
 
-        <!-- 7. FAQ (Matte Silver Background) -->
+        <section class="py-24 bg-zinc-950 border-y border-zinc-900">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <h2 class="text-4xl font-black mb-16 uppercase tracking-tighter text-white">The proof is in the performance</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="p-6 border border-zinc-800 rounded-2xl bg-zinc-900/50">
+                        <div class="text-4xl font-black text-[#FF0000] mb-2">$5M+</div>
+                        <div class="text-sm font-bold text-zinc-400 uppercase tracking-widest">Ad Spend Managed</div>
+                    </div>
+                    <div class="p-6 border border-zinc-800 rounded-2xl bg-zinc-900/50">
+                        <div class="text-4xl font-black text-[#FFC107] mb-2">350%</div>
+                        <div class="text-sm font-bold text-zinc-400 uppercase tracking-widest">Average ROAS</div>
+                    </div>
+                    <div class="p-6 border border-zinc-800 rounded-2xl bg-zinc-900/50">
+                        <div class="text-4xl font-black text-white mb-2">120+</div>
+                        <div class="text-sm font-bold text-zinc-400 uppercase tracking-widest">Creative Assets</div>
+                    </div>
+                    <div class="p-6 border border-zinc-800 rounded-2xl bg-zinc-900/50">
+                        <div class="text-4xl font-black text-white mb-2">40+</div>
+                        <div class="text-sm font-bold text-zinc-400 uppercase tracking-widest">Finance Brands</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-black">
+            <div class="max-w-7xl mx-auto px-6">
+                <p class="text-center text-xs text-zinc-500 uppercase tracking-widest mb-10 font-bold">Trusted by Brand & Growth Leaders</p>
+                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-40 grayscale hover:grayscale-0 transition duration-500">
+                    <div class="text-white font-black text-xl tracking-tighter">FINANCE BRAND 1</div>
+                    <div class="text-white font-black text-xl tracking-tighter">GROWTH PARTNER</div>
+                    <div class="text-white font-black text-xl tracking-tighter">TOP BROKER</div>
+                    <div class="text-white font-black text-xl tracking-tighter">FINTECH LABS</div>
+                </div>
+            </div>
+        </section>
+
         <section id="faq" class="py-32 bg-[#e2e4e8] px-6 border-t border-gray-300 relative z-10" x-data="{ active: null }">
             <div class="max-w-3xl mx-auto">
                 <h2 class="text-4xl font-black mb-16 uppercase tracking-tighter text-center text-black" x-text="t[lang].faqTitle"></h2>
@@ -318,11 +342,9 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- 8. Footer -->
         <footer id="footer-funnel" class="py-32 bg-black text-center border-t border-zinc-800 relative z-10">
             <div class="max-w-4xl mx-auto px-6 relative z-10">
                 <p class="text-[#FF0000] font-black tracking-widest uppercase mb-6 text-sm" x-text="t[lang].footerHeader"></p>
@@ -354,18 +376,14 @@
     </div>
 
     <script>
-        // --- 1. ANIMATION DES PARTICULES (Électrons & Icônes) ---
+        // --- 1. ANIMATION DES PARTICULES ---
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
         const mouse = { x: null, y: null, radius: 250 };
+        const gadsImg = new Image(); gadsImg.src = 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg';
+        const ytImg = new Image(); ytImg.src = 'https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg';
         
-        const gadsImg = new Image();
-        gadsImg.src = 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg';
-        
-        const ytImg = new Image();
-        ytImg.src = 'https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg';
-
         function resize() {
             const scale = window.devicePixelRatio || 1;
             canvas.width = window.innerWidth * scale;
@@ -384,36 +402,19 @@
                 this.vx = (Math.random() - 0.5) * 0.3;
                 this.vy = (Math.random() - 0.5) * 0.3;
                 this.angle = Math.random() * Math.PI * 2;
-                
                 let rand = Math.random();
-                if (rand > 0.96) {
-                    this.type = 'yt';
-                    this.size = Math.random() * 8 + 12; 
-                } else if (rand > 0.92) {
-                    this.type = 'gads';
-                    this.size = Math.random() * 8 + 12;
-                } else {
-                    this.type = 'electron';
-                    this.size = Math.random() * 1.5 + 0.2;
-                }
+                if (rand > 0.96) { this.type = 'yt'; this.size = Math.random() * 8 + 12; } 
+                else if (rand > 0.92) { this.type = 'gads'; this.size = Math.random() * 8 + 12; } 
+                else { this.type = 'electron'; this.size = Math.random() * 1.5 + 0.2; }
             }
             update() {
                 let dxC = (window.innerWidth / 2) - this.x;
                 let dyC = (window.innerHeight / 2) - this.y;
                 let distC = Math.sqrt(dxC*dxC + dyC*dyC);
-                
-                if (distC < 500) {
-                    this.angle += 0.0008;
-                    this.x += Math.cos(this.angle) * 0.12;
-                    this.y += Math.sin(this.angle) * 0.12;
-                }
-
-                this.x += this.vx;
-                this.y += this.vy;
-
+                if (distC < 500) { this.angle += 0.0008; this.x += Math.cos(this.angle) * 0.12; this.y += Math.sin(this.angle) * 0.12; }
+                this.x += this.vx; this.y += this.vy;
                 if (this.x < 0 || this.x > window.innerWidth) this.vx *= -1;
                 if (this.y < 0 || this.y > window.innerHeight) this.vy *= -1;
-
                 if (mouse.x) {
                     let dx = mouse.x - this.x;
                     let dy = mouse.y - this.y;
@@ -426,18 +427,10 @@
                 }
             }
             draw() {
-                if (this.type === 'electron') {
-                    ctx.fillStyle = 'rgba(255, 0, 255, 1.0)';
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fill();
-                } else {
+                if (this.type === 'electron') { ctx.fillStyle = 'rgba(255, 0, 255, 1.0)'; ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill(); } 
+                else {
                     let img = this.type === 'gads' ? gadsImg : ytImg;
-                    if (img.complete) {
-                        ctx.globalAlpha = 0.8;
-                        ctx.drawImage(img, this.x - this.size/2, this.y - this.size/2, this.size, this.size);
-                        ctx.globalAlpha = 1.0;
-                    }
+                    if (img.complete) { ctx.globalAlpha = 0.8; ctx.drawImage(img, this.x - this.size/2, this.y - this.size/2, this.size, this.size); ctx.globalAlpha = 1.0; }
                 }
             }
         }
@@ -457,12 +450,7 @@
                     let dist = Math.sqrt(dx*dx + dy*dy);
                     if (dist < 110) {
                         let opacity = (1 - (dist / 110)) * 0.3;
-                        ctx.strokeStyle = `rgba(255, 0, 255, ${opacity})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
+                        ctx.strokeStyle = `rgba(255, 0, 255, ${opacity})`; ctx.lineWidth = 0.5; ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke();
                     }
                 }
             }
@@ -487,114 +475,30 @@
                 t: {
                     fr: {
                         navPortfolio: "Portfolio", navCases: "Case Studies", navHow: "How it works", navReviews: "Reviews", navFaq: "FAQs", navBtn: "Book a call",
-                        heroTag: "Google & YouTube Growth Partner",
-                        heroH1: "YOUTUBE SHORT ADS", heroH2: "FOR FINANCE BUSINESSES",
-                        heroSub: "Nous allions la puissance créative du studio RYZE à une exécution Media Buying mathématique. Zéro créa inutile, 100% data, ROI pur.",
-                        heroBtn1: "Book a call", heroBtn2: "View Portfolio",
+                        heroTag: "Google & YouTube Growth Partner", heroH1: "YOUTUBE SHORT ADS", heroH2: "FOR FINANCE BUSINESSES", heroSub: "Nous allions la puissance créative du studio RYZE à une exécution Media Buying mathématique. Zéro créa inutile, 100% data, ROI pur.", heroBtn1: "Book a call", heroBtn2: "View Portfolio",
                         logosTitle: "Trusted by Google Partners & Finance Leaders",
-                        portTitle: "Creative Assets & Finance Wins",
-                        portSub: "Des Shorts produits par RYZE, optimisés par TSA. Nous ne produisons pas de l'art, nous produisons de la conversion.",
-                        
-                        compTitle: "COMPLIANCE ISN'T A LIMIT ANYMORE",
-                        compSub: "La publicité financière est un champ de mines. Les suspensions tuent votre trésorerie. Voici comment nous détruisons ces barrières.",
+                        portTitle: "Creative Assets & Finance Wins", portSub: "Des Shorts produits par RYZE, optimisés par TSA. Nous ne produisons pas de l'art, nous produisons de la conversion.",
+                        compTitle: "COMPLIANCE ISN'T A LIMIT ANYMORE", compSub: "La publicité financière est un champ de mines. Les suspensions tuent votre trésorerie. Voici comment nous détruisons ces barrières.",
                         compB1T: "THE FINANCE TRAP", compB1S: "BANS & SUSPENSIONS", compB1D: "Comptes suspendus à répétition. La compliance stricte bloque vos campagnes et détruit votre ROI.",
                         compB2T: "ZERO DOWNTIME", compB2S: "INSTANT REPLACEMENT", compB2D: "Notre solution : des comptes publicitaires remplaçables à la seconde. Votre acquisition ne s'arrête jamais.",
                         compB3T: "GOOGLE APPROVED", compB3S: "CERTIFICATION MASTERY", compB3D: "Méthodes internes prouvées pour obtenir et valider vos certifications financières complexes rapidement.",
                         compB4T: "NO CERT? NO PROBLEM", compB4S: "COMPLIANT SCALING", compB4D: "Même sans certification, nos frameworks créatifs performent massivement tout en respectant les algorithmes.",
                         compB5T: "UNFAIR ADVANTAGE", compB5S: "OUTPERFORM", compB5D: "Laissez vos concurrents se débattre avec le support. Scalez violemment pendant qu'ils sont bloqués.",
-
                         methTitle: "Le Processus de Scale",
                         meth1Title: "Audit & Strategy (TSA)", meth1Desc: "J'analyse ton funnel, tes métriques et tes goulots d'étranglement financiers. On ne lance rien sans avoir cartographié le chemin vers le ROI.",
                         meth2Title: "Production (RYZE)", meth2Desc: "Ryze Performance prend le relais pour créer les Shorts qui captent l'attention. Concepts testés, hooks agressifs, design orienté conversion.",
                         meth3Title: "Media & Data-Buying", meth3Desc: "Je configure l'écosystème publicitaire sur Google & YouTube. Ciblage ultra-précis, audiences d'exclusion, pilotage algorithmique.",
                         meth4Title: "Optimize", meth4Desc: "Analyse froide de la donnée. Chaque € dépensé est tracé. On tue ce qui ne marche pas, on double ce qui convertit.",
                         meth5Title: "SCALE", meth5Desc: "Une fois le CPA stabilisé, on ouvre les vannes pour dominer le marché des plateformes financières.",
-                        revTitle: "La puissance du duo Créa + Data.",
-                        revQuote: "Avant TSA, on brûlait du cash sur YouTube sans comprendre pourquoi. La combinaison de leurs créas ultra-performantes et de la rigueur de TSA sur la donnée a littéralement changé notre ROAS.",
-                        revAuthor: "Leader / Niche Finance",
+                        revTitle: "La puissance du duo Créa + Data.", revQuote: "Avant TSA, on brûlait du cash sur YouTube sans comprendre pourquoi. La combinaison de leurs créas ultra-performantes et de la rigueur de TSA sur la donnée a littéralement changé notre ROAS.", revAuthor: "Leader / Niche Finance",
                         faqTitle: "F.A.Q", faqCat1: "Processus", faqCat2: "Performance",
                         faq1Q: "Pourquoi ce duo (TSA x RYZE) ?", faq1A: "Parce que la créa sans data est un pari, et la data sans créa est une perte de temps. On apporte l'excellence des deux mondes.",
-                        faq2Q: "Ryze s'occupe de toutes les créations ?", faq2A: "Oui, tout est clé en main. Ils gèrent la production visuelle, je gère la diffusion et l'optimisation mathématique.",
-                        faq3Q: "Délai de mise en place ?", faq3A: "Le setup est rapide : audit sous 48h, premières créas sous 7 jours.",
-                        faq4Q: "Comment mesurez-vous le ROI ?", faq4A: "À travers le suivi rigoureux des conversions : leads qualifiés, inscriptions brokers, ou actions de valeur directe.",
-                        faq5Q: "Pourquoi YouTube Shorts ?", faq5A: "C'est le format le plus sous-coté pour la finance : visibilité massive, CPM bas, et attention maximale.",
-                        faq6Q: "Est-ce compatible avec mon budget ?", faq6A: "Si ton business est déjà rentable, notre système est conçu pour accélérer ta croissance sans risque inutile.",
-                        footerHeader: "GROWTH PARTNER FOR FINANCE BUSINESSES", footerTitle: "Let's Scale", footerSub: "Get your discovery call booked in or connect with me to see if I can help.",
-                        footerBtn1: "Request your free audit", footerBtn2: "Or Speak directly to me"
-                    },
-                    en: {
-                        navPortfolio: "Portfolio", navCases: "Case Studies", navHow: "How it works", navReviews: "Reviews", navFaq: "FAQs", navBtn: "Book a call",
-                        heroTag: "Google & YouTube Growth Partner",
-                        heroH1: "YOUTUBE SHORT ADS", heroH2: "FOR FINANCE BUSINESSES",
-                        heroSub: "We combine the creative power of RYZE studio with mathematical Media Buying execution. Zero useless creatives, 100% data, pure ROI.",
-                        heroBtn1: "Book a call", heroBtn2: "View Portfolio",
-                        logosTitle: "Trusted by Google Partners & Finance Leaders",
-                        portTitle: "Creative Assets & Finance Wins",
-                        portSub: "Shorts produced by RYZE, optimized by TSA. We don't produce art, we produce conversions.",
-                        
-                        compTitle: "COMPLIANCE ISN'T A LIMIT ANYMORE",
-                        compSub: "Finance advertising is restricted. Suspensions kill your cash flow. Here is how we crush these barriers.",
-                        compB1T: "THE FINANCE TRAP", compB1S: "BANS & SUSPENSIONS", compB1D: "Repeated account bans. Strict compliance blocks your campaigns and destroys your ROI.",
-                        compB2T: "ZERO DOWNTIME", compB2S: "INSTANT REPLACEMENT", compB2D: "Our solution: ad accounts replaceable in seconds. Your acquisition never stops.",
-                        compB3T: "GOOGLE APPROVED", compB3S: "CERTIFICATION MASTERY", compB3D: "Proven internal methods to quickly obtain and validate complex financial certifications.",
-                        compB4T: "NO CERT? NO PROBLEM", compB4S: "COMPLIANT SCALING", compB4D: "Even without certification, our creative frameworks perform massively while respecting algorithms.",
-                        compB5T: "UNFAIR ADVANTAGE", compB5S: "OUTPERFORM", compB5D: "Let your competitors struggle with support. Scale violently while they are stuck.",
-
-                        methTitle: "The Scaling Process",
-                        meth1Title: "Audit & Strategy (TSA)", meth1Desc: "I analyze your funnel, metrics, and financial bottlenecks. We don't launch anything without mapping the path to ROI.",
-                        meth2Title: "Production (RYZE)", meth2Desc: "Ryze Performance takes over to create attention-grabbing Shorts. Tested concepts, aggressive hooks, conversion-oriented design.",
-                        meth3Title: "Media & Data-Buying", meth3Desc: "I set up the advertising ecosystem on Google & YouTube. Ultra-precise targeting, exclusion audiences, algorithmic steering.",
-                        meth4Title: "Optimize", meth4Desc: "Cold data analysis. Every € spent is tracked. We kill what doesn't work, we double down on what converts.",
-                        meth5Title: "SCALE", meth5Desc: "Once the CPA is stabilized, we open the floodgates to dominate the financial platforms market.",
-                        revTitle: "The power of the Creative + Data duo.",
-                        revQuote: "Before TSA, we burned cash on YouTube without understanding why. The combination of their high-performing creatives and TSA's data rigor literally changed our ROAS.",
-                        revAuthor: "Leader / Finance Niche",
-                        faqTitle: "F.A.Q", faqCat1: "Process", faqCat2: "Performance",
-                        faq1Q: "Why this duo (TSA x RYZE)?", faq1A: "Because creative without data is a gamble, and data without creative is a waste of time. We bring the best of both worlds.",
-                        faq2Q: "Does Ryze handle all creations?", faq2A: "Yes, everything is turnkey. They manage visual production, I manage distribution and mathematical optimization.",
-                        faq3Q: "Implementation time?", faq3A: "Setup is fast: audit within 48h, first creatives within 7 days.",
-                        faq4Q: "How do you measure ROI?", faq4A: "Through rigorous conversion tracking: qualified leads, broker registrations, or direct value actions.",
-                        faq5Q: "Why YouTube Shorts?", faq5A: "It's the most underrated format for finance: massive visibility, low CPM, and maximum audience attention.",
-                        faq6Q: "Is it compatible with my budget?", faq6A: "If your business is already profitable, our system is designed to accelerate your growth without unnecessary risk.",
-                        footerHeader: "GROWTH PARTNER FOR FINANCE BUSINESSES", footerTitle: "Let's Scale", footerSub: "Get your discovery call booked in or connect with me to see if I can help.",
-                        footerBtn1: "Request your free audit", footerBtn2: "Or Speak directly to me"
-                    },
-                    es: {
-                        navPortfolio: "Portfolio", navCases: "Casos de Éxito", navHow: "Proceso", navReviews: "Reseñas", navFaq: "FAQs", navBtn: "Agendar",
-                        heroTag: "Google & YouTube Growth Partner",
-                        heroH1: "YOUTUBE SHORT ADS", heroH2: "FOR FINANCE BUSINESSES",
-                        heroSub: "Combinamos el poder creativo del estudio RYZE con una ejecución matemática de Media Buying. Cero creatividades inútiles, 100% data, ROI puro.",
-                        heroBtn1: "Agendar llamada", heroBtn2: "Ver Portfolio",
-                        logosTitle: "Confían en nosotros Partners de Google y Líderes Financieros",
-                        portTitle: "Activos Creativos y Éxitos Financieros",
-                        portSub: "Shorts producidos por RYZE, optimizados por TSA. No producimos arte, producimos conversiones.",
-                        
-                        compTitle: "LA COMPLIANCE YA NO ES UN LÍMITE",
-                        compSub: "La publicidad financiera está restringida. Las suspensiones matan tu flujo de caja. Así destruimos estas barreras.",
-                        compB1T: "LA TRAMPA", compB1S: "BANEOS Y SUSPENSIONES", compB1D: "Cuentas suspendidas repetidamente. La estricta compliance bloquea tus campañas y destruye tu ROI.",
-                        compB2T: "CERO INACTIVIDAD", compB2S: "REEMPLAZO INSTANTÁNEO", compB2D: "Nuestra solución: cuentas reemplazables en segundos. Tu adquisición nunca se detiene.",
-                        compB3T: "APROBADO POR GOOGLE", compB3S: "DOMINIO DE CERTIFICACIONES", compB3D: "Métodos internos probados para obtener rápidamente certificaciones financieras complejas.",
-                        compB4T: "¿SIN CERTIFICADO?", compB4S: "ESCALADO COMPLIANT", compB4D: "Aún sin certificación, nuestros frameworks creativos rinden masivamente respetando los algoritmos.",
-                        compB5T: "VENTAJA INJUSTA", compB5S: "SUPERA A TU COMPETENCIA", compB5D: "Deja que tus competidores luchen con el soporte. Escala violentamente mientras ellos están bloqueados.",
-
-                        methTitle: "El Proceso de Escala",
-                        meth1Title: "Auditoría y Estrategia (TSA)", meth1Desc: "Analizo tu embudo, métricas y cuellos de botella. No lanzamos nada sin mapear el camino hacia el ROI.",
-                        meth2Title: "Producción (RYZE)", meth2Desc: "Ryze Performance asume el control para crear Shorts que captan la atención. Conceptos probados, ganchos agresivos, diseño orientado a la conversión.",
-                        meth3Title: "Media & Data-Buying", meth3Desc: "Configuro el ecosistema publicitario en Google y YouTube. Segmentación ultra precisa, audiencias de exclusión, dirección algorítmica.",
-                        meth4Title: "Optimizar", meth4Desc: "Análisis frío de datos. Cada € gastado es rastreado. Matamos lo que no funciona, duplicamos lo que convierte.",
-                        meth5Title: "ESCALAR", meth5Desc: "Una vez estabilizado el CPA, abrimos las compuertas para dominar el mercado financiero.",
-                        revTitle: "El poder del dúo Creatividad + Datos.",
-                        revQuote: "Antes de TSA, quemábamos dinero en YouTube sin entender por qué. La combinación de sus creatividades y el rigor de TSA cambió literalmente nuestro ROAS.",
-                        revAuthor: "Líder / Nicho Financiero",
-                        faqTitle: "F.A.Q", faqCat1: "Proceso", faqCat2: "Rendimiento",
-                        faq1Q: "¿Por qué este dúo (TSA x RYZE)?", faq1A: "Porque la creatividad sin datos es una apuesta, y los datos sin creatividad son una pérdida de tiempo.",
-                        faq2Q: "¿Ryze se encarga de todas las creaciones?", faq2A: "Sí, todo es llave en mano. Ellos gestionan la producción visual, yo la distribución y optimización.",
-                        faq3Q: "¿Tiempo de implementación?", faq3A: "Rápido: auditoría en 48h, primeras creatividades en 7 días.",
-                        faq4Q: "¿Cómo medís el ROI?", faq4A: "A través del seguimiento riguroso de conversiones: leads cualificados o registros en brokers.",
-                        faq5Q: "¿Por qué YouTube Shorts?", faq5A: "Es el formato más infravalorado para finanzas: visibilidad masiva, CPM bajo y máxima atención.",
-                        faq6Q: "¿Es compatible con mi presupuesto?", faq6A: "Si tu negocio ya es rentable, nuestro sistema está diseñado para acelerar tu crecimiento sin riesgo innecesario.",
-                        footerHeader: "GROWTH PARTNER FOR FINANCE BUSINESSES", footerTitle: "Let's Scale", footerSub: "Get your discovery call booked in or connect with me to see if I can help.",
-                        footerBtn1: "Request your free audit", footerBtn2: "Or Speak directly to me"
+                        faq2Q: "Ryze s'occupe de toutes les créations ?", faq2A: "Oui, tout est clé en main. Ils gèrent la production, nous gérons la data.",
+                        faq3Q: "Temps de mise en place ?", faq3A: "Rapide : audit en 48h, premières créas en 7 jours.",
+                        faq4Q: "Comment mesurez-vous le ROI ?", faq4A: "Tracking rigoureux de conversion : leads qualifiés ou dépôts.",
+                        faq5Q: "Pourquoi YouTube Shorts ?", faq5A: "Format sous-côté en finance : visibilité massive, CPM bas, attention maximale.",
+                        faq6Q: "Budget compatible ?", faq6A: "Si tu es rentable, on accélère. Sans risque inutile.",
+                        footerHeader: "GROWTH PARTNER FOR FINANCE BUSINESSES", footerTitle: "Let's Scale", footerSub: "Get your discovery call booked in or connect with me to see if I can help.", footerBtn1: "Request your free audit", footerBtn2: "Or Speak directly to me"
                     }
                 }
             }

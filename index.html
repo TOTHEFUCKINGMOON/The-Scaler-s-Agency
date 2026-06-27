@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Scaler's Agency | Growth Partner for Finance</title>
+    <title>TSA | The Scaler's Agency</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -33,300 +33,304 @@
             z-index: 10;
         }
 
-        /* Effet dopaminergique Rouge/Jaune */
-        .gradient-text-ry { 
-            background: linear-gradient(90deg, #FF0000, #FFC107); 
+        /* Dopaminergic Red/Yellow Gradient */
+        .gradient-text { 
+            background: linear-gradient(90deg, #dc2626, #facc15); 
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent; 
         }
-
-        /* Glow strict Rouge et Jaune */
-        .card-glow-red:hover { 
-            box-shadow: 0 0 30px rgba(255, 0, 0, 0.15); 
-            border-color: #FF0000; 
-            transition: all 0.4s ease; 
-        }
         
-        .card-glow-yellow:hover { 
-            box-shadow: 0 0 30px rgba(255, 193, 7, 0.15); 
-            border-color: #FFC107; 
+        .gradient-bg {
+            background: linear-gradient(90deg, #dc2626, #facc15);
+        }
+
+        .card-glow:hover { 
+            box-shadow: 0 0 30px rgba(220, 38, 38, 0.3); 
+            border-color: #facc15; 
             transition: all 0.4s ease; 
         }
         
         .glass-section {
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(12px);
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
         }
 
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: #000; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #FF0000; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #dc2626; border-radius: 10px; }
     </style>
 </head>
-<body class="antialiased custom-scrollbar" x-data="languageManager()" x-cloak>
+<body class="antialiased custom-scrollbar">
 
-    <!-- Canvas de l'animation inchangé (couleur modifiée dans le script en bas) -->
+    <!-- Fuchsia Electron Animation -->
     <canvas id="particle-canvas"></canvas>
 
     <div class="relative-content">
         
         <!-- 1. Navigation -->
         <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
-            <div class="flex justify-between items-center p-5 max-w-7xl mx-auto">
-                <div class="text-2xl font-black tracking-tighter uppercase text-white">
+            <div class="flex justify-between items-center p-6 max-w-7xl mx-auto">
+                <div class="text-3xl font-black tracking-tighter uppercase">
                     TSA
                 </div>
                 
-                <div class="hidden lg:flex space-x-8 text-xs font-bold uppercase tracking-widest text-gray-400">
-                    <a href="#portfolio" class="hover:text-white transition" x-text="t[lang].navPortfolio"></a>
-                    <a href="#portfolio" class="hover:text-white transition" x-text="t[lang].navCases"></a>
-                    <a href="#how-it-works" class="hover:text-white transition" x-text="t[lang].navHow"></a>
-                    <a href="#reviews" class="hover:text-white transition" x-text="t[lang].navReviews"></a>
-                    <a href="#faq" class="hover:text-white transition" x-text="t[lang].navFaq"></a>
+                <div class="hidden lg:flex items-center space-x-8 text-sm font-bold uppercase tracking-widest text-gray-300">
+                    <a href="#portfolio" class="hover:text-white transition">Portfolio</a>
+                    <a href="#case-studies" class="hover:text-white transition">Case studies</a>
+                    <a href="#how-it-works" class="hover:text-white transition">How it works</a>
+                    <a href="#reviews" class="hover:text-white transition">Reviews</a>
+                    <a href="#faqs" class="hover:text-white transition">FAQs</a>
                 </div>
 
-                <div class="flex items-center space-x-6">
-                    <div class="flex space-x-2 bg-white/5 p-1 rounded-full border border-white/10">
-                        <button @click="setLang('en')" class="w-6 h-6 rounded-full overflow-hidden border-2" :class="lang === 'en' ? 'border-[#FFC107]' : 'border-transparent opacity-50'"><img src="https://flagcdn.com/w40/gb.png" class="w-full h-full object-cover"></button>
-                        <button @click="setLang('fr')" class="w-6 h-6 rounded-full overflow-hidden border-2" :class="lang === 'fr' ? 'border-[#FFC107]' : 'border-transparent opacity-50'"><img src="https://flagcdn.com/w40/fr.png" class="w-full h-full object-cover"></button>
-                        <button @click="setLang('es')" class="w-6 h-6 rounded-full overflow-hidden border-2" :class="lang === 'es' ? 'border-[#FFC107]' : 'border-transparent opacity-50'"><img src="https://flagcdn.com/w40/es.png" class="w-full h-full object-cover"></button>
-                    </div>
-                    <a href="https://calendly.com/lucabesson333/30min" target="_blank" class="bg-[#FF0000] hover:bg-red-700 text-white px-6 py-2 rounded-full font-bold transition text-xs uppercase tracking-widest" x-text="t[lang].navBtn"></a>
+                <div>
+                    <a href="https://wa.me/yournumber" target="_blank" class="gradient-bg text-black px-8 py-3 rounded-full font-black transition text-sm uppercase tracking-widest hover:opacity-90 transform active:scale-95 shadow-[0_0_15px_rgba(220,38,38,0.5)]">
+                        Book a Call
+                    </a>
                 </div>
             </div>
         </nav>
 
         <!-- 2. Hero Section -->
         <header class="pt-48 pb-20 px-6 text-center max-w-5xl mx-auto">
-            <div class="inline-block border border-white/20 bg-zinc-900/50 backdrop-blur-sm px-4 py-1.5 rounded-full text-[#FFC107] text-xs font-black uppercase tracking-widest mb-8" x-text="t[lang].heroTag"></div>
-            
-            <h1 class="text-5xl md:text-8xl font-black mb-2 leading-none uppercase tracking-tighter gradient-text-ry">
-                <span x-text="t[lang].heroH1"></span>
+            <h3 class="text-red-600 font-black tracking-[0.2em] uppercase mb-4 text-sm md:text-base">
+                Google & YouTube Growth Partner
+            </h3>
+            <h1 class="text-6xl md:text-8xl font-black mb-6 leading-tight uppercase gradient-text">
+                YOUTUBE SHORT ADS<br>FOR FINANCE BUSINESSES
             </h1>
-            <h2 class="text-3xl md:text-5xl font-black mb-8 leading-tight uppercase text-white tracking-tighter" x-text="t[lang].heroH2"></h2>
-            
-            <p class="text-gray-400 text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light" x-text="t[lang].heroSub"></p>
-            
+            <h2 class="text-gray-200 text-2xl md:text-3xl mb-6 font-bold uppercase tracking-tight">
+                Driving growth for 6 & 9 figure finance brands with RYZE Performance.
+            </h2>
+            <p class="text-gray-400 text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light">
+                Nous allions la puissance créative du studio RYZE à une exécution Media Buying mathématique. Zéro créa inutile, 100% data, ROI pur.
+            </p>
             <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="https://calendly.com/lucabesson333/30min" target="_blank" class="bg-[#FF0000] text-white px-8 py-4 rounded-lg font-black text-lg hover:bg-red-700 transition uppercase tracking-tighter" x-text="t[lang].heroBtn1"></a>
-                <a href="#portfolio" class="bg-white text-black px-8 py-4 rounded-lg font-black text-lg hover:bg-gray-200 transition uppercase tracking-tighter" x-text="t[lang].heroBtn2"></a>
+                <a href="https://wa.me/yournumber" class="gradient-bg text-black px-10 py-5 rounded-lg font-black text-lg transition uppercase tracking-tighter shadow-[0_0_20px_rgba(250,204,21,0.4)] hover:scale-105">
+                    Book a call
+                </a>
+                <a href="#portfolio" class="bg-zinc-900 border border-white/20 px-10 py-5 rounded-lg font-black text-lg hover:bg-zinc-800 transition uppercase tracking-tighter text-white">
+                    View Portfolio
+                </a>
             </div>
         </header>
 
         <!-- 3. Social Proof (Logos) -->
-        <section class="py-12 border-y border-white/10 bg-black/40 backdrop-blur-md">
-            <div class="max-w-5xl mx-auto text-center px-6">
-                <p class="text-xs text-gray-500 uppercase tracking-widest mb-8 font-bold" x-text="t[lang].logosTitle"></p>
-                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition duration-500 text-white">
-                    <div class="font-black text-2xl tracking-tighter flex items-center gap-2">Google Partner</div>
-                    <div class="font-black text-2xl tracking-tighter flex items-center gap-2">YouTube Ads</div>
-                    <div class="font-black text-2xl tracking-tighter flex items-center gap-2">RYZE Performance</div>
-                </div>
+        <section class="py-12 border-y border-white/10 bg-black/50 backdrop-blur-sm">
+            <p class="text-center text-xs font-black text-gray-500 uppercase tracking-[0.3em] mb-8">
+                Trusted by Google Partners & Finance Leaders
+            </p>
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale">
+                <div class="text-2xl md:text-3xl font-black tracking-tighter">Google Partner</div>
+                <div class="text-2xl md:text-3xl font-black tracking-tighter">YouTube Ads</div>
+                <div class="text-2xl md:text-3xl font-black tracking-tighter">RYZE Performance</div>
             </div>
         </section>
 
         <!-- 4. Creative Portfolio -->
         <section id="portfolio" class="py-32 max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-black mb-4 uppercase tracking-tighter text-center" x-text="t[lang].portTitle"></h2>
-            <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto text-lg" x-text="t[lang].portSub"></p>
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-black uppercase tracking-tighter mb-4">Creative Assets & Finance Wins</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Des Shorts produits par RYZE, optimisés par TSA. Nous ne produisons pas de l'art, nous produisons de la conversion.</p>
+            </div>
             
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Video Placeholders -->
-                <template x-for="i in 4">
-                    <div class="aspect-[9/16] bg-zinc-900 border border-zinc-800 rounded-2xl flex flex-col items-center justify-center card-glow-red relative overflow-hidden group cursor-pointer">
-                        <div class="absolute inset-0 bg-[#FF0000]/10 opacity-0 group-hover:opacity-100 transition duration-300"></div>
-                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition">
-                            <div class="w-0 h-0 border-t-8 border-t-transparent border-l-12 border-l-black border-b-8 border-b-transparent ml-1"></div>
-                        </div>
-                        <span class="text-zinc-500 font-bold uppercase text-xs tracking-widest group-hover:text-white transition">Play Short</span>
-                    </div>
-                </template>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Video Placeholder 1 -->
+                <div class="aspect-[9/16] bg-zinc-900 border border-white/10 rounded-2xl flex items-center justify-center card-glow group relative overflow-hidden cursor-pointer">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition"></div>
+                    <span class="text-white font-bold uppercase tracking-widest z-10">Play Short 1</span>
+                </div>
+                <!-- Video Placeholder 2 -->
+                <div class="aspect-[9/16] bg-zinc-900 border border-white/10 rounded-2xl flex items-center justify-center card-glow group relative overflow-hidden cursor-pointer">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition"></div>
+                    <span class="text-white font-bold uppercase tracking-widest z-10">Play Short 2</span>
+                </div>
+                <!-- Video Placeholder 3 -->
+                <div class="aspect-[9/16] bg-zinc-900 border border-white/10 rounded-2xl flex items-center justify-center card-glow group relative overflow-hidden cursor-pointer">
+                    <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition"></div>
+                    <span class="text-white font-bold uppercase tracking-widest z-10">Play Short 3</span>
+                </div>
             </div>
         </section>
 
         <!-- 5. Methodology / Process -->
         <section id="how-it-works" class="py-32 glass-section px-6 border-y border-white/5">
             <div class="max-w-5xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-black mb-24 uppercase tracking-tighter text-center" x-text="t[lang].methTitle"></h2>
+                <h2 class="text-4xl md:text-5xl font-black text-center mb-20 uppercase tracking-tighter">L'ingénierie du <span class="text-red-600">Scale</span></h2>
                 
-                <div class="space-y-12 relative before:absolute before:inset-0 before:ml-6 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-[#FF0000] before:via-[#FFC107] before:to-zinc-900">
-                    
-                    <!-- Step 1 -->
-                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                        <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-[0_0_15px_rgba(255,255,255,0.2)] group-hover:scale-110 transition duration-300">1</div>
-                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-zinc-900 border border-zinc-800 p-8 rounded-3xl card-glow-red">
-                            <h3 class="font-black text-2xl uppercase mb-3 tracking-tighter" x-text="t[lang].meth1Title"></h3>
-                            <p class="text-gray-400 leading-relaxed" x-text="t[lang].meth1Desc"></p>
+                <div class="space-y-6">
+                    <div class="bg-zinc-900/80 p-8 rounded-2xl border-l-4 border-red-600 flex flex-col md:flex-row gap-6 items-start">
+                        <div class="text-5xl font-black text-zinc-800">01</div>
+                        <div>
+                            <h3 class="text-2xl font-black uppercase mb-2">Audit & Strategy (TSA)</h3>
+                            <p class="text-gray-400">J'analyse ton funnel, tes métriques et tes goulots d'étranglement financiers. On ne lance rien sans avoir cartographié le chemin vers le ROI.</p>
                         </div>
                     </div>
 
-                    <!-- Step 2 -->
-                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                        <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-[0_0_15px_rgba(255,255,255,0.2)] group-hover:scale-110 transition duration-300">2</div>
-                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-zinc-900 border border-zinc-800 p-8 rounded-3xl card-glow-yellow">
-                            <h3 class="font-black text-2xl uppercase mb-3 tracking-tighter" x-text="t[lang].meth2Title"></h3>
-                            <p class="text-gray-400 leading-relaxed" x-text="t[lang].meth2Desc"></p>
+                    <div class="bg-zinc-900/80 p-8 rounded-2xl border-l-4 border-yellow-500 flex flex-col md:flex-row gap-6 items-start ml-0 md:ml-12">
+                        <div class="text-5xl font-black text-zinc-800">02</div>
+                        <div>
+                            <h3 class="text-2xl font-black uppercase mb-2">Production (RYZE)</h3>
+                            <p class="text-gray-400">Ryze Performance prend le relais pour créer les Shorts qui captent l'attention. Concepts testés, hooks agressifs, design orienté conversion.</p>
                         </div>
                     </div>
 
-                    <!-- Step 3 -->
-                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                        <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-[0_0_15px_rgba(255,255,255,0.2)] group-hover:scale-110 transition duration-300">3</div>
-                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-zinc-900 border border-zinc-800 p-8 rounded-3xl card-glow-red">
-                            <h3 class="font-black text-2xl uppercase mb-3 tracking-tighter" x-text="t[lang].meth3Title"></h3>
-                            <p class="text-gray-400 leading-relaxed" x-text="t[lang].meth3Desc"></p>
+                    <div class="bg-zinc-900/80 p-8 rounded-2xl border-l-4 border-red-600 flex flex-col md:flex-row gap-6 items-start ml-0 md:ml-24">
+                        <div class="text-5xl font-black text-zinc-800">03</div>
+                        <div>
+                            <h3 class="text-2xl font-black uppercase mb-2">Media & Data-Buying (TSA)</h3>
+                            <p class="text-gray-400">Je configure l'écosystème publicitaire sur Google & YouTube. Ciblage ultra-précis, audiences d'exclusion, pilotage algorithmique.</p>
                         </div>
                     </div>
 
-                    <!-- Step 4 -->
-                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                        <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-[0_0_15px_rgba(255,255,255,0.2)] group-hover:scale-110 transition duration-300">4</div>
-                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-zinc-900 border border-zinc-800 p-8 rounded-3xl card-glow-yellow">
-                            <h3 class="font-black text-2xl uppercase mb-3 tracking-tighter" x-text="t[lang].meth4Title"></h3>
-                            <p class="text-gray-400 leading-relaxed" x-text="t[lang].meth4Desc"></p>
+                    <div class="bg-zinc-900/80 p-8 rounded-2xl border-l-4 border-yellow-500 flex flex-col md:flex-row gap-6 items-start ml-0 md:ml-36">
+                        <div class="text-5xl font-black text-zinc-800">04</div>
+                        <div>
+                            <h3 class="text-2xl font-black uppercase mb-2">Optimize</h3>
+                            <p class="text-gray-400">Analyse froide de la donnée. Chaque € dépensé est tracé. On tue ce qui ne marche pas, on double ce qui convertit.</p>
                         </div>
                     </div>
 
-                    <!-- Step 5 -->
-                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                        <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-[0_0_15px_rgba(255,255,255,0.2)] group-hover:scale-110 transition duration-300">5</div>
-                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-[#FF0000] border border-[#FF0000] p-8 rounded-3xl shadow-[0_0_30px_rgba(255,0,0,0.3)]">
-                            <h3 class="font-black text-2xl uppercase mb-3 tracking-tighter text-white" x-text="t[lang].meth5Title"></h3>
-                            <p class="text-white/90 leading-relaxed font-bold" x-text="t[lang].meth5Desc"></p>
+                    <div class="gradient-bg p-8 rounded-2xl flex flex-col md:flex-row gap-6 items-start ml-0 md:ml-48 shadow-[0_0_30px_rgba(250,204,21,0.2)]">
+                        <div class="text-5xl font-black text-black/20">05</div>
+                        <div>
+                            <h3 class="text-2xl font-black text-black uppercase mb-2">SCALE</h3>
+                            <p class="text-black/80 font-bold">Une fois le CPA stabilisé, on ouvre les vannes pour dominer le marché des plateformes financières.</p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
         <!-- 6. Reviews -->
-        <section id="reviews" class="py-32 max-w-5xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-black mb-16 uppercase tracking-tighter" x-text="t[lang].revTitle"></h2>
-            
-            <div class="bg-zinc-900 border border-zinc-800 p-12 rounded-3xl relative">
-                <span class="text-8xl text-zinc-800 absolute top-2 left-6 font-serif leading-none">"</span>
-                <p class="text-2xl md:text-3xl font-light italic text-white relative z-10 mb-8 leading-relaxed" x-text="t[lang].revQuote"></p>
-                <div class="text-gray-500 font-bold uppercase tracking-widest text-sm" x-text="t[lang].revAuthor"></div>
+        <section id="reviews" class="py-32 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-16">La puissance du duo <br><span class="gradient-text">Créa + Data</span></h2>
+                
+                <div class="bg-zinc-900/50 border border-white/10 p-12 rounded-3xl relative">
+                    <div class="text-6xl text-red-600 absolute top-6 left-8 font-serif">"</div>
+                    <p class="text-xl md:text-2xl font-light italic leading-relaxed mb-8 relative z-10 text-gray-200">
+                        Avant TSA, on brûlait du cash sur YouTube sans comprendre pourquoi. La combinaison de leurs créas ultra-performantes et de la rigueur de TSA sur la donnée a littéralement changé notre ROAS.
+                    </p>
+                    <div class="font-black uppercase tracking-widest text-yellow-500">— Finance EdTech Client</div>
+                </div>
             </div>
         </section>
 
-        <!-- 7. FAQ -->
-        <section id="faq" class="py-32 glass-section px-6 border-t border-white/5" x-data="{ active: null }">
+        <!-- 7. FAQs -->
+        <section id="faqs" class="py-32 glass-section px-6" x-data="{ active: null }">
             <div class="max-w-3xl mx-auto">
-                <h2 class="text-4xl font-black mb-16 uppercase tracking-tighter text-center" x-text="t[lang].faqTitle"></h2>
+                <h2 class="text-4xl font-black text-center mb-16 uppercase tracking-tighter">Questions Fréquentes</h2>
                 
-                <!-- Category 1 -->
-                <div class="mb-10">
-                    <h3 class="text-[#FFC107] font-black mb-6 uppercase tracking-widest text-sm border-b border-[#FFC107]/20 pb-2" x-text="t[lang].faqCat1"></h3>
+                <div class="space-y-4">
+                    <h3 class="text-red-600 font-bold uppercase tracking-widest text-sm mb-4 mt-8">Process</h3>
                     
-                    <div class="space-y-4">
-                        <div class="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden transition-all">
-                            <button @click="active !== 1 ? active = 1 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm hover:text-[#FFC107] transition flex justify-between items-center">
-                                <span x-text="t[lang].faq1Q"></span>
-                                <span class="text-xl" x-text="active === 1 ? '-' : '+'"></span>
-                            </button>
-                            <div x-show="active === 1" x-collapse x-cloak>
-                                <div class="p-6 pt-0 text-gray-400" x-text="t[lang].faq1A"></div>
+                    <div class="border border-white/10 rounded-xl bg-zinc-900/50 overflow-hidden">
+                        <button @click="active !== 1 ? active = 1 : active = null" class="w-full text-left p-6 font-bold uppercase tracking-wide flex justify-between items-center hover:bg-white/5">
+                            Pourquoi ce duo (TSA + Ryze) ?
+                            <span x-show="active !== 1" class="text-red-500">+</span>
+                            <span x-show="active === 1" class="text-yellow-500" x-cloak>-</span>
+                        </button>
+                        <div x-show="active === 1" x-collapse x-cloak>
+                            <div class="p-6 pt-0 text-gray-400">
+                                Parce que la créa sans data est un pari, et la data sans créa est une perte de temps. On apporte les deux mondes.
                             </div>
                         </div>
+                    </div>
 
-                        <div class="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden transition-all">
-                            <button @click="active !== 2 ? active = 2 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm hover:text-[#FFC107] transition flex justify-between items-center">
-                                <span x-text="t[lang].faq2Q"></span>
-                                <span class="text-xl" x-text="active === 2 ? '-' : '+'"></span>
-                            </button>
-                            <div x-show="active === 2" x-collapse x-cloak>
-                                <div class="p-6 pt-0 text-gray-400" x-text="t[lang].faq2A"></div>
+                    <div class="border border-white/10 rounded-xl bg-zinc-900/50 overflow-hidden">
+                        <button @click="active !== 2 ? active = 2 : active = null" class="w-full text-left p-6 font-bold uppercase tracking-wide flex justify-between items-center hover:bg-white/5">
+                            Ryze s'occupe de toutes les créations ?
+                            <span x-show="active !== 2" class="text-red-500">+</span>
+                            <span x-show="active === 2" class="text-yellow-500" x-cloak>-</span>
+                        </button>
+                        <div x-show="active === 2" x-collapse x-cloak>
+                            <div class="p-6 pt-0 text-gray-400">
+                                Oui, tout est clé en main. Ils gèrent la production haute performance, je gère la diffusion et les mathématiques de conversion.
                             </div>
                         </div>
+                    </div>
 
-                        <div class="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden transition-all">
-                            <button @click="active !== 3 ? active = 3 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm hover:text-[#FFC107] transition flex justify-between items-center">
-                                <span x-text="t[lang].faq3Q"></span>
-                                <span class="text-xl" x-text="active === 3 ? '-' : '+'"></span>
-                            </button>
-                            <div x-show="active === 3" x-collapse x-cloak>
-                                <div class="p-6 pt-0 text-gray-400" x-text="t[lang].faq3A"></div>
+                    <div class="border border-white/10 rounded-xl bg-zinc-900/50 overflow-hidden">
+                        <button @click="active !== 3 ? active = 3 : active = null" class="w-full text-left p-6 font-bold uppercase tracking-wide flex justify-between items-center hover:bg-white/5">
+                            Délai de mise en place ?
+                            <span x-show="active !== 3" class="text-red-500">+</span>
+                            <span x-show="active === 3" class="text-yellow-500" x-cloak>-</span>
+                        </button>
+                        <div x-show="active === 3" x-collapse x-cloak>
+                            <div class="p-6 pt-0 text-gray-400">
+                                Le setup est rapide : audit sous 48h, premières créas sous 7 jours.
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-yellow-500 font-bold uppercase tracking-widest text-sm mb-4 mt-12">Performance</h3>
+
+                    <div class="border border-white/10 rounded-xl bg-zinc-900/50 overflow-hidden">
+                        <button @click="active !== 4 ? active = 4 : active = null" class="w-full text-left p-6 font-bold uppercase tracking-wide flex justify-between items-center hover:bg-white/5">
+                            Comment mesurez-vous le ROI ?
+                            <span x-show="active !== 4" class="text-red-500">+</span>
+                            <span x-show="active === 4" class="text-yellow-500" x-cloak>-</span>
+                        </button>
+                        <div x-show="active === 4" x-collapse x-cloak>
+                            <div class="p-6 pt-0 text-gray-400">
+                                À travers le suivi rigoureux des conversions : leads qualifiés, inscriptions brokers, ou actions de valeur traçables.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border border-white/10 rounded-xl bg-zinc-900/50 overflow-hidden">
+                        <button @click="active !== 5 ? active = 5 : active = null" class="w-full text-left p-6 font-bold uppercase tracking-wide flex justify-between items-center hover:bg-white/5">
+                            Pourquoi YouTube Shorts ?
+                            <span x-show="active !== 5" class="text-red-500">+</span>
+                            <span x-show="active === 5" class="text-yellow-500" x-cloak>-</span>
+                        </button>
+                        <div x-show="active === 5" x-collapse x-cloak>
+                            <div class="p-6 pt-0 text-gray-400">
+                                C'est le format le plus sous-coté pour la finance en ce moment : visibilité massive, CPM bas, et attention maximale.
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Category 2 -->
-                <div>
-                    <h3 class="text-[#FF0000] font-black mb-6 uppercase tracking-widest text-sm border-b border-[#FF0000]/20 pb-2" x-text="t[lang].faqCat2"></h3>
-                    
-                    <div class="space-y-4">
-                        <div class="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden transition-all">
-                            <button @click="active !== 4 ? active = 4 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm hover:text-[#FF0000] transition flex justify-between items-center">
-                                <span x-text="t[lang].faq4Q"></span>
-                                <span class="text-xl" x-text="active === 4 ? '-' : '+'"></span>
-                            </button>
-                            <div x-show="active === 4" x-collapse x-cloak>
-                                <div class="p-6 pt-0 text-gray-400" x-text="t[lang].faq4A"></div>
-                            </div>
-                        </div>
-
-                        <div class="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden transition-all">
-                            <button @click="active !== 5 ? active = 5 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm hover:text-[#FF0000] transition flex justify-between items-center">
-                                <span x-text="t[lang].faq5Q"></span>
-                                <span class="text-xl" x-text="active === 5 ? '-' : '+'"></span>
-                            </button>
-                            <div x-show="active === 5" x-collapse x-cloak>
-                                <div class="p-6 pt-0 text-gray-400" x-text="t[lang].faq5A"></div>
-                            </div>
-                        </div>
-
-                        <div class="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden transition-all">
-                            <button @click="active !== 6 ? active = 6 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm hover:text-[#FF0000] transition flex justify-between items-center">
-                                <span x-text="t[lang].faq6Q"></span>
-                                <span class="text-xl" x-text="active === 6 ? '-' : '+'"></span>
-                            </button>
-                            <div x-show="active === 6" x-collapse x-cloak>
-                                <div class="p-6 pt-0 text-gray-400" x-text="t[lang].faq6A"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
 
-        <!-- 8. Footer Funnel (Reproduction Ryze + Tes infos) -->
-        <footer id="footer-funnel" class="py-32 bg-black text-center border-t border-zinc-800 relative">
-            <div class="max-w-4xl mx-auto px-6 relative z-10">
-                <p class="text-[#FF0000] font-black tracking-widest uppercase mb-6 text-sm" x-text="t[lang].footerHeader"></p>
-                <h2 class="text-6xl md:text-9xl font-black mb-8 uppercase tracking-tighter text-white" x-text="t[lang].footerTitle"></h2>
+        <!-- 8. Footer -->
+        <footer class="py-32 bg-[#121212] text-center border-t border-white/5">
+            <div class="max-w-4xl mx-auto px-6">
+                <p class="text-red-600 font-black tracking-widest uppercase text-sm mb-6">Growth Partner for Finance Businesses</p>
+                <h2 class="text-6xl md:text-8xl font-black mb-10 uppercase tracking-tighter gradient-text">
+                    Let's Scale
+                </h2>
                 
-                <p class="text-gray-400 mb-12 text-lg md:text-xl" x-text="t[lang].footerSub"></p>
-                
-                <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-24">
-                    <a href="https://calendly.com/lucabesson333/30min" target="_blank" class="w-full md:w-auto bg-[#FFC107] text-black px-10 py-5 rounded-lg font-black text-sm hover:bg-yellow-500 transition uppercase tracking-widest" x-text="t[lang].footerBtn1"></a>
-                    <a href="https://wa.me/MESSAGE" target="_blank" class="w-full md:w-auto bg-transparent border border-zinc-700 text-white px-10 py-5 rounded-lg font-black text-sm hover:bg-zinc-900 transition uppercase tracking-widest" x-text="t[lang].footerBtn2"></a>
+                <p class="text-gray-300 text-lg mb-12">
+                    Get your discovery call booked in or connect with me to see if I can help.
+                </p>
+
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-20">
+                    <a href="https://calendly.com/" target="_blank" class="w-full md:w-auto bg-green-400 text-black px-12 py-5 rounded-lg font-black text-xl hover:bg-green-500 transition transform active:scale-95 uppercase">
+                        Request your free audit
+                    </a>
+                    <a href="https://wa.me/yournumber" target="_blank" class="w-full md:w-auto border border-white/20 text-white px-12 py-5 rounded-lg font-black text-xl hover:bg-white/10 transition uppercase">
+                        Or speak directly to me
+                    </a>
                 </div>
 
-                <div class="flex justify-center items-center gap-8 opacity-40 grayscale">
-                    <div class="font-black text-xl tracking-tighter flex items-center gap-2">
-                        <span>Google Reviews</span>
-                        <span class="text-white text-sm">★★★★★</span>
+                <div class="flex justify-center items-center gap-12 pt-10 border-t border-white/5">
+                    <div class="flex items-center gap-2">
+                        <div class="font-bold text-xl tracking-tight">Google</div>
+                        <div class="flex text-yellow-500 text-xs">★★★★★</div>
+                        <div class="text-[10px] uppercase tracking-widest ml-1">Reviews</div>
                     </div>
-                    <div class="font-black text-xl tracking-tighter flex items-center gap-2">
-                        <div class="flex space-x-1"><div class="w-2 h-4 bg-white"></div><div class="w-2 h-4 bg-white"></div><div class="w-2 h-4 bg-white"></div></div>
+                    <div class="font-black text-xl tracking-tighter uppercase">
                         RYZE Performance
                     </div>
-                </div>
-                
-                <div class="mt-20 pt-8 border-t border-zinc-900">
-                    <p class="text-zinc-600 text-[10px] tracking-[0.5em] uppercase font-bold">© 2026 THE SCALER'S AGENCY — HIGH PERFORMANCE ONLY</p>
                 </div>
             </div>
         </footer>
     </div>
 
-    <!-- Script de l'animation d'électrons et du Multilingue -->
+    <!-- Canvas Animation Script -->
     <script>
-        // --- 1. ANIMATION DES PARTICULES (FUCHSIA UNIQUEMENT) ---
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
@@ -341,6 +345,7 @@
         }
 
         window.addEventListener('mousemove', (e) => { mouse.x = e.x; mouse.y = e.y; });
+        window.addEventListener('mouseout', () => { mouse.x = null; mouse.y = null; });
 
         class Particle {
             constructor() {
@@ -380,7 +385,7 @@
                 }
             }
             draw() {
-                // Modification : Couleur Fuschia exacte pour les particules
+                // Fuchsia color for electrons
                 ctx.fillStyle = 'rgba(255, 0, 255, 1.0)';
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -402,7 +407,7 @@
                     let dist = Math.sqrt(dx*dx + dy*dy);
                     if (dist < 110) {
                         let opacity = (1 - (dist / 110)) * 0.3;
-                        // Modification : Couleur Fuschia exacte pour les liens
+                        // Fuchsia color for lines connecting electrons
                         ctx.strokeStyle = `rgba(255, 0, 255, ${opacity})`;
                         ctx.lineWidth = 0.5;
                         ctx.beginPath();
@@ -424,100 +429,6 @@
         window.addEventListener('resize', resize);
         resize();
         animate();
-
-        // --- 2. GESTIONNAIRE DE LANGUES (Nouveau Copywriting) ---
-        function languageManager() {
-            return {
-                lang: localStorage.getItem('scalerLang') || 'fr',
-                setLang(l) { this.lang = l; localStorage.setItem('scalerLang', l); },
-                t: {
-                    fr: {
-                        navPortfolio: "Portfolio", navCases: "Case Studies", navHow: "How it works", navReviews: "Reviews", navFaq: "FAQs", navBtn: "Book a call",
-                        heroTag: "Google & YouTube Growth Partner",
-                        heroH1: "YOUTUBE SHORT ADS", heroH2: "FOR FINANCE BUSINESSES",
-                        heroSub: "Nous allions la puissance créative du studio RYZE à une exécution Media Buying mathématique. Zéro créa inutile, 100% data, ROI pur.",
-                        heroBtn1: "Book a call", heroBtn2: "View Portfolio",
-                        logosTitle: "Trusted by Google Partners & Finance Leaders",
-                        portTitle: "Creative Assets & Finance Wins",
-                        portSub: "Des Shorts produits par RYZE, optimisés par TSA. Nous ne produisons pas de l'art, nous produisons de la conversion.",
-                        methTitle: "Le Processus de Scale",
-                        meth1Title: "Audit & Strategy (TSA)", meth1Desc: "J'analyse ton funnel, tes métriques et tes goulots d'étranglement financiers. On ne lance rien sans avoir cartographié le chemin vers le ROI.",
-                        meth2Title: "Production (RYZE)", meth2Desc: "Ryze Performance prend le relais pour créer les Shorts qui captent l'attention. Concepts testés, hooks agressifs, design orienté conversion.",
-                        meth3Title: "Media & Data-Buying", meth3Desc: "Je configure l'écosystème publicitaire sur Google & YouTube. Ciblage ultra-précis, audiences d'exclusion, pilotage algorithmique.",
-                        meth4Title: "Optimize", meth4Desc: "Analyse froide de la donnée. Chaque € dépensé est tracé. On tue ce qui ne marche pas, on double ce qui convertit.",
-                        meth5Title: "SCALE", meth5Desc: "Une fois le CPA stabilisé, on ouvre les vannes pour dominer le marché des plateformes financières.",
-                        revTitle: "La puissance du duo Créa + Data.",
-                        revQuote: "Avant TSA, on brûlait du cash sur YouTube sans comprendre pourquoi. La combinaison de leurs créas ultra-performantes et de la rigueur de TSA sur la donnée a littéralement changé notre ROAS.",
-                        revAuthor: "Leader / Niche Finance",
-                        faqTitle: "F.A.Q", faqCat1: "Processus", faqCat2: "Performance",
-                        faq1Q: "Pourquoi ce duo (TSA x RYZE) ?", faq1A: "Parce que la créa sans data est un pari, et la data sans créa est une perte de temps. On apporte l'excellence des deux mondes.",
-                        faq2Q: "Ryze s'occupe de toutes les créations ?", faq2A: "Oui, tout est clé en main. Ils gèrent la production visuelle, je gère la diffusion et l'optimisation mathématique.",
-                        faq3Q: "Délai de mise en place ?", faq3A: "Le setup est rapide : audit sous 48h, premières créas sous 7 jours.",
-                        faq4Q: "Comment mesurez-vous le ROI ?", faq4A: "À travers le suivi rigoureux des conversions : leads qualifiés, inscriptions brokers, ou actions de valeur directe.",
-                        faq5Q: "Pourquoi YouTube Shorts ?", faq5A: "C'est le format le plus sous-coté pour la finance : visibilité massive, CPM bas, et attention maximale.",
-                        faq6Q: "Est-ce compatible avec mon budget ?", faq6A: "Si ton business est déjà rentable, notre système est conçu pour accélérer ta croissance sans risque inutile.",
-                        footerHeader: "GROWTH PARTNER FOR FINANCE BUSINESSES", footerTitle: "Let's Scale", footerSub: "Get your discovery call booked in or connect with me to see if I can help.",
-                        footerBtn1: "Request your free audit", footerBtn2: "Or Speak directly to me"
-                    },
-                    en: {
-                        navPortfolio: "Portfolio", navCases: "Case Studies", navHow: "How it works", navReviews: "Reviews", navFaq: "FAQs", navBtn: "Book a call",
-                        heroTag: "Google & YouTube Growth Partner",
-                        heroH1: "YOUTUBE SHORT ADS", heroH2: "FOR FINANCE BUSINESSES",
-                        heroSub: "We combine the creative power of RYZE studio with mathematical Media Buying execution. Zero useless creatives, 100% data, pure ROI.",
-                        heroBtn1: "Book a call", heroBtn2: "View Portfolio",
-                        logosTitle: "Trusted by Google Partners & Finance Leaders",
-                        portTitle: "Creative Assets & Finance Wins",
-                        portSub: "Shorts produced by RYZE, optimized by TSA. We don't produce art, we produce conversions.",
-                        methTitle: "The Scaling Process",
-                        meth1Title: "Audit & Strategy (TSA)", meth1Desc: "I analyze your funnel, metrics, and financial bottlenecks. We don't launch anything without mapping the path to ROI.",
-                        meth2Title: "Production (RYZE)", meth2Desc: "Ryze Performance takes over to create attention-grabbing Shorts. Tested concepts, aggressive hooks, conversion-oriented design.",
-                        meth3Title: "Media & Data-Buying", meth3Desc: "I set up the advertising ecosystem on Google & YouTube. Ultra-precise targeting, exclusion audiences, algorithmic steering.",
-                        meth4Title: "Optimize", meth4Desc: "Cold data analysis. Every € spent is tracked. We kill what doesn't work, we double down on what converts.",
-                        meth5Title: "SCALE", meth5Desc: "Once the CPA is stabilized, we open the floodgates to dominate the financial platforms market.",
-                        revTitle: "The power of the Creative + Data duo.",
-                        revQuote: "Before TSA, we burned cash on YouTube without understanding why. The combination of their high-performing creatives and TSA's data rigor literally changed our ROAS.",
-                        revAuthor: "Leader / Finance Niche",
-                        faqTitle: "F.A.Q", faqCat1: "Process", faqCat2: "Performance",
-                        faq1Q: "Why this duo (TSA x RYZE)?", faq1A: "Because creative without data is a gamble, and data without creative is a waste of time. We bring the best of both worlds.",
-                        faq2Q: "Does Ryze handle all creations?", faq2A: "Yes, everything is turnkey. They manage visual production, I manage distribution and mathematical optimization.",
-                        faq3Q: "Implementation time?", faq3A: "Setup is fast: audit within 48h, first creatives within 7 days.",
-                        faq4Q: "How do you measure ROI?", faq4A: "Through rigorous conversion tracking: qualified leads, broker registrations, or direct value actions.",
-                        faq5Q: "Why YouTube Shorts?", faq5A: "It's the most underrated format for finance: massive visibility, low CPM, and maximum audience attention.",
-                        faq6Q: "Is it compatible with my budget?", faq6A: "If your business is already profitable, our system is designed to accelerate your growth without unnecessary risk.",
-                        footerHeader: "GROWTH PARTNER FOR FINANCE BUSINESSES", footerTitle: "Let's Scale", footerSub: "Get your discovery call booked in or connect with me to see if I can help.",
-                        footerBtn1: "Request your free audit", footerBtn2: "Or Speak directly to me"
-                    },
-                    es: {
-                        navPortfolio: "Portfolio", navCases: "Casos de Éxito", navHow: "Proceso", navReviews: "Reseñas", navFaq: "FAQs", navBtn: "Agendar",
-                        heroTag: "Google & YouTube Growth Partner",
-                        heroH1: "YOUTUBE SHORT ADS", heroH2: "FOR FINANCE BUSINESSES",
-                        heroSub: "Combinamos el poder creativo del estudio RYZE con una ejecución matemática de Media Buying. Cero creatividades inútiles, 100% data, ROI puro.",
-                        heroBtn1: "Agendar llamada", heroBtn2: "Ver Portfolio",
-                        logosTitle: "Confían en nosotros Partners de Google y Líderes Financieros",
-                        portTitle: "Activos Creativos y Éxitos Financieros",
-                        portSub: "Shorts producidos por RYZE, optimizados por TSA. No producimos arte, producimos conversiones.",
-                        methTitle: "El Proceso de Escala",
-                        meth1Title: "Auditoría y Estrategia (TSA)", meth1Desc: "Analizo tu embudo, métricas y cuellos de botella. No lanzamos nada sin mapear el camino hacia el ROI.",
-                        meth2Title: "Producción (RYZE)", meth2Desc: "Ryze Performance asume el control para crear Shorts que captan la atención. Conceptos probados, ganchos agresivos, diseño orientado a la conversión.",
-                        meth3Title: "Media & Data-Buying", meth3Desc: "Configuro el ecosistema publicitario en Google y YouTube. Segmentación ultra precisa, audiencias de exclusión, dirección algorítmica.",
-                        meth4Title: "Optimizar", meth4Desc: "Análisis frío de datos. Cada € gastado es rastreado. Matamos lo que no funciona, duplicamos lo que convierte.",
-                        meth5Title: "ESCALAR", meth5Desc: "Una vez estabilizado el CPA, abrimos las compuertas para dominar el mercado financiero.",
-                        revTitle: "El poder del dúo Creatividad + Datos.",
-                        revQuote: "Antes de TSA, quemábamos dinero en YouTube sin entender por qué. La combinación de sus creatividades y el rigor de TSA cambió literalmente nuestro ROAS.",
-                        revAuthor: "Líder / Nicho Financiero",
-                        faqTitle: "F.A.Q", faqCat1: "Proceso", faqCat2: "Rendimiento",
-                        faq1Q: "¿Por qué este dúo (TSA x RYZE)?", faq1A: "Porque la creatividad sin datos es una apuesta, y los datos sin creatividad son una pérdida de tiempo.",
-                        faq2Q: "¿Ryze se encarga de todas las creaciones?", faq2A: "Sí, todo es llave en mano. Ellos gestionan la producción visual, yo la distribución y optimización.",
-                        faq3Q: "¿Tiempo de implementación?", faq3A: "Rápido: auditoría en 48h, primeras creatividades en 7 días.",
-                        faq4Q: "¿Cómo medís el ROI?", faq4A: "A través del seguimiento riguroso de conversiones: leads cualificados o registros en brokers.",
-                        faq5Q: "¿Por qué YouTube Shorts?", faq5A: "Es el formato más infravalorado para finanzas: visibilidad masiva, CPM bajo y máxima atención.",
-                        faq6Q: "¿Es compatible con mi presupuesto?", faq6A: "Si tu negocio ya es rentable, nuestro sistema está diseñado para acelerar tu crecimiento sin riesgo innecesario.",
-                        footerHeader: "GROWTH PARTNER FOR FINANCE BUSINESSES", footerTitle: "Let's Scale", footerSub: "Get your discovery call booked in or connect with me to see if I can help.",
-                        footerBtn1: "Request your free audit", footerBtn2: "Or Speak directly to me"
-                    }
-                }
-            }
-        }
     </script>
 </body>
 </html>

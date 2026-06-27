@@ -2,8 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Scaler's Agency | Growth Partner for Finance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>The Scaler's Agency | Growth Partner</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -60,7 +60,6 @@
         .custom-scrollbar::-webkit-scrollbar-track { background: #000; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #FF0000; border-radius: 10px; }
 
-        /* Animation pour la bannière de logos */
         @keyframes scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -83,7 +82,7 @@
     <div class="relative-content">
         
         <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
-            <div class="flex justify-between items-center p-5 max-w-7xl mx-auto">
+            <div class="flex justify-between items-center p-4 md:p-5 max-w-7xl mx-auto">
                 <div class="text-2xl font-black tracking-tighter uppercase text-white">
                     TSA
                 </div>
@@ -96,59 +95,57 @@
                     <a href="#faq" class="hover:text-white transition" x-text="t[lang].navFaq"></a>
                 </div>
 
-                <div class="flex items-center space-x-6">
-                    <div class="flex space-x-2 bg-white/5 p-1 rounded-full border border-white/10">
-                        <button @click="setLang('en')" class="w-6 h-6 rounded-full overflow-hidden border-2" :class="lang === 'en' ? 'border-[#FFC107]' : 'border-transparent opacity-50'"><img src="https://flagcdn.com/w40/gb.png" class="w-full h-full object-cover"></button>
-                        <button @click="setLang('fr')" class="w-6 h-6 rounded-full overflow-hidden border-2" :class="lang === 'fr' ? 'border-[#FFC107]' : 'border-transparent opacity-50'"><img src="https://flagcdn.com/w40/fr.png" class="w-full h-full object-cover"></button>
-                        <button @click="setLang('es')" class="w-6 h-6 rounded-full overflow-hidden border-2" :class="lang === 'es' ? 'border-[#FFC107]' : 'border-transparent opacity-50'"><img src="https://flagcdn.com/w40/es.png" class="w-full h-full object-cover"></button>
+                <div class="flex items-center space-x-4 md:space-x-6">
+                    <div class="flex space-x-1 md:space-x-2 bg-white/5 p-1 rounded-full border border-white/10">
+                        <button @click="setLang('en')" class="w-5 h-5 md:w-6 md:h-6 rounded-full overflow-hidden border-2" :class="lang === 'en' ? 'border-[#FFC107]' : 'border-transparent opacity-50'"><img src="https://flagcdn.com/w40/gb.png" class="w-full h-full object-cover"></button>
+                        <button @click="setLang('fr')" class="w-5 h-5 md:w-6 md:h-6 rounded-full overflow-hidden border-2" :class="lang === 'fr' ? 'border-[#FFC107]' : 'border-transparent opacity-50'"><img src="https://flagcdn.com/w40/fr.png" class="w-full h-full object-cover"></button>
+                        <button @click="setLang('es')" class="w-5 h-5 md:w-6 md:h-6 rounded-full overflow-hidden border-2" :class="lang === 'es' ? 'border-[#FFC107]' : 'border-transparent opacity-50'"><img src="https://flagcdn.com/w40/es.png" class="w-full h-full object-cover"></button>
+                        <button @click="setLang('de')" class="w-5 h-5 md:w-6 md:h-6 rounded-full overflow-hidden border-2" :class="lang === 'de' ? 'border-[#FFC107]' : 'border-transparent opacity-50'"><img src="https://flagcdn.com/w40/de.png" class="w-full h-full object-cover"></button>
                     </div>
-                    <a href="https://calendly.com/lucabesson333/30min" target="_blank" class="bg-[#FF0000] hover:bg-red-700 text-white px-6 py-2 rounded-full font-bold transition text-xs uppercase tracking-widest shadow-[0_0_15px_rgba(255,0,0,0.4)]" x-text="t[lang].navBtn"></a>
+                    <a href="https://calendly.com/lucabesson333/30min" target="_blank" class="bg-[#FF0000] hover:bg-red-700 text-white px-3 md:px-6 py-2 rounded-full font-bold transition text-[10px] md:text-xs uppercase tracking-widest shadow-[0_0_15px_rgba(255,0,0,0.4)] text-center" x-text="t[lang].navBtn"></a>
                 </div>
             </div>
         </nav>
 
-        <header class="pt-48 pb-12 px-6 text-center max-w-5xl mx-auto">
-            <div class="inline-block border border-white/20 bg-zinc-900/50 backdrop-blur-sm px-4 py-1.5 rounded-full text-[#FFC107] text-xs font-black uppercase tracking-widest mb-8" x-text="t[lang].heroTag"></div>
+        <header class="pt-40 md:pt-48 pb-12 px-6 text-center max-w-5xl mx-auto">
+            <div class="inline-block border border-white/20 bg-zinc-900/50 backdrop-blur-sm px-4 py-1.5 rounded-full text-[#FFC107] text-[10px] md:text-xs font-black uppercase tracking-widest mb-8" x-text="t[lang].heroTag"></div>
             
-            <h1 class="text-5xl md:text-8xl font-black mb-2 leading-none uppercase tracking-tighter gradient-text-ry">
+            <h1 class="text-4xl sm:text-6xl md:text-8xl font-black mb-4 leading-none uppercase tracking-tighter gradient-text-ry break-words">
                 <span x-text="t[lang].heroH1"></span>
             </h1>
-            <h2 class="text-3xl md:text-5xl font-black mb-8 leading-tight uppercase text-white tracking-tighter" x-text="t[lang].heroH2"></h2>
+            <h2 class="text-2xl sm:text-3xl md:text-5xl font-black mb-8 leading-tight uppercase text-white tracking-tighter" x-text="t[lang].heroH2"></h2>
             
-            <p class="text-gray-400 text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light" x-text="t[lang].heroSub"></p>
+            <p class="text-gray-400 text-base md:text-xl mb-12 max-w-3xl mx-auto font-light" x-text="t[lang].heroSub"></p>
             
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="https://calendly.com/lucabesson333/30min" target="_blank" class="bg-[#FF0000] text-white px-8 py-4 rounded-lg font-black text-lg hover:bg-red-700 transition uppercase tracking-tighter shadow-[0_0_20px_rgba(255,0,0,0.5)]" x-text="t[lang].heroBtn1"></a>
-                <a href="#portfolio" class="bg-white text-black px-8 py-4 rounded-lg font-black text-lg hover:bg-gray-200 transition uppercase tracking-tighter" x-text="t[lang].heroBtn2"></a>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+                <a href="https://calendly.com/lucabesson333/30min" target="_blank" class="w-full md:w-auto bg-[#FF0000] text-white px-8 py-4 rounded-lg font-black text-sm md:text-lg hover:bg-red-700 transition uppercase tracking-tighter shadow-[0_0_20px_rgba(255,0,0,0.5)] text-center" x-text="t[lang].heroBtn1"></a>
+                <a href="#portfolio" class="w-full md:w-auto bg-white text-black px-8 py-4 rounded-lg font-black text-sm md:text-lg hover:bg-gray-200 transition uppercase tracking-tighter text-center" x-text="t[lang].heroBtn2"></a>
             </div>
 
-            <p class="text-xs text-gray-500 uppercase tracking-widest mt-12 font-bold" x-text="t[lang].logosTitle"></p>
+            <p class="text-[10px] md:text-xs text-gray-500 uppercase tracking-widest mt-12 font-bold" x-text="t[lang].logosTitle"></p>
         </header>
 
-        <section class="py-8 border-y border-white/10 bg-black/40 backdrop-blur-md overflow-hidden">
+        <section class="py-6 md:py-8 border-y border-white/10 bg-black/40 backdrop-blur-md overflow-hidden">
             <div class="marquee-container flex">
                 <div class="marquee-content gap-12 md:gap-24 opacity-60 hover:opacity-100 transition duration-500 text-white px-6 w-max">
-                    <div class="font-black text-2xl tracking-tighter flex items-center gap-2 whitespace-nowrap">Google Partner</div>
-                    <div class="font-black text-2xl tracking-tighter flex items-center gap-2 whitespace-nowrap">YouTube Ads</div>
-                    <div class="font-black text-2xl tracking-tighter flex items-center gap-2 whitespace-nowrap">RYZE Performance</div>
-                    <div class="font-black text-2xl tracking-tighter flex items-center gap-2 whitespace-nowrap">Google Partner</div>
-                    <div class="font-black text-2xl tracking-tighter flex items-center gap-2 whitespace-nowrap">YouTube Ads</div>
-                    <div class="font-black text-2xl tracking-tighter flex items-center gap-2 whitespace-nowrap">RYZE Performance</div>
-                    <div class="font-black text-2xl tracking-tighter flex items-center gap-2 whitespace-nowrap">Google Partner</div>
-                    <div class="font-black text-2xl tracking-tighter flex items-center gap-2 whitespace-nowrap">YouTube Ads</div>
-                    <div class="font-black text-2xl tracking-tighter flex items-center gap-2 whitespace-nowrap">RYZE Performance</div>
-                    <div class="font-black text-2xl tracking-tighter flex items-center gap-2 whitespace-nowrap">Google Partner</div>
-                    <div class="font-black text-2xl tracking-tighter flex items-center gap-2 whitespace-nowrap">YouTube Ads</div>
-                    <div class="font-black text-2xl tracking-tighter flex items-center gap-2 whitespace-nowrap">RYZE Performance</div>
+                    <div class="font-black text-xl md:text-2xl tracking-tighter flex items-center gap-2 whitespace-nowrap">Google Partner</div>
+                    <div class="font-black text-xl md:text-2xl tracking-tighter flex items-center gap-2 whitespace-nowrap">YouTube Ads</div>
+                    <div class="font-black text-xl md:text-2xl tracking-tighter flex items-center gap-2 whitespace-nowrap">RYZE Performance</div>
+                    <div class="font-black text-xl md:text-2xl tracking-tighter flex items-center gap-2 whitespace-nowrap">Google Partner</div>
+                    <div class="font-black text-xl md:text-2xl tracking-tighter flex items-center gap-2 whitespace-nowrap">YouTube Ads</div>
+                    <div class="font-black text-xl md:text-2xl tracking-tighter flex items-center gap-2 whitespace-nowrap">RYZE Performance</div>
+                    <div class="font-black text-xl md:text-2xl tracking-tighter flex items-center gap-2 whitespace-nowrap">Google Partner</div>
+                    <div class="font-black text-xl md:text-2xl tracking-tighter flex items-center gap-2 whitespace-nowrap">YouTube Ads</div>
+                    <div class="font-black text-xl md:text-2xl tracking-tighter flex items-center gap-2 whitespace-nowrap">RYZE Performance</div>
                 </div>
             </div>
         </section>
 
-        <section id="portfolio" class="py-32 max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-black mb-4 uppercase tracking-tighter text-center" x-text="t[lang].portTitle"></h2>
-            <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto text-lg" x-text="t[lang].portSub"></p>
+        <section id="portfolio" class="py-24 md:py-32 max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-black mb-4 uppercase tracking-tighter text-center" x-text="t[lang].portTitle"></h2>
+            <p class="text-gray-400 text-center mb-16 max-w-2xl mx-auto text-sm md:text-lg" x-text="t[lang].portSub"></p>
             
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                 <template x-for="i in 4">
                     <div class="aspect-[9/16] bg-zinc-900 border border-zinc-800 rounded-2xl flex flex-col items-center justify-center card-glow-red relative overflow-hidden group cursor-pointer">
                         <div class="absolute inset-0 bg-[#FF0000]/10 opacity-0 group-hover:opacity-100 transition duration-300"></div>
@@ -161,88 +158,88 @@
             </div>
         </section>
 
-        <section id="compliance" class="py-24 bg-gradient-to-r from-[#FF0000] to-[#FFC107] px-6 border-y border-white/10 shadow-[0_0_50px_rgba(255,0,0,0.2)]">
+        <section id="compliance" class="py-24 bg-gradient-to-r from-[#FF0000] via-[#FF4500] to-[#FFC107] px-6 border-y border-white/10 shadow-[0_0_50px_rgba(255,0,0,0.2)]">
             <div class="max-w-7xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-black text-center mb-6 text-white uppercase tracking-tighter" x-text="t[lang].compTitle"></h2>
-                <p class="text-white/90 font-bold text-center mb-16 max-w-3xl mx-auto text-lg" x-text="t[lang].compSub"></p>
+                <h2 class="text-3xl md:text-5xl font-black text-center mb-6 text-white uppercase tracking-tighter" x-text="t[lang].compTitle"></h2>
+                <p class="text-white/90 font-bold text-center mb-16 max-w-3xl mx-auto text-sm md:text-lg" x-text="t[lang].compSub"></p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
-                    <div class="bg-zinc-900/90 rounded-3xl p-6 flex flex-col shadow-2xl card-glow-red border border-white/5">
+                    <div class="bg-zinc-900/95 rounded-3xl p-6 flex flex-col shadow-2xl card-glow-red border border-white/5">
                         <h4 class="text-[#FF0000] font-black uppercase text-xs tracking-widest mb-2" x-text="t[lang].compB1T"></h4>
                         <h3 class="text-white font-black uppercase text-lg mb-4 leading-tight" x-text="t[lang].compB1S"></h3>
-                        <p class="text-gray-300 text-sm font-medium" x-text="t[lang].compB1D"></p>
+                        <p class="text-gray-300 text-xs md:text-sm font-medium" x-text="t[lang].compB1D"></p>
                     </div>
                     
-                    <div class="bg-zinc-900/90 rounded-3xl p-6 flex flex-col shadow-2xl card-glow-red border border-white/5">
+                    <div class="bg-zinc-900/95 rounded-3xl p-6 flex flex-col shadow-2xl card-glow-red border border-white/5">
                         <h4 class="text-[#FFC107] font-black uppercase text-xs tracking-widest mb-2" x-text="t[lang].compB2T"></h4>
                         <h3 class="text-white font-black uppercase text-lg mb-4 leading-tight" x-text="t[lang].compB2S"></h3>
-                        <p class="text-gray-300 text-sm font-medium" x-text="t[lang].compB2D"></p>
+                        <p class="text-gray-300 text-xs md:text-sm font-medium" x-text="t[lang].compB2D"></p>
                     </div>
                     
-                    <div class="bg-zinc-900/90 rounded-3xl p-6 flex flex-col shadow-2xl card-glow-red border border-white/5">
+                    <div class="bg-zinc-900/95 rounded-3xl p-6 flex flex-col shadow-2xl card-glow-red border border-white/5">
                         <h4 class="text-[#FF0000] font-black uppercase text-xs tracking-widest mb-2" x-text="t[lang].compB3T"></h4>
                         <h3 class="text-white font-black uppercase text-lg mb-4 leading-tight" x-text="t[lang].compB3S"></h3>
-                        <p class="text-gray-300 text-sm font-medium" x-text="t[lang].compB3D"></p>
+                        <p class="text-gray-300 text-xs md:text-sm font-medium" x-text="t[lang].compB3D"></p>
                     </div>
                     
-                    <div class="bg-zinc-900/90 rounded-3xl p-6 flex flex-col shadow-2xl card-glow-red border border-white/5">
+                    <div class="bg-zinc-900/95 rounded-3xl p-6 flex flex-col shadow-2xl card-glow-red border border-white/5">
                         <h4 class="text-[#FFC107] font-black uppercase text-xs tracking-widest mb-2" x-text="t[lang].compB4T"></h4>
                         <h3 class="text-white font-black uppercase text-lg mb-4 leading-tight" x-text="t[lang].compB4S"></h3>
-                        <p class="text-gray-300 text-sm font-medium" x-text="t[lang].compB4D"></p>
+                        <p class="text-gray-300 text-xs md:text-sm font-medium" x-text="t[lang].compB4D"></p>
                     </div>
                     
-                    <div class="bg-zinc-900/90 rounded-3xl p-6 flex flex-col shadow-2xl card-glow-red border border-white/5">
+                    <div class="bg-zinc-900/95 rounded-3xl p-6 flex flex-col shadow-2xl card-glow-red border border-white/5">
                         <h4 class="text-[#FF0000] font-black uppercase text-xs tracking-widest mb-2" x-text="t[lang].compB5T"></h4>
                         <h3 class="text-white font-black uppercase text-lg mb-4 leading-tight" x-text="t[lang].compB5S"></h3>
-                        <p class="text-gray-300 text-sm font-medium" x-text="t[lang].compB5D"></p>
+                        <p class="text-gray-300 text-xs md:text-sm font-medium" x-text="t[lang].compB5D"></p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="how-it-works" class="py-32 bg-white px-6 border-y border-gray-200 relative z-10">
+        <section id="how-it-works" class="py-24 md:py-32 bg-white px-6 border-y border-gray-200 relative z-10">
             <div class="max-w-5xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-black mb-24 uppercase tracking-tighter text-center text-black" x-text="t[lang].methTitle"></h2>
+                <h2 class="text-3xl md:text-5xl font-black mb-16 md:mb-24 uppercase tracking-tighter text-center text-black" x-text="t[lang].methTitle"></h2>
                 
-                <div class="space-y-12 relative before:absolute before:inset-0 before:ml-6 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-[#FF0000] before:via-[#FFC107] before:to-white">
+                <div class="space-y-8 md:space-y-12 relative before:absolute before:inset-0 before:ml-6 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gradient-to-b before:from-[#FF0000] before:via-[#FFC107] before:to-white">
                     
-                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                        <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-lg group-hover:scale-110 transition duration-300">1</div>
-                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-zinc-900 border border-zinc-800 p-8 rounded-3xl card-glow-red shadow-2xl">
-                            <h3 class="font-black text-2xl uppercase mb-3 tracking-tighter text-white" x-text="t[lang].meth1Title"></h3>
-                            <p class="text-gray-300 leading-relaxed font-medium" x-text="t[lang].meth1Desc"></p>
+                    <div class="relative flex items-center justify-end md:justify-normal md:odd:flex-row-reverse group">
+                        <div class="absolute left-0 md:static flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-lg group-hover:scale-110 transition duration-300">1</div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-zinc-900 border border-zinc-800 p-6 md:p-8 rounded-3xl card-glow-red shadow-2xl">
+                            <h3 class="font-black text-xl md:text-2xl uppercase mb-3 tracking-tighter text-white" x-text="t[lang].meth1Title"></h3>
+                            <p class="text-gray-300 leading-relaxed font-medium text-sm md:text-base" x-text="t[lang].meth1Desc"></p>
                         </div>
                     </div>
 
-                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                        <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-lg group-hover:scale-110 transition duration-300">2</div>
-                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-zinc-900 border border-zinc-800 p-8 rounded-3xl card-glow-yellow shadow-2xl">
-                            <h3 class="font-black text-2xl uppercase mb-3 tracking-tighter text-white" x-text="t[lang].meth2Title"></h3>
-                            <p class="text-gray-300 leading-relaxed font-medium" x-text="t[lang].meth2Desc"></p>
+                    <div class="relative flex items-center justify-end md:justify-normal md:odd:flex-row-reverse group">
+                        <div class="absolute left-0 md:static flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-lg group-hover:scale-110 transition duration-300">2</div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-zinc-900 border border-zinc-800 p-6 md:p-8 rounded-3xl card-glow-yellow shadow-2xl">
+                            <h3 class="font-black text-xl md:text-2xl uppercase mb-3 tracking-tighter text-white" x-text="t[lang].meth2Title"></h3>
+                            <p class="text-gray-300 leading-relaxed font-medium text-sm md:text-base" x-text="t[lang].meth2Desc"></p>
                         </div>
                     </div>
 
-                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                        <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-lg group-hover:scale-110 transition duration-300">3</div>
-                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-zinc-900 border border-zinc-800 p-8 rounded-3xl card-glow-red shadow-2xl">
-                            <h3 class="font-black text-2xl uppercase mb-3 tracking-tighter text-white" x-text="t[lang].meth3Title"></h3>
-                            <p class="text-gray-300 leading-relaxed font-medium" x-text="t[lang].meth3Desc"></p>
+                    <div class="relative flex items-center justify-end md:justify-normal md:odd:flex-row-reverse group">
+                        <div class="absolute left-0 md:static flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-lg group-hover:scale-110 transition duration-300">3</div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-zinc-900 border border-zinc-800 p-6 md:p-8 rounded-3xl card-glow-red shadow-2xl">
+                            <h3 class="font-black text-xl md:text-2xl uppercase mb-3 tracking-tighter text-white" x-text="t[lang].meth3Title"></h3>
+                            <p class="text-gray-300 leading-relaxed font-medium text-sm md:text-base" x-text="t[lang].meth3Desc"></p>
                         </div>
                     </div>
 
-                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                        <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-lg group-hover:scale-110 transition duration-300">4</div>
-                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-zinc-900 border border-zinc-800 p-8 rounded-3xl card-glow-yellow shadow-2xl">
-                            <h3 class="font-black text-2xl uppercase mb-3 tracking-tighter text-white" x-text="t[lang].meth4Title"></h3>
-                            <p class="text-gray-300 leading-relaxed font-medium" x-text="t[lang].meth4Desc"></p>
+                    <div class="relative flex items-center justify-end md:justify-normal md:odd:flex-row-reverse group">
+                        <div class="absolute left-0 md:static flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-lg group-hover:scale-110 transition duration-300">4</div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-zinc-900 border border-zinc-800 p-6 md:p-8 rounded-3xl card-glow-yellow shadow-2xl">
+                            <h3 class="font-black text-xl md:text-2xl uppercase mb-3 tracking-tighter text-white" x-text="t[lang].meth4Title"></h3>
+                            <p class="text-gray-300 leading-relaxed font-medium text-sm md:text-base" x-text="t[lang].meth4Desc"></p>
                         </div>
                     </div>
 
-                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                        <div class="flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-lg group-hover:scale-110 transition duration-300">5</div>
-                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-[#FF0000] border border-[#FF0000] p-8 rounded-3xl shadow-[0_0_30px_rgba(255,0,0,0.5)]">
-                            <h3 class="font-black text-2xl uppercase mb-3 tracking-tighter text-white" x-text="t[lang].meth5Title"></h3>
-                            <p class="text-white/90 leading-relaxed font-bold" x-text="t[lang].meth5Desc"></p>
+                    <div class="relative flex items-center justify-end md:justify-normal md:odd:flex-row-reverse group">
+                        <div class="absolute left-0 md:static flex items-center justify-center w-12 h-12 rounded-full border-4 border-black bg-zinc-300 text-black font-black shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-lg group-hover:scale-110 transition duration-300">5</div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-[#FF0000] border border-[#FF0000] p-6 md:p-8 rounded-3xl shadow-[0_0_30px_rgba(255,0,0,0.5)]">
+                            <h3 class="font-black text-xl md:text-2xl uppercase mb-3 tracking-tighter text-white" x-text="t[lang].meth5Title"></h3>
+                            <p class="text-white/90 leading-relaxed font-bold text-sm md:text-base" x-text="t[lang].meth5Desc"></p>
                         </div>
                     </div>
 
@@ -250,111 +247,111 @@
             </div>
         </section>
 
-        <section id="reviews" class="py-32 max-w-5xl mx-auto px-6 text-center relative z-10">
-            <h2 class="text-4xl font-black mb-16 uppercase tracking-tighter gradient-text-ry" x-text="t[lang].revTitle"></h2>
+        <section id="reviews" class="py-24 md:py-32 max-w-5xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-black mb-16 uppercase tracking-tighter gradient-text-ry" x-text="t[lang].revTitle"></h2>
             
-            <div class="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 p-12 rounded-3xl relative shadow-2xl">
-                <span class="text-8xl text-red-600/20 absolute top-2 left-6 font-serif leading-none">"</span>
-                <p class="text-2xl md:text-3xl font-light italic text-white relative z-10 mb-8 leading-relaxed" x-text="t[lang].revQuote"></p>
-                <div class="text-[#FFC107] font-black uppercase tracking-widest text-sm" x-text="t[lang].revAuthor"></div>
+            <div class="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800 p-6 md:p-12 rounded-3xl relative shadow-2xl">
+                <span class="text-6xl md:text-8xl text-red-600/20 absolute top-2 left-4 md:left-6 font-serif leading-none">"</span>
+                <p class="text-lg md:text-2xl font-light italic text-white relative z-10 mb-8 leading-relaxed" x-text="t[lang].revQuote"></p>
+                <div class="text-[#FFC107] font-black uppercase tracking-widest text-xs md:text-sm" x-text="t[lang].revAuthor"></div>
             </div>
         </section>
 
-        <section class="py-32 px-6 relative z-10">
+        <section class="py-24 md:py-32 px-6 relative z-10">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-black mb-20 text-center text-white uppercase tracking-tighter">The Proof Is In The Performance</h2>
+                <h2 class="text-3xl md:text-5xl font-black mb-16 md:mb-20 text-center text-white uppercase tracking-tighter" x-text="t[lang].proofTitle"></h2>
                 <div class="space-y-12">
                     
-                    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 md:p-10 flex flex-col md:flex-row gap-10 items-center card-glow-red">
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 md:p-10 flex flex-col md:flex-row gap-8 md:gap-10 items-center card-glow-red">
                         <div class="w-full md:w-5/12 relative">
                             <div class="aspect-[4/5] bg-zinc-800 rounded-2xl overflow-hidden border border-zinc-700 flex items-center justify-center shadow-lg">
                                 <span class="text-zinc-600 font-bold uppercase text-sm">Image Swissklip</span>
                             </div>
-                            <div class="absolute -bottom-4 right-4 bg-zinc-900 border border-zinc-700 px-4 py-2 rounded-lg flex items-center shadow-xl">
-                                <span class="text-[#00e5ff] font-bold text-sm">+100K Revenue ↑</span>
+                            <div class="absolute -bottom-3 right-3 bg-zinc-900 border border-zinc-700 px-4 py-2 rounded-lg flex items-center shadow-xl">
+                                <span class="text-[#00e5ff] font-bold text-xs md:text-sm">+100K <span x-text="t[lang].proofRev"></span> ↑</span>
                             </div>
                         </div>
                         <div class="w-full md:w-7/12 space-y-4">
-                            <div class="text-[#FFC107] font-black uppercase tracking-widest text-sm">HEALTH & WELLNESS</div>
-                            <h3 class="text-4xl font-black text-white uppercase tracking-tighter">SWISSKLIP</h3>
-                            <div class="space-y-1 text-2xl font-bold tracking-tight">
-                                <div><span class="text-[#00e5ff]">+50</span> Statics per month</div>
+                            <div class="text-[#FFC107] font-black uppercase tracking-widest text-xs md:text-sm" x-text="t[lang].proof1Tag"></div>
+                            <h3 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter">SWISSKLIP</h3>
+                            <div class="space-y-1 text-xl md:text-2xl font-bold tracking-tight">
+                                <div><span class="text-[#00e5ff]">+50</span> <span x-text="t[lang].proof1Stat1"></span></div>
                                 <div><span class="text-[#00e5ff]">-25%</span> CPA</div>
                                 <div><span class="text-[#00e5ff]">+35%</span> ROAS</div>
                             </div>
-                            <p class="text-gray-400 text-sm leading-relaxed mt-6">Led a creative rebranding initiative for Swissklip, a premium personal care brand. Delivered over 50+ static creatives, elevating brand perception and scaling content production.</p>
+                            <p class="text-gray-400 text-xs md:text-sm leading-relaxed mt-6" x-text="t[lang].proof1Desc"></p>
                         </div>
                     </div>
 
-                    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 md:p-10 flex flex-col md:flex-row-reverse gap-10 items-center card-glow-yellow">
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 md:p-10 flex flex-col md:flex-row-reverse gap-8 md:gap-10 items-center card-glow-yellow">
                         <div class="w-full md:w-5/12 relative">
                             <div class="aspect-[4/5] bg-zinc-800 rounded-2xl overflow-hidden border border-zinc-700 flex items-center justify-center shadow-lg">
                                 <span class="text-zinc-600 font-bold uppercase text-sm">Image Mojo</span>
                             </div>
-                            <div class="absolute -bottom-4 right-4 bg-zinc-900 border border-zinc-700 px-4 py-2 rounded-lg flex items-center shadow-xl">
-                                <span class="text-[#00e5ff] font-bold text-sm">-25% CPA ↑</span>
+                            <div class="absolute -bottom-3 right-3 bg-zinc-900 border border-zinc-700 px-4 py-2 rounded-lg flex items-center shadow-xl">
+                                <span class="text-[#00e5ff] font-bold text-xs md:text-sm">-25% CPA ↑</span>
                             </div>
                         </div>
                         <div class="w-full md:w-7/12 space-y-4">
-                            <div class="text-[#FFC107] font-black uppercase tracking-widest text-sm">MOBILE APP / CREATIVES</div>
-                            <h3 class="text-4xl font-black text-white uppercase tracking-tighter">MOJO</h3>
-                            <div class="space-y-1 text-2xl font-bold tracking-tight">
-                                <div><span class="text-[#00e5ff]">-25%</span> CPA in 4 months</div>
-                                <div><span class="text-[#00e5ff]">+250</span> Creatives Produced</div>
-                                <div><span class="text-[#00e5ff]">+30%</span> Ad Spend</div>
+                            <div class="text-[#FFC107] font-black uppercase tracking-widest text-xs md:text-sm" x-text="t[lang].proof2Tag"></div>
+                            <h3 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter">MOJO</h3>
+                            <div class="space-y-1 text-xl md:text-2xl font-bold tracking-tight">
+                                <div><span class="text-[#00e5ff]">-25%</span> <span x-text="t[lang].proof2Stat1"></span></div>
+                                <div><span class="text-[#00e5ff]">+250</span> <span x-text="t[lang].proof2Stat2"></span></div>
+                                <div><span class="text-[#00e5ff]">+30%</span> Ad <span x-text="t[lang].proofSpend"></span></div>
                             </div>
-                            <p class="text-gray-400 text-sm leading-relaxed mt-6">Mojo helps content creators create trending Reels & TikTok and Reels videos in seconds. By applying a strong testing methodology, generated significant growth through creative performance strategy over 6 months. We produced 250 creatives across 5 markets (FR, US, ES, BR, DE).</p>
+                            <p class="text-gray-400 text-xs md:text-sm leading-relaxed mt-6" x-text="t[lang].proof2Desc"></p>
                         </div>
                     </div>
 
-                    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 md:p-10 flex flex-col md:flex-row gap-10 items-center card-glow-red">
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 md:p-10 flex flex-col md:flex-row gap-8 md:gap-10 items-center card-glow-red">
                         <div class="w-full md:w-5/12 relative">
                             <div class="aspect-[4/5] bg-zinc-800 rounded-2xl overflow-hidden border border-zinc-700 flex items-center justify-center shadow-lg">
                                 <span class="text-zinc-600 font-bold uppercase text-sm">Image SKWHEEL</span>
                             </div>
-                            <div class="absolute -bottom-4 right-4 bg-zinc-900 border border-zinc-700 px-4 py-2 rounded-lg flex items-center shadow-xl">
-                                <span class="text-[#00e5ff] font-bold text-sm">+150K Revenue ↑</span>
+                            <div class="absolute -bottom-3 right-3 bg-zinc-900 border border-zinc-700 px-4 py-2 rounded-lg flex items-center shadow-xl">
+                                <span class="text-[#00e5ff] font-bold text-xs md:text-sm">+150K <span x-text="t[lang].proofRev"></span> ↑</span>
                             </div>
                         </div>
                         <div class="w-full md:w-7/12 space-y-4">
-                            <div class="text-[#FFC107] font-black uppercase tracking-widest text-sm">HEALTH & SPORT</div>
-                            <h3 class="text-4xl font-black text-white uppercase tracking-tighter">SKWHELL</h3>
-                            <div class="space-y-1 text-2xl font-bold tracking-tight">
-                                <div><span class="text-[#00e5ff]">150K</span> Revenue</div>
+                            <div class="text-[#FFC107] font-black uppercase tracking-widest text-xs md:text-sm" x-text="t[lang].proof3Tag"></div>
+                            <h3 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter">SKWHELL</h3>
+                            <div class="space-y-1 text-xl md:text-2xl font-bold tracking-tight">
+                                <div><span class="text-[#00e5ff]">150K</span> <span x-text="t[lang].proofRev"></span></div>
                                 <div><span class="text-[#00e5ff]">4.2X</span> ROAS</div>
-                                <div><span class="text-[#00e5ff]">1st</span> Product Launch</div>
+                                <div><span class="text-[#00e5ff]" x-text="t[lang].proofLaunch"></span></div>
                             </div>
-                            <p class="text-gray-400 text-sm leading-relaxed mt-6">For Skwheel's first product launch, we applied our creative testing OS to pinpoint top-performing drivers - format, style, and USP. We produced multi-market assets in several languages, driving $150K+ revenue and 4.2x ROAS.</p>
+                            <p class="text-gray-400 text-xs md:text-sm leading-relaxed mt-6" x-text="t[lang].proof3Desc"></p>
                         </div>
                     </div>
 
-                    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 md:p-10 flex flex-col md:flex-row-reverse gap-10 items-center card-glow-yellow">
+                    <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6 md:p-10 flex flex-col md:flex-row-reverse gap-8 md:gap-10 items-center card-glow-yellow">
                         <div class="w-full md:w-5/12 relative">
                             <div class="aspect-[4/5] bg-zinc-800 rounded-2xl overflow-hidden border border-zinc-700 flex items-center justify-center shadow-lg relative">
                                 <span class="text-zinc-600 font-bold uppercase text-sm">Image Rosegold</span>
-                                <div class="absolute top-4 right-4 bg-zinc-900 border border-zinc-700 px-3 py-1 rounded-lg">
-                                    <span class="text-[#00e5ff] font-black">-22% CPA</span>
+                                <div class="absolute top-3 right-3 bg-zinc-900 border border-zinc-700 px-3 py-1 rounded-lg">
+                                    <span class="text-[#00e5ff] font-black text-xs">-22% CPA</span>
                                 </div>
                             </div>
-                            <div class="absolute -bottom-4 left-4 bg-zinc-900 border border-zinc-700 px-4 py-2 rounded-lg flex items-center shadow-xl z-10">
-                                <span class="text-[#00e5ff] font-bold text-sm">+30% Spend ↑</span>
+                            <div class="absolute -bottom-3 left-3 bg-zinc-900 border border-zinc-700 px-4 py-2 rounded-lg flex items-center shadow-xl z-10">
+                                <span class="text-[#00e5ff] font-bold text-xs md:text-sm">+30% <span x-text="t[lang].proofSpend"></span> ↑</span>
                             </div>
                         </div>
                         <div class="w-full md:w-7/12 space-y-4">
-                            <div class="text-[#FFC107] font-black uppercase tracking-widest text-sm">BEAUTY & HEALTH</div>
-                            <h3 class="text-4xl font-black text-white uppercase tracking-tighter">Rosegold</h3>
-                            <div class="space-y-1 text-2xl font-bold tracking-tight">
-                                <div><span class="text-[#00e5ff]">+50</span> Assets per month</div>
+                            <div class="text-[#FFC107] font-black uppercase tracking-widest text-xs md:text-sm" x-text="t[lang].proof4Tag"></div>
+                            <h3 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter">Rosegold</h3>
+                            <div class="space-y-1 text-xl md:text-2xl font-bold tracking-tight">
+                                <div><span class="text-[#00e5ff]">+50</span> <span x-text="t[lang].proof4Stat1"></span></div>
                                 <div><span class="text-[#00e5ff]">-22%</span> CPA</div>
                                 <div><span class="text-[#00e5ff]">+1pt</span> ROAS</div>
                             </div>
-                            <p class="text-gray-400 text-sm leading-relaxed mt-6">Executed a rebranding campaign for Rosegold, a premium personal care brand under Swissklip. Delivered 50+ on-brand creatives per month, enhancing brand perception, scaling content output, and significantly improving paid media efficiency.</p>
+                            <p class="text-gray-400 text-xs md:text-sm leading-relaxed mt-6" x-text="t[lang].proof4Desc"></p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="mt-16 text-center">
-                    <a href="https://calendly.com/lucabesson333/30min" target="_blank" class="inline-block bg-[#FF0000] text-white px-10 py-4 rounded-lg font-black text-sm hover:bg-red-700 transition shadow-[0_0_20px_rgba(255,0,0,0.4)] tracking-widest uppercase" x-text="t[lang].navBtn"></a>
+                    <a href="https://calendly.com/lucabesson333/30min" target="_blank" class="w-full md:w-auto inline-block bg-[#FF0000] text-white px-10 py-4 rounded-lg font-black text-sm md:text-base hover:bg-red-700 transition shadow-[0_0_20px_rgba(255,0,0,0.4)] tracking-widest uppercase text-center" x-text="t[lang].navBtn"></a>
                     <div class="mt-6 flex justify-center items-center gap-2 opacity-60">
                         <span class="font-black text-xl tracking-tighter">Google</span>
                         <span class="text-xs uppercase font-bold tracking-widest">Reviews <span class="text-yellow-500">★★★★★</span></span>
@@ -363,51 +360,42 @@
             </div>
         </section>
 
-        <section class="py-32 px-6 relative z-10">
+        <section class="py-24 md:py-32 px-6 relative z-10">
             <div class="max-w-5xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-black mb-16 text-center text-white uppercase tracking-tighter">Trusted by Brand & Growth Leaders</h2>
+                <h2 class="text-3xl md:text-5xl font-black mb-16 text-center text-white uppercase tracking-tighter" x-text="t[lang].trustTitle"></h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-white rounded-2xl p-8 text-black relative shadow-xl hover:-translate-y-1 transition duration-300">
+                    <div class="bg-white rounded-2xl p-6 md:p-8 text-black relative shadow-xl hover:-translate-y-1 transition duration-300">
                         <div class="absolute top-6 left-6 text-blue-600">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                        </div>
-                        <div class="absolute top-6 right-6 text-gray-400">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </div>
                         <div class="flex items-center gap-4 mb-6 mt-8">
                             <div class="w-12 h-12 bg-gray-200 rounded-full flex-shrink-0"></div>
                             <div>
                                 <div class="font-bold text-sm flex items-center gap-1">Sandra Milena Barragán <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg></div>
-                                <div class="text-gray-500 text-xs">Marketing Director Renault LATAM</div>
+                                <div class="text-gray-500 text-xs" x-text="t[lang].trust1Role"></div>
                             </div>
                         </div>
-                        <p class="text-sm text-gray-800 leading-relaxed">Geoffrey is dependable, innovative, and strategic. He took initiative on global campaigns coordination on the LATAM area at Renault Group, delivering polished performance creative on time, every time.</p>
+                        <p class="text-sm text-gray-800 leading-relaxed" x-text="t[lang].trust1Text"></p>
                     </div>
 
-                    <div class="bg-white rounded-2xl p-8 text-black relative shadow-xl hover:-translate-y-1 transition duration-300">
+                    <div class="bg-white rounded-2xl p-6 md:p-8 text-black relative shadow-xl hover:-translate-y-1 transition duration-300">
                         <div class="absolute top-6 left-6 text-blue-600">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                        </div>
-                        <div class="absolute top-6 right-6 text-gray-400">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </div>
                         <div class="flex items-center gap-4 mb-6 mt-8">
                             <div class="w-12 h-12 bg-gray-200 rounded-full flex-shrink-0"></div>
                             <div>
                                 <div class="font-bold text-sm flex items-center gap-1">Morad Adjaoud <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg></div>
-                                <div class="text-gray-500 text-xs">Performance Director Dior</div>
+                                <div class="text-gray-500 text-xs" x-text="t[lang].trust2Role"></div>
                             </div>
                         </div>
-                        <p class="text-sm text-gray-800 leading-relaxed">Geoffrey was an awesome person to work with. He is a detail / target / results oriented co-worker. His knowledge in brand marketing, digital media and consumer trends is vast and extensive.</p>
+                        <p class="text-sm text-gray-800 leading-relaxed" x-text="t[lang].trust2Text"></p>
                     </div>
 
-                    <div class="bg-white rounded-2xl p-8 text-black relative shadow-xl hover:-translate-y-1 transition duration-300">
+                    <div class="bg-white rounded-2xl p-6 md:p-8 text-black relative shadow-xl hover:-translate-y-1 transition duration-300">
                         <div class="absolute top-6 left-6 text-blue-600">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                        </div>
-                        <div class="absolute top-6 right-6 text-gray-400">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </div>
                         <div class="flex items-center gap-4 mb-6 mt-8">
                             <div class="w-12 h-12 bg-gray-200 rounded-full flex-shrink-0"></div>
@@ -416,98 +404,89 @@
                                 <div class="text-gray-500 text-xs">+30M Ad Spend</div>
                             </div>
                         </div>
-                        <p class="text-sm text-gray-800 leading-relaxed">Geoffrey is a strategist at the forefront of ad creative strategy, combining human quality with a data-driven approach to drive performance for DTC brand. His relentless pursuit of knowledge and ambition to position RYZE as an industry leader are reflected in everything he doe</p>
+                        <p class="text-sm text-gray-800 leading-relaxed" x-text="t[lang].trust3Text"></p>
                     </div>
 
-                    <div class="bg-white rounded-2xl p-8 text-black relative shadow-xl hover:-translate-y-1 transition duration-300">
+                    <div class="bg-white rounded-2xl p-6 md:p-8 text-black relative shadow-xl hover:-translate-y-1 transition duration-300">
                         <div class="absolute top-6 left-6 text-blue-600">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                        </div>
-                        <div class="absolute top-6 right-6 text-gray-400">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </div>
                         <div class="flex items-center gap-4 mb-6 mt-8">
                             <div class="w-12 h-12 bg-gray-200 rounded-full flex-shrink-0"></div>
                             <div>
                                 <div class="font-bold text-sm flex items-center gap-1">Vincent Castello <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg></div>
-                                <div class="text-gray-500 text-xs">Art Director, ex-Twitter, Coke & Google</div>
+                                <div class="text-gray-500 text-xs" x-text="t[lang].trust4Role"></div>
                             </div>
                         </div>
-                        <p class="text-sm text-gray-800 leading-relaxed">Geoffrey was one of my key partners at Publicis Media when I was at The Coca-Cola Company, and working with him was always a pleasure. He's a brilliant creative strategist, a sharp media buying expert, and a true leader.</p>
+                        <p class="text-sm text-gray-800 leading-relaxed" x-text="t[lang].trust4Text"></p>
                     </div>
 
-                    <div class="bg-white rounded-2xl p-8 text-black relative shadow-xl hover:-translate-y-1 transition duration-300">
+                    <div class="bg-white rounded-2xl p-6 md:p-8 text-black relative shadow-xl hover:-translate-y-1 transition duration-300">
                         <div class="absolute top-6 left-6 text-blue-600">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                        </div>
-                        <div class="absolute top-6 right-6 text-gray-400">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </div>
                         <div class="flex items-center gap-4 mb-6 mt-8">
                             <div class="w-12 h-12 bg-gray-200 rounded-full flex-shrink-0"></div>
                             <div>
                                 <div class="font-bold text-sm flex items-center gap-1">Sofian Kabiri <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg></div>
-                                <div class="text-gray-500 text-xs">Growth Marketer SKWHEEL</div>
+                                <div class="text-gray-500 text-xs" x-text="t[lang].trust5Role"></div>
                             </div>
                         </div>
-                        <p class="text-sm text-gray-800 leading-relaxed">RYZE team integrated seamlessly into our Skwheel launch. From zero to $150K revenue and a 4.2x ROAS on our first product launch, their creative strategy didn't just hit—it scaled. Strategic, fast, and focused on what converts. Geoffrey's output, speed and efficiency is next level.</p>
+                        <p class="text-sm text-gray-800 leading-relaxed" x-text="t[lang].trust5Text"></p>
                     </div>
 
-                    <div class="bg-white rounded-2xl p-8 text-black relative shadow-xl hover:-translate-y-1 transition duration-300">
+                    <div class="bg-white rounded-2xl p-6 md:p-8 text-black relative shadow-xl hover:-translate-y-1 transition duration-300">
                         <div class="absolute top-6 left-6 text-blue-600">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                        </div>
-                        <div class="absolute top-6 right-6 text-gray-400">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </div>
                         <div class="flex items-center gap-4 mb-6 mt-8">
                             <div class="w-12 h-12 bg-gray-200 rounded-full flex-shrink-0"></div>
                             <div>
                                 <div class="font-bold text-sm flex items-center gap-1">Réda Aissa <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg></div>
-                                <div class="text-gray-500 text-xs">Paid Director Accor</div>
+                                <div class="text-gray-500 text-xs" x-text="t[lang].trust6Role"></div>
                             </div>
                         </div>
-                        <p class="text-sm text-gray-800 leading-relaxed">I had the opportunity to work with RYZE team at Accor, where they used social listening to fuel creative strategies with strong consumer insights. He skillfully connected data to ideas while also demonstrating a sharp understanding of media buying, ensuring strategies were both creative and impactful. I highly recommend him!</p>
+                        <p class="text-sm text-gray-800 leading-relaxed" x-text="t[lang].trust6Text"></p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="faq" class="py-32 bg-[#e2e4e8] px-6 border-t border-gray-300 relative z-10" x-data="{ active: null }">
+        <section id="faq" class="py-24 md:py-32 bg-[#e2e4e8] px-6 border-t border-gray-300 relative z-10" x-data="{ active: null }">
             <div class="max-w-3xl mx-auto">
-                <h2 class="text-4xl font-black mb-16 uppercase tracking-tighter text-center text-black" x-text="t[lang].faqTitle"></h2>
+                <h2 class="text-3xl md:text-5xl font-black mb-16 uppercase tracking-tighter text-center text-black" x-text="t[lang].faqTitle"></h2>
                 
                 <div class="mb-10">
                     <h3 class="gradient-text-ry font-black mb-6 uppercase tracking-widest text-sm border-b border-gray-400 pb-2" x-text="t[lang].faqCat1"></h3>
                     
                     <div class="space-y-4">
                         <div class="bg-white border border-gray-300 rounded-xl overflow-hidden transition-all shadow-sm">
-                            <button @click="active !== 1 ? active = 1 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm text-black hover:text-[#FF0000] transition flex justify-between items-center">
+                            <button @click="active !== 1 ? active = 1 : active = null" class="w-full text-left p-6 font-bold uppercase text-xs md:text-sm text-black hover:text-[#FF0000] transition flex justify-between items-center">
                                 <span x-text="t[lang].faq1Q"></span>
                                 <span class="text-xl font-normal" x-text="active === 1 ? '-' : '+'"></span>
                             </button>
                             <div x-show="active === 1" x-collapse x-cloak>
-                                <div class="p-6 pt-0 text-gray-700 font-medium" x-text="t[lang].faq1A"></div>
+                                <div class="p-6 pt-0 text-gray-700 text-sm md:text-base font-medium" x-text="t[lang].faq1A"></div>
                             </div>
                         </div>
 
                         <div class="bg-white border border-gray-300 rounded-xl overflow-hidden transition-all shadow-sm">
-                            <button @click="active !== 2 ? active = 2 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm text-black hover:text-[#FF0000] transition flex justify-between items-center">
+                            <button @click="active !== 2 ? active = 2 : active = null" class="w-full text-left p-6 font-bold uppercase text-xs md:text-sm text-black hover:text-[#FF0000] transition flex justify-between items-center">
                                 <span x-text="t[lang].faq2Q"></span>
                                 <span class="text-xl font-normal" x-text="active === 2 ? '-' : '+'"></span>
                             </button>
                             <div x-show="active === 2" x-collapse x-cloak>
-                                <div class="p-6 pt-0 text-gray-700 font-medium" x-text="t[lang].faq2A"></div>
+                                <div class="p-6 pt-0 text-gray-700 text-sm md:text-base font-medium" x-text="t[lang].faq2A"></div>
                             </div>
                         </div>
 
                         <div class="bg-white border border-gray-300 rounded-xl overflow-hidden transition-all shadow-sm">
-                            <button @click="active !== 3 ? active = 3 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm text-black hover:text-[#FF0000] transition flex justify-between items-center">
+                            <button @click="active !== 3 ? active = 3 : active = null" class="w-full text-left p-6 font-bold uppercase text-xs md:text-sm text-black hover:text-[#FF0000] transition flex justify-between items-center">
                                 <span x-text="t[lang].faq3Q"></span>
                                 <span class="text-xl font-normal" x-text="active === 3 ? '-' : '+'"></span>
                             </button>
                             <div x-show="active === 3" x-collapse x-cloak>
-                                <div class="p-6 pt-0 text-gray-700 font-medium" x-text="t[lang].faq3A"></div>
+                                <div class="p-6 pt-0 text-gray-700 text-sm md:text-base font-medium" x-text="t[lang].faq3A"></div>
                             </div>
                         </div>
                     </div>
@@ -518,32 +497,32 @@
                     
                     <div class="space-y-4">
                         <div class="bg-white border border-gray-300 rounded-xl overflow-hidden transition-all shadow-sm">
-                            <button @click="active !== 4 ? active = 4 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm text-black hover:text-[#FF0000] transition flex justify-between items-center">
+                            <button @click="active !== 4 ? active = 4 : active = null" class="w-full text-left p-6 font-bold uppercase text-xs md:text-sm text-black hover:text-[#FF0000] transition flex justify-between items-center">
                                 <span x-text="t[lang].faq4Q"></span>
                                 <span class="text-xl font-normal" x-text="active === 4 ? '-' : '+'"></span>
                             </button>
                             <div x-show="active === 4" x-collapse x-cloak>
-                                <div class="p-6 pt-0 text-gray-700 font-medium" x-text="t[lang].faq4A"></div>
+                                <div class="p-6 pt-0 text-gray-700 text-sm md:text-base font-medium" x-text="t[lang].faq4A"></div>
                             </div>
                         </div>
 
                         <div class="bg-white border border-gray-300 rounded-xl overflow-hidden transition-all shadow-sm">
-                            <button @click="active !== 5 ? active = 5 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm text-black hover:text-[#FF0000] transition flex justify-between items-center">
+                            <button @click="active !== 5 ? active = 5 : active = null" class="w-full text-left p-6 font-bold uppercase text-xs md:text-sm text-black hover:text-[#FF0000] transition flex justify-between items-center">
                                 <span x-text="t[lang].faq5Q"></span>
                                 <span class="text-xl font-normal" x-text="active === 5 ? '-' : '+'"></span>
                             </button>
                             <div x-show="active === 5" x-collapse x-cloak>
-                                <div class="p-6 pt-0 text-gray-700 font-medium" x-text="t[lang].faq5A"></div>
+                                <div class="p-6 pt-0 text-gray-700 text-sm md:text-base font-medium" x-text="t[lang].faq5A"></div>
                             </div>
                         </div>
 
                         <div class="bg-white border border-gray-300 rounded-xl overflow-hidden transition-all shadow-sm">
-                            <button @click="active !== 6 ? active = 6 : active = null" class="w-full text-left p-6 font-bold uppercase text-sm text-black hover:text-[#FF0000] transition flex justify-between items-center">
+                            <button @click="active !== 6 ? active = 6 : active = null" class="w-full text-left p-6 font-bold uppercase text-xs md:text-sm text-black hover:text-[#FF0000] transition flex justify-between items-center">
                                 <span x-text="t[lang].faq6Q"></span>
                                 <span class="text-xl font-normal" x-text="active === 6 ? '-' : '+'"></span>
                             </button>
                             <div x-show="active === 6" x-collapse x-cloak>
-                                <div class="p-6 pt-0 text-gray-700 font-medium" x-text="t[lang].faq6A"></div>
+                                <div class="p-6 pt-0 text-gray-700 text-sm md:text-base font-medium" x-text="t[lang].faq6A"></div>
                             </div>
                         </div>
                     </div>
@@ -552,35 +531,35 @@
             </div>
         </section>
 
-        <footer id="footer-funnel" class="py-32 bg-black text-center border-t border-zinc-800 relative z-10">
+        <footer id="footer-funnel" class="py-24 md:py-32 bg-black text-center border-t border-zinc-800 relative z-10">
             <div class="max-w-4xl mx-auto px-6 relative z-10">
-                <p class="text-[#FF0000] font-black tracking-widest uppercase mb-6 text-sm" x-text="t[lang].footerHeader"></p>
-                <h2 class="text-6xl md:text-9xl font-black mb-8 uppercase tracking-tighter text-white" x-text="t[lang].footerTitle"></h2>
+                <p class="text-[#FF0000] font-black tracking-widest uppercase mb-6 text-xs md:text-sm" x-text="t[lang].footerHeader"></p>
+                <h2 class="text-5xl md:text-9xl font-black mb-8 uppercase tracking-tighter text-white" x-text="t[lang].footerTitle"></h2>
                 
-                <p class="text-gray-400 mb-12 text-lg md:text-xl" x-text="t[lang].footerSub"></p>
+                <p class="text-gray-400 mb-12 text-base md:text-xl" x-text="t[lang].footerSub"></p>
                 
                 <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-24">
-                    <a href="https://calendly.com/lucabesson333/30min" target="_blank" class="w-full md:w-auto bg-[#FFC107] text-black px-10 py-5 rounded-lg font-black text-sm hover:bg-yellow-500 transition uppercase tracking-widest" x-text="t[lang].footerBtn1"></a>
-                    <a href="https://wa.me/MESSAGE" target="_blank" class="w-full md:w-auto bg-transparent border border-zinc-700 text-white px-10 py-5 rounded-lg font-black text-sm hover:bg-zinc-900 transition uppercase tracking-widest" x-text="t[lang].footerBtn2"></a>
+                    <a href="https://calendly.com/lucabesson333/30min" target="_blank" class="w-full md:w-auto bg-[#FFC107] text-black px-6 md:px-10 py-4 md:py-5 rounded-lg font-black text-xs md:text-sm hover:bg-yellow-500 transition uppercase tracking-widest" x-text="t[lang].footerBtn1"></a>
+                    <a href="https://wa.me/MESSAGE" target="_blank" class="w-full md:w-auto bg-transparent border border-zinc-700 text-white px-6 md:px-10 py-4 md:py-5 rounded-lg font-black text-xs md:text-sm hover:bg-zinc-900 transition uppercase tracking-widest" x-text="t[lang].footerBtn2"></a>
                 </div>
 
-                <div class="flex justify-center items-center gap-8 opacity-40 grayscale">
-                    <div class="font-black text-xl tracking-tighter flex items-center gap-2">
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 opacity-40 grayscale">
+                    <div class="font-black text-lg md:text-xl tracking-tighter flex items-center gap-2">
                         <span>Google Reviews</span>
-                        <span class="text-white text-sm">★★★★★</span>
+                        <span class="text-white text-xs md:text-sm">★★★★★</span>
                     </div>
-                    <div class="font-black text-xl tracking-tighter flex items-center gap-2">
-                        <div class="flex space-x-1"><div class="w-2 h-4 bg-white"></div><div class="w-2 h-4 bg-white"></div><div class="w-2 h-4 bg-white"></div></div>
+                    <div class="font-black text-lg md:text-xl tracking-tighter flex items-center gap-2">
+                        <div class="flex space-x-1"><div class="w-1.5 h-3 md:w-2 md:h-4 bg-white"></div><div class="w-1.5 h-3 md:w-2 md:h-4 bg-white"></div><div class="w-1.5 h-3 md:w-2 md:h-4 bg-white"></div></div>
                         RYZE Performance
                     </div>
                 </div>
                 
-                <div class="mt-20 pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p class="text-zinc-600 text-[10px] tracking-[0.5em] uppercase font-bold">© 2026 THE SCALER'S AGENCY — HIGH PERFORMANCE ONLY</p>
-                    <div class="flex space-x-6 text-zinc-600 text-xs uppercase tracking-widest font-bold">
-                        <a href="#" class="hover:text-white transition">Privacy Policy</a>
-                        <a href="#" class="hover:text-white transition">Terms of Service</a>
-                        <a href="#" class="hover:text-white transition">Legal Notice</a>
+                <div class="mt-20 pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+                    <p class="text-zinc-600 text-[9px] md:text-[10px] tracking-[0.3em] md:tracking-[0.5em] uppercase font-bold" x-text="t[lang].copyright"></p>
+                    <div class="flex flex-wrap justify-center gap-4 text-zinc-600 text-[10px] md:text-xs uppercase tracking-widest font-bold mt-4 md:mt-0">
+                        <a href="#" class="hover:text-white transition" x-text="t[lang].privacy"></a>
+                        <a href="#" class="hover:text-white transition" x-text="t[lang].terms"></a>
+                        <a href="#" class="hover:text-white transition" x-text="t[lang].legal"></a>
                     </div>
                 </div>
             </div>
@@ -620,12 +599,12 @@
                 this.angle = Math.random() * Math.PI * 2;
                 
                 let rand = Math.random();
-                if (rand > 0.985) {
+                if (rand > 0.99) { // Seulement 1% de chance -> Rare & Massif
                     this.type = 'yt';
-                    this.size = Math.random() * 15 + 25; 
-                } else if (rand > 0.97) {
+                    this.size = Math.random() * 20 + 35; // Taille entre 35px et 55px
+                } else if (rand > 0.98) {
                     this.type = 'gads';
-                    this.size = Math.random() * 15 + 25;
+                    this.size = Math.random() * 20 + 35; // Taille entre 35px et 55px
                 } else {
                     this.type = 'electron';
                     this.size = Math.random() * 1.5 + 0.2;
@@ -668,8 +647,19 @@
                 } else {
                     let img = this.type === 'gads' ? gadsImg : ytImg;
                     if (img.complete) {
+                        // Conserver les proportions exactes
+                        let ratio = img.width / img.height;
+                        let drawW = this.size;
+                        let drawH = this.size;
+                        
+                        if (ratio > 1) { // Plus large que haut
+                            drawH = this.size / ratio;
+                        } else { // Plus haut que large
+                            drawW = this.size * ratio;
+                        }
+
                         ctx.globalAlpha = 0.8;
-                        ctx.drawImage(img, this.x - this.size/2, this.y - this.size/2, this.size, this.size);
+                        ctx.drawImage(img, this.x - drawW/2, this.y - drawH/2, drawW, drawH);
                         ctx.globalAlpha = 1.0;
                     }
                 }
@@ -729,13 +719,13 @@
                         portTitle: "Creative Assets & Finance Wins",
                         portSub: "Des Shorts produits par RYZE, optimisés par TSA. Nous ne produisons pas de l'art, nous produisons de la conversion.",
                         
-                        compTitle: "COMPLIANCE ISN'T A LIMIT ANYMORE",
+                        compTitle: "LA COMPLIANCE N'EST PLUS UNE LIMITE",
                         compSub: "La publicité financière est un champ de mines. Les suspensions tuent votre trésorerie. Voici comment nous détruisons ces barrières.",
-                        compB1T: "THE FINANCE TRAP", compB1S: "BANS & SUSPENSIONS", compB1D: "Comptes suspendus à répétition. La compliance stricte bloque vos campagnes et détruit votre ROI.",
-                        compB2T: "ZERO DOWNTIME", compB2S: "INSTANT REPLACEMENT", compB2D: "Notre solution : des comptes publicitaires remplaçables à la seconde. Votre acquisition ne s'arrête jamais.",
-                        compB3T: "GOOGLE APPROVED", compB3S: "CERTIFICATION MASTERY", compB3D: "Méthodes internes prouvées pour obtenir et valider vos certifications financières complexes rapidement.",
-                        compB4T: "NO CERT? NO PROBLEM", compB4S: "COMPLIANT SCALING", compB4D: "Même sans certification, nos frameworks créatifs performent massivement tout en respectant les algorithmes.",
-                        compB5T: "UNFAIR ADVANTAGE", compB5S: "OUTPERFORM", compB5D: "Laissez vos concurrents se débattre avec le support. Scalez violemment pendant qu'ils sont bloqués.",
+                        compB1T: "LE PIÈGE FINANCIER", compB1S: "BANNISSEMENTS & SUSPENSIONS", compB1D: "Comptes suspendus à répétition. La compliance stricte bloque vos campagnes et détruit votre ROI.",
+                        compB2T: "ZÉRO INTERRUPTION", compB2S: "REMPLACEMENT INSTANTANÉ", compB2D: "Notre solution : des comptes publicitaires remplaçables à la seconde. Votre acquisition ne s'arrête jamais.",
+                        compB3T: "APPROUVÉ PAR GOOGLE", compB3S: "MAÎTRISE DES CERTIFICATIONS", compB3D: "Méthodes internes prouvées pour obtenir et valider vos certifications financières complexes rapidement.",
+                        compB4T: "PAS DE CERTIF ? PAS DE SOUCI", compB4S: "SCALE CONFORME", compB4D: "Même sans certification, nos frameworks créatifs performent massivement tout en respectant les algorithmes.",
+                        compB5T: "AVANTAGE DÉLOYAL", compB5S: "SURPERFORMEZ", compB5D: "Laissez vos concurrents se débattre avec le support. Scalez violemment pendant qu'ils sont bloqués.",
 
                         methTitle: "Your Scaling Process",
                         meth1Title: "Audit & Strategy (TSA)", meth1Desc: "J'analyse ton funnel, tes métriques et tes goulots d'étranglement financiers. On ne lance rien sans avoir cartographié le chemin vers le ROI.",
@@ -743,9 +733,25 @@
                         meth3Title: "Media & Data-Buying", meth3Desc: "Je configure l'écosystème publicitaire sur Google & YouTube. Ciblage ultra-précis, audiences d'exclusion, pilotage algorithmique.",
                         meth4Title: "Optimize", meth4Desc: "Analyse froide de la donnée. Chaque € dépensé est tracé. On tue ce qui ne marche pas, on double ce qui convertit.",
                         meth5Title: "SCALE", meth5Desc: "Une fois le CPA stabilisé, on ouvre les vannes pour dominer le marché des plateformes financières.",
+                        
                         revTitle: "Le Duo de Choc à votre service.",
-                        revQuote: "Nous avons combiné la force de frappe analytique de TSA avec l'expérience sans pareil et incommensurable auprès des plus grands accumulée par Ryze Performance.",
+                        revQuote: "Nous avons combiné la force de frappe analytique de TSA avec l'expérience sans pareil et incommensurable que Ryze Performance a accumulée auprès des plus grands noms comme Coca Cola.",
                         revAuthor: "CEO - The Scaler's Agency",
+                        
+                        proofTitle: "La Preuve par la Performance", proofRev: "Revenus", proofSpend: "Dépenses Ads", proofLaunch: "1er Lancement",
+                        proof1Tag: "SANTÉ & BIEN-ÊTRE", proof1Stat1: "Créas / mois", proof1Desc: "Direction du rebranding créatif de Swissklip, une marque premium de soins. Plus de 50 créas statiques générées pour élever la perception et scaler la production de contenu.",
+                        proof2Tag: "APPLICATION MOBILE", proof2Stat1: "CPA en 4 mois", proof2Stat2: "Créas Produites", proof2Desc: "Mojo aide les créateurs à générer des Reels et TikTok tendances en quelques secondes. L'application d'une méthodologie de test stricte a généré une croissance énorme en 6 mois sur 5 marchés (FR, US, ES, BR, DE).",
+                        proof3Tag: "SANTÉ & SPORT", proof3Desc: "Pour le premier lancement produit de Skwheel, nous avons isolé les meilleurs vecteurs de performance (format, style, USP). Des assets multilingues générant 150K$+ et un ROAS de 4.2x.",
+                        proof4Tag: "BEAUTÉ & SANTÉ", proof4Stat1: "Assets / mois", proof4Desc: "Exécution d'une campagne de rebranding pour Rosegold. 50+ créatives par mois ont massivement amélioré l'efficacité des campagnes payantes et propulsé le scale.",
+                        
+                        trustTitle: "Validé par les Leaders de la Croissance",
+                        trust1Role: "Marketing Director Renault LATAM", trust1Text: "Geoffrey est fiable, innovant et stratégique. Il a pris des initiatives sur la coordination des campagnes globales chez Renault Group, livrant des créas performantes à temps, à chaque fois.",
+                        trust2Role: "Performance Director Dior", trust2Text: "Ce fut génial de travailler avec Geoffrey. C'est un collaborateur axé sur les détails et les résultats. Ses connaissances en marketing de marque et tendances consommateurs sont vastes.",
+                        trust3Text: "Geoffrey est à l'avant-garde de la stratégie créative publicitaire, combinant qualité humaine et approche data-driven pour booster la performance. Son ambition fait de RYZE un leader.",
+                        trust4Role: "Art Director, ex-Twitter, Coke & Google", trust4Text: "Geoffrey fut l'un de mes partenaires clés chez Publicis Media pour Coca-Cola. C'est un stratège créatif brillant, un expert affûté du media buying et un véritable leader.",
+                        trust5Role: "Growth Marketer SKWHEEL", trust5Text: "L'équipe RYZE s'est intégrée parfaitement à notre lancement. De 0 à 150K$ avec un ROAS de 4.2x. Stratégique, rapide et focalisé sur ce qui convertit. Son efficacité est du niveau supérieur.",
+                        trust6Role: "Paid Director Accor", trust6Text: "Il a connecté avec habileté la donnée aux idées, tout en démontrant une compréhension experte du media buying, assurant des stratégies à la fois créatives et impactantes. Je le recommande vivement !",
+
                         faqTitle: "F.A.Q", faqCat1: "Processus", faqCat2: "Performance",
                         faq1Q: "Pourquoi ce duo (TSA x RYZE) ?", faq1A: "Parce que la créa sans data est un pari, et la data sans créa est une perte de temps. On apporte l'excellence des deux mondes.",
                         faq2Q: "Ryze s'occupe de toutes les créations ?", faq2A: "Oui, tout est clé en main. Ils gèrent la production visuelle, je gère la diffusion et l'optimisation mathématique.",
@@ -753,8 +759,10 @@
                         faq4Q: "Comment mesurez-vous le ROI ?", faq4A: "À travers le suivi rigoureux des conversions : leads qualifiés, inscriptions brokers, ou actions de valeur directe.",
                         faq5Q: "Pourquoi YouTube Shorts ?", faq5A: "C'est le format le plus sous-coté pour la finance : visibilité massive, CPM bas, et attention maximale.",
                         faq6Q: "Est-ce compatible avec mon budget ?", faq6A: "Si ton business est déjà rentable, notre système est conçu pour accélérer ta croissance sans risque inutile.",
+                        
                         footerHeader: "GROWTH PARTNER FOR FINANCE BUSINESSES", footerTitle: "Let's Scale", footerSub: "Get your discovery call booked in or connect with me to see if I can help.",
-                        footerBtn1: "Request your free audit", footerBtn2: "Or Speak directly to me"
+                        footerBtn1: "Request your free audit", footerBtn2: "Or Speak directly to me",
+                        copyright: "© 2026 THE SCALER'S AGENCY — HIGH PERFORMANCE ONLY", privacy: "Privacy Policy", terms: "Terms of Service", legal: "Legal Notice"
                     },
                     en: {
                         navPortfolio: "Portfolio", navCases: "Case Studies", navHow: "How it works", navReviews: "Reviews", navFaq: "FAQs", navBtn: "Request your free audit",
@@ -780,9 +788,25 @@
                         meth3Title: "Media & Data-Buying", meth3Desc: "I set up the advertising ecosystem on Google & YouTube. Ultra-precise targeting, exclusion audiences, algorithmic steering.",
                         meth4Title: "Optimize", meth4Desc: "Cold data analysis. Every € spent is tracked. We kill what doesn't work, we double down on what converts.",
                         meth5Title: "SCALE", meth5Desc: "Once the CPA is stabilized, we open the floodgates to dominate the financial platforms market.",
-                        revTitle: "Le Duo de Choc à votre service.",
-                        revQuote: "We have combined the analytical striking force of TSA with the unparalleled and immeasurable experience accumulated by Ryze Performance working with the biggest names.",
+                        
+                        revTitle: "The Power Duo at your service.",
+                        revQuote: "We have combined the analytical striking force of TSA with the unparalleled and immeasurable experience Ryze Performance has accumulated working with the biggest names like Coca Cola.",
                         revAuthor: "CEO - The Scaler's Agency",
+
+                        proofTitle: "The Proof Is In The Performance", proofRev: "Revenue", proofSpend: "Ad Spend", proofLaunch: "1st Product Launch",
+                        proof1Tag: "HEALTH & WELLNESS", proof1Stat1: "Statics per month", proof1Desc: "Led a creative rebranding initiative for Swissklip, a premium personal care brand. Delivered over 50+ static creatives, elevating brand perception and scaling content production.",
+                        proof2Tag: "MOBILE APP / CREATIVES", proof2Stat1: "CPA in 4 months", proof2Stat2: "Creatives Produced", proof2Desc: "Mojo helps content creators create trending Reels & TikTok and Reels videos in seconds. By applying a strong testing methodology, generated significant growth through creative performance strategy over 6 months. We produced 250 creatives across 5 markets (FR, US, ES, BR, DE).",
+                        proof3Tag: "HEALTH & SPORT", proof3Desc: "For Skwheel's first product launch, we applied our creative testing OS to pinpoint top-performing drivers - format, style, and USP. We produced multi-market assets in several languages, driving $150K+ revenue and 4.2x ROAS.",
+                        proof4Tag: "BEAUTY & HEALTH", proof4Stat1: "Assets per month", proof4Desc: "Executed a rebranding campaign for Rosegold, a premium personal care brand under Swissklip. Delivered 50+ on-brand creatives per month, enhancing brand perception, scaling content output, and significantly improving paid media efficiency.",
+                        
+                        trustTitle: "Trusted by Brand & Growth Leaders",
+                        trust1Role: "Marketing Director Renault LATAM", trust1Text: "Geoffrey is dependable, innovative, and strategic. He took initiative on global campaigns coordination on the LATAM area at Renault Group, delivering polished performance creative on time, every time.",
+                        trust2Role: "Performance Director Dior", trust2Text: "Geoffrey was an awesome person to work with. He is a detail / target / results oriented co-worker. His knowledge in brand marketing, digital media and consumer trends is vast and extensive.",
+                        trust3Text: "Geoffrey is a strategist at the forefront of ad creative strategy, combining human quality with a data-driven approach to drive performance for DTC brand. His relentless pursuit of knowledge and ambition to position RYZE as an industry leader are reflected in everything he does.",
+                        trust4Role: "Art Director, ex-Twitter, Coke & Google", trust4Text: "Geoffrey was one of my key partners at Publicis Media when I was at The Coca-Cola Company, and working with him was always a pleasure. He's a brilliant creative strategist, a sharp media buying expert, and a true leader.",
+                        trust5Role: "Growth Marketer SKWHEEL", trust5Text: "RYZE team integrated seamlessly into our Skwheel launch. From zero to $150K revenue and a 4.2x ROAS on our first product launch, their creative strategy didn't just hit—it scaled. Strategic, fast, and focused on what converts. Geoffrey's output, speed and efficiency is next level.",
+                        trust6Role: "Paid Director Accor", trust6Text: "I had the opportunity to work with RYZE team at Accor, where they used social listening to fuel creative strategies with strong consumer insights. He skillfully connected data to ideas while also demonstrating a sharp understanding of media buying, ensuring strategies were both creative and impactful. I highly recommend him!",
+
                         faqTitle: "F.A.Q", faqCat1: "Process", faqCat2: "Performance",
                         faq1Q: "Why this duo (TSA x RYZE)?", faq1A: "Because creative without data is a gamble, and data without creative is a waste of time. We bring the best of both worlds.",
                         faq2Q: "Does Ryze handle all creations?", faq2A: "Yes, everything is turnkey. They manage visual production, I manage distribution and mathematical optimization.",
@@ -790,17 +814,19 @@
                         faq4Q: "How do you measure ROI?", faq4A: "Through rigorous conversion tracking: qualified leads, broker registrations, or direct value actions.",
                         faq5Q: "Why YouTube Shorts?", faq5A: "It's the most underrated format for finance: massive visibility, low CPM, and maximum audience attention.",
                         faq6Q: "Is it compatible with my budget?", faq6A: "If your business is already profitable, our system is designed to accelerate your growth without unnecessary risk.",
+                        
                         footerHeader: "GROWTH PARTNER FOR FINANCE BUSINESSES", footerTitle: "Let's Scale", footerSub: "Get your discovery call booked in or connect with me to see if I can help.",
-                        footerBtn1: "Request your free audit", footerBtn2: "Or Speak directly to me"
+                        footerBtn1: "Request your free audit", footerBtn2: "Or Speak directly to me",
+                        copyright: "© 2026 THE SCALER'S AGENCY — HIGH PERFORMANCE ONLY", privacy: "Privacy Policy", terms: "Terms of Service", legal: "Legal Notice"
                     },
                     es: {
-                        navPortfolio: "Portfolio", navCases: "Casos de Éxito", navHow: "Proceso", navReviews: "Reseñas", navFaq: "FAQs", navBtn: "Solicita tu auditoría gratuita",
+                        navPortfolio: "Portfolio", navCases: "Case Studies", navHow: "How it works", navReviews: "Reviews", navFaq: "FAQs", navBtn: "Request your free audit",
                         heroTag: "Google & YouTube Growth Partner",
                         heroH1: "YOUTUBE SHORT ADS", heroH2: "FOR FINANCE BUSINESSES",
                         heroSub: "Combinamos el poder creativo del estudio RYZE con una ejecución matemática de Media Buying. Cero creatividades inútiles, 100% data, ROI puro.",
-                        heroBtn1: "Solicita tu auditoría gratuita", heroBtn2: "Ver Portfolio",
-                        logosTitle: "Confían en nosotros Partners de Google y Líderes Financieros",
-                        portTitle: "Activos Creativos y Éxitos Financieros",
+                        heroBtn1: "Request your free audit", heroBtn2: "View Portfolio",
+                        logosTitle: "Trusted by Google Partners & Finance Leaders",
+                        portTitle: "Creative Assets & Finance Wins",
                         portSub: "Shorts producidos por RYZE, optimizados por TSA. No producimos arte, producimos conversiones.",
                         
                         compTitle: "LA COMPLIANCE YA NO ES UN LÍMITE",
@@ -817,18 +843,91 @@
                         meth3Title: "Media & Data-Buying", meth3Desc: "Configuro el ecosistema publicitario en Google y YouTube. Segmentación ultra precisa, audiencias de exclusión, dirección algorítmica.",
                         meth4Title: "Optimizar", meth4Desc: "Análisis frío de datos. Cada € gastado es rastreado. Matamos lo que no funciona, duplicamos lo que convierte.",
                         meth5Title: "ESCALAR", meth5Desc: "Una vez estabilizado el CPA, abrimos las compuertas para dominar el mercado financiero.",
-                        revTitle: "Le Duo de Choc à votre service.",
-                        revQuote: "Hemos combinado la fuerza de ataque analítica de TSA con la experiencia sin igual e inmensurable acumulada por Ryze Performance trabajando con los más grandes.",
+                        
+                        revTitle: "El Dúo Dinámico a tu servicio.",
+                        revQuote: "Hemos combinado la fuerza de ataque analítica de TSA con la experiencia sin igual e inmensurable que Ryze Performance ha acumulado trabajando con grandes nombres como Coca Cola.",
                         revAuthor: "CEO - The Scaler's Agency",
+
+                        proofTitle: "La Prueba está en el Rendimiento", proofRev: "Ingresos", proofSpend: "Gasto en Ads", proofLaunch: "1er Lanzamiento",
+                        proof1Tag: "SALUD Y BIENESTAR", proof1Stat1: "Creatividades / mes", proof1Desc: "Lideramos una iniciativa de rebranding creativo para Swissklip. Entregamos más de 50 creatividades estáticas, elevando la percepción de marca y escalando la producción.",
+                        proof2Tag: "APP MÓVIL / CREATIVOS", proof2Stat1: "CPA en 4 meses", proof2Stat2: "Creatividades", proof2Desc: "Mojo ayuda a los creadores a generar Reels y TikToks en segundos. Generamos un crecimiento significativo durante 6 meses en 5 mercados (FR, US, ES, BR, DE).",
+                        proof3Tag: "SALUD Y DEPORTE", proof3Desc: "Para el lanzamiento de Skwheel, aplicamos nuestro sistema para encontrar los mejores impulsores. Producimos activos en varios idiomas, logrando +150K$ de ingresos y 4.2x ROAS.",
+                        proof4Tag: "BELLEZA Y SALUD", proof4Stat1: "Activos al mes", proof4Desc: "Campaña de rebranding para Rosegold. Entregamos 50+ creatividades al mes, mejorando significativamente la eficiencia de los medios pagados.",
+                        
+                        trustTitle: "Con la confianza de los Líderes",
+                        trust1Role: "Director de Marketing Renault LATAM", trust1Text: "Geoffrey es confiable, innovador y estratégico. Tomó la iniciativa en la coordinación de campañas globales en Renault Group, entregando creatividades a tiempo.",
+                        trust2Role: "Director de Rendimiento Dior", trust2Text: "Fue increíble trabajar con Geoffrey. Está orientado al detalle y los resultados. Su conocimiento en marketing y tendencias de consumo es vasto.",
+                        trust3Text: "Geoffrey es un estratega a la vanguardia publicitaria, combinando calidad humana con un enfoque basado en datos. Su ambición hace de RYZE un líder en la industria.",
+                        trust4Role: "Director de Arte, ex-Twitter, Coke & Google", trust4Text: "Geoffrey fue clave en Publicis Media para Coca-Cola. Es un estratega brillante, un experto en media buying y un verdadero líder.",
+                        trust5Role: "Growth Marketer SKWHEEL", trust5Text: "El equipo RYZE se integró perfectamente. De 0 a 150K$ con 4.2x ROAS. Estratégico, rápido y centrado en lo que convierte.",
+                        trust6Role: "Director de Medios Accor", trust6Text: "Conectó hábilmente los datos con las ideas, demostrando un profundo entendimiento de la compra de medios. ¡Lo recomiendo ampliamente!",
+
                         faqTitle: "F.A.Q", faqCat1: "Proceso", faqCat2: "Rendimiento",
-                        faq1Q: "¿Por qué este dúo (TSA x RYZE)?", faq1A: "Porque la creatividad sin datos es una apuesta, y los datos sin creatividad son una pérdida de tiempo.",
+                        faq1Q: "¿Por qué este dúo (TSA x RYZE)?", faq1A: "Porque la creatividad sin datos es una apuesta, y los datos sin creatividad son una pérdida de tiempo. Unimos lo mejor de ambos mundos.",
                         faq2Q: "¿Ryze se encarga de todas las creaciones?", faq2A: "Sí, todo es llave en mano. Ellos gestionan la producción visual, yo la distribución y optimización.",
                         faq3Q: "¿Tiempo de implementación?", faq3A: "Rápido: auditoría en 48h, primeras creatividades en 7 días.",
                         faq4Q: "¿Cómo medís el ROI?", faq4A: "A través del seguimiento riguroso de conversiones: leads cualificados o registros en brokers.",
                         faq5Q: "¿Por qué YouTube Shorts?", faq5A: "Es el formato más infravalorado para finanzas: visibilidad masiva, CPM bajo y máxima atención.",
                         faq6Q: "¿Es compatible con mi presupuesto?", faq6A: "Si tu negocio ya es rentable, nuestro sistema está diseñado para acelerar tu crecimiento sin riesgo innecesario.",
+                        
                         footerHeader: "GROWTH PARTNER FOR FINANCE BUSINESSES", footerTitle: "Let's Scale", footerSub: "Get your discovery call booked in or connect with me to see if I can help.",
-                        footerBtn1: "Request your free audit", footerBtn2: "Or Speak directly to me"
+                        footerBtn1: "Request your free audit", footerBtn2: "Or Speak directly to me",
+                        copyright: "© 2026 THE SCALER'S AGENCY — HIGH PERFORMANCE ONLY", privacy: "Privacy Policy", terms: "Terms of Service", legal: "Legal Notice"
+                    },
+                    de: {
+                        navPortfolio: "Portfolio", navCases: "Case Studies", navHow: "How it works", navReviews: "Reviews", navFaq: "FAQs", navBtn: "Request your free audit",
+                        heroTag: "Google & YouTube Growth Partner",
+                        heroH1: "YOUTUBE SHORT ADS", heroH2: "FOR FINANCE BUSINESSES",
+                        heroSub: "Wir kombinieren die kreative Kraft des RYZE-Studios mit mathematischer Media-Buying-Ausführung. Keine nutzlosen Creatives, 100% Daten, reiner ROI.",
+                        heroBtn1: "Request your free audit", heroBtn2: "View Portfolio",
+                        logosTitle: "Trusted by Google Partners & Finance Leaders",
+                        portTitle: "Creative Assets & Finance Wins",
+                        portSub: "Von RYZE produzierte und von TSA optimierte Shorts. Wir produzieren keine Kunst, wir produzieren Conversions.",
+                        
+                        compTitle: "COMPLIANCE IST KEINE GRENZE MEHR",
+                        compSub: "Finanzwerbung ist ein Minenfeld. Kontosperrungen zerstören Ihren Cashflow. So reißen wir diese Barrieren ein.",
+                        compB1T: "DIE FINANZ-FALLE", compB1S: "SPERRUNGEN", compB1D: "Wiederholte Kontosperrungen. Strenge Compliance blockiert Kampagnen und zerstört den ROI.",
+                        compB2T: "NULL AUSFALLZEIT", compB2S: "SOFORTIGER ERSATZ", compB2D: "Unsere Lösung: Werbekonten, die in Sekunden austauschbar sind. Die Akquise stoppt nie.",
+                        compB3T: "GOOGLE ZUGELASSEN", compB3S: "ZERTIFIZIERUNG", compB3D: "Bewährte interne Methoden, um komplexe Finanzzertifizierungen schnell zu erhalten.",
+                        compB4T: "OHNE ZERTIFIZIERUNG?", compB4S: "KONFORMES SKALIEREN", compB4D: "Auch ohne Zertifizierung performen unsere kreativen Frameworks massiv und respektieren Algorithmen.",
+                        compB5T: "UNFAIRER VORTEIL", compB5S: "ÜBERTREFFEN", compB5D: "Lassen Sie Ihre Konkurrenz mit dem Support kämpfen. Skalieren Sie aggressiv, während sie feststecken.",
+
+                        methTitle: "Your Scaling Process",
+                        meth1Title: "Audit & Strategie (TSA)", meth1Desc: "Ich analysiere Ihren Trichter, Ihre Kennzahlen und finanzielle Engpässe. Wir starten nichts ohne ROI-Plan.",
+                        meth2Title: "Produktion (RYZE)", meth2Desc: "Ryze Performance übernimmt, um aufmerksamkeitsstarke Shorts zu erstellen. Getestete Konzepte, aggressive Hooks.",
+                        meth3Title: "Media & Data-Buying", meth3Desc: "Ich richte das Werbeökosystem auf Google & YouTube ein. Hochpräzises Targeting, algorithmische Steuerung.",
+                        meth4Title: "Optimieren", meth4Desc: "Kalte Datenanalyse. Jeder ausgegebene Euro wird verfolgt. Was nicht funktioniert, wird gestoppt.",
+                        meth5Title: "SKALIEREN", meth5Desc: "Sobald sich der CPA stabilisiert hat, öffnen wir die Schleusen, um den Markt zu dominieren.",
+                        
+                        revTitle: "Das Power-Duo zu Ihren Diensten.",
+                        revQuote: "Wir haben die analytische Schlagkraft von TSA mit der unvergleichlichen und unermesslichen Erfahrung kombiniert, die Ryze Performance bei der Zusammenarbeit mit großen Namen wie Coca Cola gesammelt hat.",
+                        revAuthor: "CEO - The Scaler's Agency",
+
+                        proofTitle: "Der Beweis liegt in der Leistung", proofRev: "Umsatz", proofSpend: "Werbeausgaben", proofLaunch: "1. Einführung",
+                        proof1Tag: "GESUNDHEIT & WELLNESS", proof1Stat1: "Statische Ads / Monat", proof1Desc: "Leitung eines kreativen Rebrandings für Swissklip. Über 50 statische Ads geliefert, Markenwahrnehmung verbessert.",
+                        proof2Tag: "MOBILE APP / KREATIV", proof2Stat1: "CPA in 4 Monaten", proof2Stat2: "Creatives Produziert", proof2Desc: "Mojo hilft, trendige Reels in Sekunden zu erstellen. Signifikantes Wachstum über 6 Monate in 5 Märkten erzielt.",
+                        proof3Tag: "GESUNDHEIT & SPORT", proof3Desc: "Für den Skwheel-Produktstart identifizierten wir die besten Formate. 150K$+ Umsatz und 4.2x ROAS generiert.",
+                        proof4Tag: "BEAUTY & GESUNDHEIT", proof4Stat1: "Assets / Monat", proof4Desc: "Rebranding-Kampagne für Rosegold. 50+ Creatives pro Monat steigerten die Media-Effizienz massiv.",
+                        
+                        trustTitle: "Vertraut von Marken- und Wachstumsführern",
+                        trust1Role: "Marketing Director Renault LATAM", trust1Text: "Geoffrey ist zuverlässig, innovativ und strategisch. Er lieferte pünktliche und ausgefeilte Performance-Creatives.",
+                        trust2Role: "Performance Director Dior", trust2Text: "Es war großartig, mit Geoffrey zu arbeiten. Er ist zielorientiert und verfügt über enormes Wissen im Markenmarketing.",
+                        trust3Text: "Geoffrey ist ein Stratege an der Spitze der Ad-Kreativstrategie, der menschliche Qualität mit datengesteuertem Ansatz verbindet.",
+                        trust4Role: "Art Director, ex-Twitter, Coke & Google", trust4Text: "Er war ein brillanter kreativer Stratege und ein scharfsinniger Media-Buying-Experte bei Coca-Cola.",
+                        trust5Role: "Growth Marketer SKWHEEL", trust5Text: "Von 0 auf 150K$ mit 4.2x ROAS. Strategisch, schnell und fokussiert auf Konversionen. Effizienz auf höchstem Niveau.",
+                        trust6Role: "Paid Director Accor", trust6Text: "Er verband geschickt Daten mit Ideen und zeigte ein scharfes Verständnis für den Media-Einkauf. Sehr zu empfehlen!",
+
+                        faqTitle: "F.A.Q", faqCat1: "Prozess", faqCat2: "Leistung",
+                        faq1Q: "Warum dieses Duo (TSA x RYZE)?", faq1A: "Weil Kreativität ohne Daten ein Glücksspiel ist und Daten ohne Kreativität Zeitverschwendung.",
+                        faq2Q: "Übernimmt Ryze die gesamte Erstellung?", faq2A: "Ja, alles aus einer Hand. Sie managen die visuelle Produktion, ich die Verteilung und Optimierung.",
+                        faq3Q: "Implementierungszeit?", faq3A: "Das Setup ist schnell: Audit innerhalb von 48h, erste Creatives innerhalb von 7 Tagen.",
+                        faq4Q: "Wie messen Sie den ROI?", faq4A: "Durch strenge Conversion-Verfolgung: qualifizierte Leads, Broker-Registrierungen oder direkte Werte.",
+                        faq5Q: "Warum YouTube Shorts?", faq5A: "Das am meisten unterschätzte Format für Finanzen: massive Sichtbarkeit, niedriger CPM und maximale Aufmerksamkeit.",
+                        faq6Q: "Passt es in mein Budget?", faq6A: "Wenn Ihr Geschäft bereits profitabel ist, beschleunigt unser System Ihr Wachstum ohne Risiko.",
+                        
+                        footerHeader: "GROWTH PARTNER FOR FINANCE BUSINESSES", footerTitle: "Let's Scale", footerSub: "Get your discovery call booked in or connect with me to see if I can help.",
+                        footerBtn1: "Request your free audit", footerBtn2: "Or Speak directly to me",
+                        copyright: "© 2026 THE SCALER'S AGENCY — HIGH PERFORMANCE ONLY", privacy: "Privacy Policy", terms: "Terms of Service", legal: "Legal Notice"
                     }
                 }
             }
